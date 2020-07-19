@@ -1,0 +1,21 @@
+{
+  "name": "snio-resume",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.5",
+    "next": "^9.4.4",
+    "postcss-import": "^12.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "tailwindcss": "^1.5.1"
+  }
+}
