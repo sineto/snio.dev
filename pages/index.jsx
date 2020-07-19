@@ -10,7 +10,7 @@ import getData from '../utils/get-data';
 
 const Index = ({ repositories }) => {
 	return (
-		<div className='container'>
+		<>
 			<PageHead />
 			<Header />
 			<Hero />
@@ -78,7 +78,7 @@ const Index = ({ repositories }) => {
 					)
 				 })}
 			</div>
-		</div>
+		</>
 	);
 };
 
