@@ -36,7 +36,7 @@ by [DevPleno](https://devpleno.com/).
 - The layout credits mainly go to [Logan Cee](https://dribbble.com/shots/11276631-DS-Personal-Developer-Portfolio).
 
 ## Self-Promotion
-Do you like this plugin? Come on:
+Do you like this project? Come on:
 - Star and follow the repository on [GitHub](https://github.com/sineto/snio.portfolio).
 - Follow me on
   - [GitHub](https://github.com/sineto)
