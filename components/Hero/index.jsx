@@ -14,10 +14,10 @@ const Hero = () => {
 				<a className='px-4 py-2 mt-5 border-2 rounded-sm hover:bg-green-lighter hover:text-gray1 text-green-lighter border-green-lighter' href='#'>Say hi!</a>
 			</div>
 
-			<div className='flex items-center justify-end p-4 xl:-mt-10 xl:w-1/2 gap-8 xl:p-12'>
-				<DiJavascript1 className='text-5xl opacity-25 sm:text-8xl' />
-				<FaNodeJs className='text-5xl opacity-25 sm:text-8xl' />
-				<FaReact className='text-5xl opacity-25 sm:text-8xl' />
+			<div className='flex items-center justify-end px-2 py-4 lg:-mt-10 lg:w-1/2 gap-8 xl:p-12'>
+				<DiJavascript1 className='text-6xl opacity-25 sm:text-8xl' />
+				<FaNodeJs className='text-6xl opacity-25 sm:text-8xl' />
+				<FaReact className='text-6xl opacity-25 sm:text-8xl' />
 			</div>
 
 		</div>

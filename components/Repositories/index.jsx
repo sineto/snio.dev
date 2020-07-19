@@ -11,7 +11,7 @@ const Repositories = ({ repositories }) => {
 			 {repositories.map((repository) => {
 				return (
 					<div
-						className='p-6 my-2 border-b-2 border-transparent lg:m-1 hover:border-solid hover:border-green-lighter rounded-md bg-gray0'
+						className='p-6 my-2 border-b-2 border-transparent md:m-2 lg:m-1 hover:border-solid hover:border-green-lighter rounded-md bg-gray0'
 						key={repository.id}>
 						<a href={repository.html_url} className='font-bold hover:text-green-lighter'>{repository.name}</a>
 						<p className='flex items-center gap-1 text-green-lighter'>
