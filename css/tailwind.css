@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 
 body {
+	width: 100%;
 	font-family: 'Roboto Mono';
 	color: #ffffff;
 	background: #2D2E32 url(../public/images/bg-body.png) top right no-repeat;

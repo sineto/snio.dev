@@ -21,6 +21,7 @@ const PageHead = () => {
 			<meta name="msapplication-TileColor" content="#ffffff"/>
 			<meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
 			<meta name="theme-color" content="#ffffff"/>
+			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			<title>Sinésio Neto - Software Developer</title>
 		</Head>
 	);
