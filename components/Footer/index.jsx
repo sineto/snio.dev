@@ -27,7 +27,7 @@ const Footer = () => {
 						Information
 					</span>
 					<span className='block mb-1 text-sm text-gray2'>
-						Want to hire me? Let's take a chat.
+						Want to hire me?
 					</span>
 					<ul className='flex flex-col items-center xm:items-start'>
 						<li className='flex items-center sm:text-xl space-x-2'>
