@@ -25,9 +25,9 @@ const resumeCards = [
 
 const Introduce = () => {
 	return (
-		<div className='flex flex-wrap xl:w-full sm:p-10 bg-gray0'>
-			<div className='flex flex-col flex-wrap order-first order-last p-4 md:order-first lg:p-12 md:w-1/2'>
-				{resumeCards.map((card, i) => <ResumeCard key={i} card={card} /> )}
+		<div className='flex flex-wrap justify-center xm:p-12 bg-gray0'>
+			<div className='flex flex-col order-first order-last w-full p-4 md:order-first md:w-1/2'>
+				{resumeCards.map((card, i) => <ResumeCard key={i} index={i} card={card} /> )}
 			</div>
 			<Resume />
 		</div>

@@ -14,9 +14,11 @@ const getData =  async (username) => {
 			return {
 				id: repository.id,
 				name: repository.name,
+				description: repository.description,
 				html_url: repository.html_url,
 				language: repository.language,
 				stargazers_count: repository.stargazers_count,
+				forks_count: repository.forks_count,
 			}
 		});
 

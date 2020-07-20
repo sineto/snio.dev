@@ -23,7 +23,8 @@ module.exports = {
 		},
 		extend: {
 			screens: {
-				'xs': '320px'
+				'xs': '320px',
+				'xm': '580px'
 			},
 			colors: {
 				'gray0': '#25262A',
@@ -45,8 +46,11 @@ module.exports = {
 			}
 		},
 		variants: {
+			backgroundColor: ['responsive', 'hover', 'focus'],
+			borderWidth: ['responsive', 'hover'],
+			textColor: ['responsive', 'hover', 'focus', 'group-hover'],
 			zIndex: ['responsive', 'hover'],
-			borderWidth: ['responsive', 'hover']
+			// backgroundColor: ['responsive', 'hover'],
 		}
 	}
 };

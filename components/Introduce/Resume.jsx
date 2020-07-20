@@ -2,7 +2,7 @@ import React from 'react';
 
 const Resume = () => {
 	return (
-		<div className='p-4 xl:p-12 lg:p-12 md:w-1/2'>
+		<div className='p-4 md:w-1/2'>
 			<span className='text-xs text-gray2'>Introduce</span>
 			<h2 className='text-3xl'>Hi! My name is <span className='border-b-1'>Sinésio Neto</span></h2>
 			<p className='my-5 text-justify text-xm text-gray2'>
