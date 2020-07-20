@@ -6,7 +6,7 @@ const Footer = () => {
 	return (
 		<>
 			<div className='flex flex-wrap items-center justify-center p-8 sm:justify-between xm:p-12 bg-gray0'>
-				<div className='flex flex-col items-center order-last p-5 sm:p-0 space-y-3 xs:order-first'>
+				<div className='flex flex-col items-center order-last p-5 sm:p-0 space-y-3 xm:order-first'>
 					<a href='https://snio.now.sh' className='block'>
 						<img className='max-w-vs' src='/images/snio-logo.svg' />
 					</a>
