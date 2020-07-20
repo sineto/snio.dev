@@ -46,10 +46,10 @@ module.exports = {
 			}
 		},
 		variants: {
+			zIndex: ['responsive', 'hover'],
 			backgroundColor: ['responsive', 'hover', 'focus'],
 			borderWidth: ['responsive', 'hover'],
 			textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-			zIndex: ['responsive', 'hover'],
 			// backgroundColor: ['responsive', 'hover'],
 		}
 	}

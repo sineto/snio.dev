@@ -16,10 +16,6 @@ const Index = ({ repositories }) => {
 			<Hero />
 			<Introduce />
 			<Repositories repositories={repositories} />
-			<div className="group bg-white hover:bg-blue-500 ...">
-				<p className="text-gray-900 group-hover:text-white ...">New Project</p>
-				<p className="text-gray-700 group-hover:text-white ...">Create a new project from a variety of starting templates.</p>
-			</div>
 		</>
 	);
 };
