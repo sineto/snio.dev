@@ -12,13 +12,19 @@ const Footer = () => {
 					</a>
 					<ul className='flex space-x-4'>
 						<li>
-							<FaGithub />
+							<a href='https://github.com/sineto' target='_blank'>
+								<FaGithub />
+							</a>
 						</li>
 						<li>
-							<FaLinkedinIn />
+							<a href='https://www.linkedin.com/in/sndev/' target='_blank'>
+								<FaLinkedinIn />
+							</a>
 						</li>
 						<li>
-							<FaTelegramPlane />
+							<a href='https://t.me/sinetodev' target='_blank'>
+								<FaTelegramPlane />
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -32,11 +38,11 @@ const Footer = () => {
 					<ul className='flex flex-col items-center xm:items-start'>
 						<li className='flex items-center sm:text-xl space-x-2'>
 							<FaEnvelope className='inline-block'/>
-							<a href='#' target='_blank'>sineto.dev@gmail.com</a>
+							<a href='mailto:sineto.dev@gmail.com' target='_blank'>sineto.dev@gmail.com</a>
 						</li>
 						<li className='flex items-center sm:text-xl space-x-2'>
 							<MdPhonelinkRing />
-							<a href='#' target='_blank'>+55 00 0 0000-0000</a>
+							<a href='tel:55-86-99999-9999' target='_blank'>+55 00 0 0000-0000</a>
 						</li>
 					</ul>
 				</div>

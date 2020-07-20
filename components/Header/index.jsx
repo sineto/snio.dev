@@ -12,14 +12,14 @@ const Header = () => {
 			<div>
 				<ul className='flex space-x-6'>
 					<li className='flex items-center text-xs space-x-2 text-gray2'>
-						<FaLinkedin className='inline-block text-white'/>
-						<a className='hover:text-green-lighter' href='https://www.linkedin.com/in/sndev/' target='_blank'>
+						<FaLinkedin className='inline-block text-lg text-white'/>
+						<a className='text-lg hover:text-green-lighter' href='https://www.linkedin.com/in/sndev/' target='_blank'>
 							LinkedIn
 						</a>
 					</li>
 					<li className='flex items-center text-xs space-x-2 text-gray2'>
-						<FaGithub className='inline-block text-white'/>
-						<a className='hover:text-green-lighter' href='https://github.com/sineto' target='_blank'>
+						<FaGithub className='inline-block text-lg text-white'/>
+						<a className='text-lg hover:text-green-lighter' href='https://github.com/sineto' target='_blank'>
 							GitHub
 						</a>
 					</li>
