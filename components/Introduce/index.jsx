@@ -27,7 +27,11 @@ const Introduce = () => {
 	return (
 		<div className='flex flex-wrap justify-center xm:p-12 bg-gray0'>
 			<div className='flex flex-col order-first order-last w-full p-4 md:order-first md:w-1/2'>
-				{resumeCards.map((card, i) => <ResumeCard key={i} index={i} card={card} /> )}
+				{resumeCards.map((card, i) => {
+					return (
+						<ResumeCard key={i} card={card} /> )}
+					)
+				}
 			</div>
 			<Resume />
 		</div>

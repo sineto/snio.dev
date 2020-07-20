@@ -42,15 +42,15 @@ module.exports = {
 				'vs': '124px'
 			},
 			fontSize: {
+				'tiny': '.65rem',
 				'8xl': '130px'
 			}
 		},
 		variants: {
-			zIndex: ['responsive', 'hover'],
+			zIndex: ['responsive', 'hover', 'focus'],
 			backgroundColor: ['responsive', 'hover', 'focus'],
 			borderWidth: ['responsive', 'hover'],
 			textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-			// backgroundColor: ['responsive', 'hover'],
 		}
 	}
 };

@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Introduce from '../components/Introduce';
 import Repositories from '../components/Repositories';
+import Footer from '../components/Footer';
 
 import getData from '../utils/get-data';
 
@@ -16,6 +17,7 @@ const Index = ({ repositories }) => {
 			<Hero />
 			<Introduce />
 			<Repositories repositories={repositories} />
+			<Footer />
 		</>
 	);
 };
