@@ -7,8 +7,6 @@ import Introduce from '../components/Introduce';
 import Repositories from '../components/Repositories';
 import Footer from '../components/Footer';
 
-import getData from '../utils/get-data';
-
 const Index = ({ repositories }) => {
 	return (
 		<>
@@ -23,7 +21,8 @@ const Index = ({ repositories }) => {
 };
 
 export const getServerSideProps = async (context) => {
-	const { repositories } = await getData('sineto');
+	const request = await fetch(`${process.env.API_HOST}/api/getUser`);
+	const { repositories } = await request.json();
 	return {
 		props: {
 			repositories
