@@ -20,6 +20,10 @@ $ git clone https://github.com/sineto/snio.portfolio
 $ cd snio.portfolio
 $ yarn install ## or npm install
 ```
+### Configuring to retrieve github's user repost information
+Open file .env.local and change GITHUBUSER for your github user
+API_HOST=https://api.github.com/users/GITHUBUSER/repos to API_HOST=https://api.github.com/users/tscndev/repos
+
 ### Running the Nestjs server
 ```sh
 ## running dev server
