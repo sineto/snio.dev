@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { NavContactLink } from '../../../components';
+import NavContactLink from '../NavContactLink';
 import * as Styles from './styles';
 
 interface ContactLink {

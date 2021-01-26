@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { iconLoader } from '../../helpers';
+import { iconLoader } from '../../../helpers';
 import * as Styles from './styles';
-import theme from '../../styles/theme';
+import theme from '../../../styles/theme';
 
 interface NavContactLinkProps {
   icon: string

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { FaEnvelope } from 'react-icons/fa';
 
 const HeaderTopBar = styled.div`
-  width: 100%;
-  margin-bottom: 120px;
+  width: 1200px;
+  margin: 0 auto 120px auto;
 
   display: flex;
   justify-content: space-between;
