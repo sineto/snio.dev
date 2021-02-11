@@ -21,7 +21,7 @@ const IntroduceSkills = styled.div`
   flex-direction: column;
   jusitify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 `;
 
 const SkillCard = styled.div`
@@ -30,13 +30,14 @@ const SkillCard = styled.div`
   font-weight: 400;
   background: ${({ theme }) => theme.gray1};
   border-radius: 8px;
-  padding: 40px;
+  padding: 30px 40px;
 
   &:hover {
-    box-shadow: 1px 29px 35px -8px rgba(0,0,0,0.41);
+    box-shadow: 0px 17px 20px -5px rgba(0,0,0,0.4);
     h3 {
       color: ${({ theme }) => theme.green};
     }
+    z-index: 1;
   }
 `;
 
@@ -73,7 +74,7 @@ const IntroduceAbout = styled.div`
   font-family: 'Roboto Mono';
   color: ${({ theme }) => theme.gray4};
   padding: 2.5rem;
-  margin-left: 7.5rem;
+  margin-left: calc(6.5rem - 2.5rem);
 `;
 
 const AboutTag = styled.p`
@@ -88,7 +89,7 @@ const AboutContent = styled.div`
 `;
 
 const AboutTitle = styled.h2`
-  font-weight: 500;
+  font-weight: 400;
   color: ${({ theme }) => theme.white};
 `;
 
@@ -98,16 +99,16 @@ const AboutBody = styled.p`
 
 export {
   Container,
-  IntroduceContent,
-  IntroduceSkills,
-  SkillCard,
-  SkillCardBody,
-  SkillCardTitle,
-  SkillCardDesc,
-  SkillCardLinkCustomers,
-  IntroduceAbout,
-  AboutTag,
-  AboutContent,
-  AboutTitle,
-  AboutBody
+  // IntroduceContent,
+  // IntroduceSkills,
+  // SkillCard,
+  // SkillCardBody,
+  // SkillCardTitle,
+  // SkillCardDesc,
+  // SkillCardLinkCustomers,
+  // IntroduceAbout,
+  // AboutTag,
+  // AboutContent,
+  // AboutTitle,
+  // AboutBody
 }

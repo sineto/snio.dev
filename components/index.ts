@@ -1,5 +1,7 @@
 import Header from './Header';
+import Introduce from './Introduce';
 
 export {
-  Header
+  Header,
+  Introduce
 }
