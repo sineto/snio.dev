@@ -65,7 +65,6 @@ const HeroTechLogosContainer = styled.div`
   gap: 95px;
 `;
 
-
 export {
   HeaderHeroContent,
   HeaderHeroDisclaimer,

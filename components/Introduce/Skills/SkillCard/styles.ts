@@ -50,5 +50,5 @@ export {
   SkillCardBody,
   SkillCardTitle,
   SkillCardDesc,
-  SkillCardLinkCustomers,
+  SkillCardLinkCustomers
 }
