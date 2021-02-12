@@ -5,110 +5,133 @@ const Container = styled.div`
   // flex-direction: column;
 `;
 
-const IntroduceContent = styled.div`
-  max-width: 1200px;
-  background: transparent;
-  padding: 7.5rem 0;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+const TechContributions = styled.div`
+  background: ${({ theme }) => theme.gray1};
+  padding: 7.5rem;
 `;
 
-const IntroduceSkills = styled.div`
+const TechContributionsContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+const TechContentRow = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 26px;
+`;
+
+const TechContentColumn = styled.div`
   display: flex;
   flex-direction: column;
-  jusitify-content: center;
   align-items: center;
-  gap: 10px;
+  flex-basis: 100%;
+  flex: 1;
+  gap: 26px
 `;
 
-const SkillCard = styled.div`
-  width: 491px;
+const TechContentHeader = styled.div`
+  max-width: 590px;
+  height: 177px;
   font-family: 'Roboto Mono';
-  font-weight: 400;
-  background: ${({ theme }) => theme.gray1};
+  padding: 0 40px 26px 0;
+
+  h1 {
+    font-size: 38px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 18px;
+    color: ${({ theme }) => theme.gray4};
+  }
+`;
+
+const TechRepositoryCard = styled.div`
+  max-width: 590px;
+  font-family: 'Roboto Mono';
+  background: rgba(37, 38, 42, 0.6);
   border-radius: 8px;
-  padding: 30px 40px;
+  padding: 28px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
 
   &:hover {
-    box-shadow: 0px 17px 20px -5px rgba(0,0,0,0.4);
-    h3 {
+    background: rgba(37, 38, 42, 1);
+
+    h2 {
       color: ${({ theme }) => theme.green};
     }
-    z-index: 1;
+
+    .iconLink {
+      color: ${({ theme }) => theme.green};
+      visibility: visible;
+    }
   }
 `;
 
-const SkillCardBody = styled.div`
-  margin-bottom: 22px;
-`;
+const RepositoryCardHeader = styled.div`
+  h2 {
+    font-size: 18px;
+    color: ${({ theme }) => theme.white};
+    cursor: pointer;
+    margin-bottom: 6px;
 
-const SkillCardTitle = styled.h3`
-  font-weight: 400;
-  font-size: 25px;
-  color: ${({ theme }) => theme.white};
-  margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+    span {
+      width: 22px;
+      height: 22px;
+      visibility: hidden;
+    }
+  }
 
-const SkillCardDesc = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.gray4};
-`;
-
-const SkillCardLinkCustomers = styled.span`
-  font-size: 14px;
-  text-transform: uppercase;
-
-  &:hover {
-    border-bottom: 1px dotted;
+  p {
+    font-size: 14px;
+    color: ${({ theme }) => theme.gray4};
   }
 `;
 
-const IntroduceAbout = styled.div`
-  font-family: 'Roboto Mono';
+const RepositoryCardSpecs = styled.ul`
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: ${({ theme }) => theme.gray4};
-  padding: 2.5rem;
-  margin-left: calc(6.5rem - 2.5rem);
-`;
-
-const AboutTag = styled.p`
-  font-size: 16px;
-  margin-bottom: 16px;
-`;
-
-const AboutContent = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
+  gap: 26px;
 
-const AboutTitle = styled.h2`
-  font-weight: 400;
-  color: ${({ theme }) => theme.white};
-`;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 
-const AboutBody = styled.p`
-  font-size: 20px;
+  li:first-child {
+    span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: tomato;
+      border-radius: 12px;
+    }
+  }
 `;
 
 export {
   Container,
-  // IntroduceContent,
-  // IntroduceSkills,
-  // SkillCard,
-  // SkillCardBody,
-  // SkillCardTitle,
-  // SkillCardDesc,
-  // SkillCardLinkCustomers,
-  // IntroduceAbout,
-  // AboutTag,
-  // AboutContent,
-  // AboutTitle,
-  // AboutBody
+  TechContributions,
+  TechContributionsContent,
+  TechContentRow,
+  TechContentColumn,
+  TechContentHeader,
+  TechRepositoryCard,
+  RepositoryCardHeader,
+  RepositoryCardSpecs
 }
