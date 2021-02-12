@@ -26,7 +26,6 @@ const TechContentRow = styled.div`
 const TechContentColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   flex-basis: 100%;
   flex: 1;
   gap: 26px
