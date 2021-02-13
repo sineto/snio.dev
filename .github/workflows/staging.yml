@@ -45,6 +45,6 @@ jobs:
   cleanup-branch:
     runs-on: ubuntu-latest
     steps:
-    - uses: jessfraz/branch-cleanup-action@master
-    - env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: jessfraz/branch-cleanup-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
