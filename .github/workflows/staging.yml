@@ -41,10 +41,3 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - run: yarn build
-
-  cleanup-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: jessfraz/branch-cleanup-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
