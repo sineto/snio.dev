@@ -12,7 +12,4 @@ const Header = styled.div`
   background-position: right;
 `;
 
-export {
-  Container,
-  Header
-}
+export { Container, Header };

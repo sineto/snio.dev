@@ -11,7 +11,11 @@ interface ContactLink {
 
 const TopBar = (): JSX.Element => {
   const contactLinks: ContactLink[] = [
-    { icon: 'fa-linkedin', label: 'Linkedin', href: 'https://www.linkedin.com/in/sndev/' },
+    {
+      icon: 'fa-linkedin',
+      label: 'Linkedin',
+      href: 'https://www.linkedin.com/in/sndev/'
+    },
     { icon: 'fa-github', label: 'GitHub', href: 'https://github.com/sineto' }
   ];
 
@@ -34,7 +38,7 @@ const TopBar = (): JSX.Element => {
               label={link.label}
               href={link.href}
             />
-          )
+          );
         })}
         <Styles.HeaderNavContactButton>
           <Styles.EnvelopeIcon />

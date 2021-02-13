@@ -10,7 +10,4 @@ const Label = styled.span`
   margin-left: 9px;
 `;
 
-export {
-  Container,
-  Label
-}
+export { Container, Label };

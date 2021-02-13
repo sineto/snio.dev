@@ -11,6 +11,4 @@ const IntroduceContent = styled.div`
   align-items: flex-start;
 `;
 
-export {
-  IntroduceContent
-}
+export { IntroduceContent };

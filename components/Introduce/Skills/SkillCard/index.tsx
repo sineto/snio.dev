@@ -8,7 +8,12 @@ export interface SkillCardProps {
   href?: string
 }
 
-const SkillCard = ({ title, icon, description, ...props }: SkillCardProps): JSX.Element => {
+const SkillCard = ({
+  title,
+  icon,
+  description,
+  ...props
+}: SkillCardProps): JSX.Element => {
   return (
     <Styles.SkillCard>
       <Styles.SkillCardBody>
@@ -16,15 +21,11 @@ const SkillCard = ({ title, icon, description, ...props }: SkillCardProps): JSX.
           {title}
           {icon}
         </Styles.SkillCardTitle>
-        <Styles.SkillCardDesc>
-          {description}
-        </Styles.SkillCardDesc>
+        <Styles.SkillCardDesc>{description}</Styles.SkillCardDesc>
       </Styles.SkillCardBody>
       <Link href='https://snio.dev'>
         <a>
-          <Styles.SkillCardLinkCustomers>
-            Clients
-          </Styles.SkillCardLinkCustomers>
+          <Styles.SkillCardLinkCustomers>Clients</Styles.SkillCardLinkCustomers>
         </a>
       </Link>
     </Styles.SkillCard>

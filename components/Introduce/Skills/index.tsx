@@ -16,7 +16,7 @@ const Skills = ({ skills }: SkillsProps): JSX.Element => {
             icon={props.icon}
             description={props.description}
           />
-        )
+        );
       })}
     </Styles.Skills>
   );

@@ -44,4 +44,4 @@ export {
   AboutTitle,
   AboutDevName,
   AboutBody
-}
+};

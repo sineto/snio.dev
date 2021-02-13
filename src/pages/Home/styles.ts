@@ -28,7 +28,7 @@ const TechContentColumn = styled.div`
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  gap: 26px
+  gap: 26px;
 `;
 
 const TechContentHeader = styled.div`
@@ -133,4 +133,4 @@ export {
   TechRepositoryCard,
   RepositoryCardHeader,
   RepositoryCardSpecs
-}
+};
