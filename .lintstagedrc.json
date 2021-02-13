@@ -1,5 +1,6 @@
 {
   "*.{ts,tsx}": [
+    "prettier --write",
     "yarn lint"
   ]
 }

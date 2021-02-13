@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit && eslint --ext .ts,.tsx --ignore-pattern '*.d.ts' . --fix"
+    "lint": "tsc --noEmit && eslint --ext .ts,.tsx --ignore-pattern '*.d.ts' . --fix",
+    "format": "prettier --write '**/*.{ts,tsx}'"
   },
   "dependencies": {
     "html-react-parser": "^1.2.4",
@@ -25,13 +26,16 @@
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-config-standard-with-typescript": "^20.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^4.3.1",
     "git-commit-msg-linter": "^3.0.0",
     "husky": "4.3.8",
     "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   }
 }

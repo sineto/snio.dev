@@ -9,7 +9,11 @@ interface NavContactLinkProps {
   href: string
 }
 
-const NavContactLink = ({ icon, label, href }: NavContactLinkProps): JSX.Element => {
+const NavContactLink = ({
+  icon,
+  label,
+  href
+}: NavContactLinkProps): JSX.Element => {
   return (
     <Link href={href}>
       <a>

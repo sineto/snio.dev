@@ -37,9 +37,4 @@ const EnvelopeIcon = styled(FaEnvelope)`
   color: ${({ theme }) => theme.green};
 `;
 
-export {
-  HeaderTopBar,
-  HeaderNavContact,
-  HeaderNavContactButton,
-  EnvelopeIcon
-}
+export { HeaderTopBar, HeaderNavContact, HeaderNavContactButton, EnvelopeIcon };

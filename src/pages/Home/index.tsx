@@ -27,7 +27,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -56,7 +57,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -85,7 +87,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -116,7 +119,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -145,7 +149,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -174,7 +179,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -203,7 +209,8 @@ const Home = (): JSX.Element => {
                     </h2>
                   </Link>
                   <p>
-                    Example of Nodejs app with Express.js and Embedded JavaScript Templates (EJS)
+                    Example of Nodejs app with Express.js and Embedded
+                    JavaScript Templates (EJS)
                   </p>
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
@@ -226,7 +233,6 @@ const Home = (): JSX.Element => {
           <button>SEE MORE...</button>
         </Styles.TechContributionsContent>
       </Styles.TechContributions>
-
     </Styles.Container>
   );
 };

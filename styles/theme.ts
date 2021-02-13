@@ -6,7 +6,7 @@ const defaultTheme = {
   gray3: '#4B4C51',
   gray4: '#90939A',
   green: '#67F3AA'
-}
+};
 
 export type ThemeType = typeof defaultTheme;
 export default defaultTheme;

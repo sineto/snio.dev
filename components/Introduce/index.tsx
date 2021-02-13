@@ -6,16 +6,35 @@ import * as Styles from './styles';
 import theme from '../../styles/theme';
 
 const skills: SkillCardProps[] = [
-  { title: 'Back-end', icon: iconLoader('ai-fill-api', 22, theme.green), description: 'I can develop APIs with REST/GraphQL architecture' },
-  { title: 'Front-end', icon: iconLoader('fa-code', 22, theme.green), description: 'Front-end develop with React and Nextjs' },
-  { title: 'Deployment', icon: iconLoader('ai-deploy-unit', 22, theme.green), description: 'Infrastructure with Google Cloud Platform and Vercel' }
+  {
+    title: 'Back-end',
+    icon: iconLoader('ai-fill-api', 22, theme.green),
+    description: 'I can develop APIs with REST/GraphQL architecture'
+  },
+  {
+    title: 'Front-end',
+    icon: iconLoader('fa-code', 22, theme.green),
+    description: 'Front-end develop with React and Nextjs'
+  },
+  {
+    title: 'Deployment',
+    icon: iconLoader('ai-deploy-unit', 22, theme.green),
+    description: 'Infrastructure with Google Cloud Platform and Vercel'
+  }
 ];
 
 const tags: string[] = [
-  'TypeScript', 'Node.js', 'HTML',
-  'CSS', 'Express', 'React',
-  'Next.js', 'GraphQL', 'REST',
-  'Google Cloud Platform', 'Vercel Platform'
+  'TypeScript',
+  'Node.js',
+  'HTML',
+  'CSS',
+  'Express',
+  'React',
+  'Next.js',
+  'GraphQL',
+  'REST',
+  'Google Cloud Platform',
+  'Vercel Platform'
 ];
 
 const Introduce = (): JSX.Element => {

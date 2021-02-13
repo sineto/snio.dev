@@ -1,7 +1,11 @@
 import React from 'react';
 import { IconType } from 'react-icons';
 import { FaGithub, FaLinkedin, FaCode, FaStar } from 'react-icons/fa';
-import { AiFillApi, AiOutlineCloudServer, AiOutlineDeploymentUnit } from 'react-icons/ai';
+import {
+  AiFillApi,
+  AiOutlineCloudServer,
+  AiOutlineDeploymentUnit
+} from 'react-icons/ai';
 import { BiLinkAlt } from 'react-icons/bi';
 import { IoGitBranch } from 'react-icons/io5';
 
@@ -22,8 +26,12 @@ const iconList: Icon[] = [
   { accessor: 'io-branch', component: IoGitBranch }
 ];
 
-const iconLoader = (name?: string, size?: number, color?: string): JSX.Element => {
-  const [Icon] = iconList.filter(({ accessor }) => (accessor === name));
+const iconLoader = (
+  name?: string,
+  size?: number,
+  color?: string
+): JSX.Element => {
+  const [Icon] = iconList.filter(({ accessor }) => accessor === name);
   const IconElement = React.createElement(Icon.component, { size, color });
   return IconElement;
 };

@@ -8,6 +8,4 @@ const Skills = styled.div`
   gap: 10px;
 `;
 
-export {
-  Skills
-}
+export { Skills };

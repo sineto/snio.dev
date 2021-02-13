@@ -10,22 +10,17 @@ interface AboutProps {
 const About = ({ devName, paragraph, tags }: AboutProps): JSX.Element => {
   return (
     <Styles.IntroduceAbout>
-      <Styles.AboutTag>
-        Introduce
-      </Styles.AboutTag>
+      <Styles.AboutTag>Introduce</Styles.AboutTag>
       <Styles.AboutContent>
         <Styles.AboutTitle>
-          Hi! My name is{' '}
-          <Styles.AboutDevName>
-            {devName}
-          </Styles.AboutDevName>
+          Hi! My name is <Styles.AboutDevName>{devName}</Styles.AboutDevName>
         </Styles.AboutTitle>
         {paragraph.map((p: string, index: number) => {
           return (
             <Styles.AboutBody key={`p-${index}`}>
               {format.stringToHtml(p, tags)}
             </Styles.AboutBody>
-          )
+          );
         })}
         {/* <Styles.AboutBody>
           {format.stringToHtml(`

@@ -9,7 +9,7 @@ const SkillCard = styled.div`
   padding: 30px 40px;
 
   &:hover {
-    box-shadow: 0px 17px 20px -5px rgba(0,0,0,0.4);
+    box-shadow: 0px 17px 20px -5px rgba(0, 0, 0, 0.4);
     h3 {
       color: ${({ theme }) => theme.green};
     }
@@ -51,4 +51,4 @@ export {
   SkillCardTitle,
   SkillCardDesc,
   SkillCardLinkCustomers
-}
+};
