@@ -1,34 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">snio.dev</h1>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+  <b>This project contains the source code of my personal portfolio available on: <a href="https://snio.dev">snio.dev</a>.</b>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[![Next.js][nextjs-badge]][nextjs-badge-url] [![Vercel][vercel-badge]][vercel-badge-url] [![TypesScript][typescript-badge]][typescript-badge-url] [![GitHub Actions][github-actions-badge]][github-actions-url] [![Lincese MIT][license-badge]][license-badge-url]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[nextjs-badge]: https://img.shields.io/badge/next%20js%20-%23000000.svg?&style=for-the-badge&logo=next.js&logoColor=white
+[nextjs-badge-url]: https://nextjs.org
+[vercel-badge]: https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white
+[vercel-badge-url]: https://vercel.com
+[typescript-badge]: https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white
+[typescript-badge-url]: https://typescriptlang.org
+[github-actions-badge]: https://img.shields.io/badge/github%20actions%20-%232671E5.svg?&style=for-the-badge&logo=github%20actions&logoColor=white
+[github-actions-url]: https://github.com/sineto/snio.dev/actions
+[license-badge]: https://img.shields.io/badge/License-MIT-green?style=for-the-badge
+[license-badge-url]: https://github.com/sineto/snio.dev/blob/develop/LICENSE
+</div>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<h3 align="center">
+  <a href="#requirements">Requirements</a> •
+  <a href="#running-up">Running Up</a> •
+  <a href="#development-considerations">Development Considerations</a> •
+  <a href="#acknowledgments">Ackownledgments</a> •
+  <a href="#self-promotion">Self Promotion</a> •
+  <a href="#license">License</a>
+</h3>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## REQUIREMENTS
+The website was built using:
+- [Nextjs](https://nextjs.org) (10.0.5)
+- [Styled Components](https://tailwindcss.com/) (5.2.1)
+- [React Helmet](https://purgecss.com/) (6.1.0)
+- [TypeScript](https://typescriptlang.org) (4.1.3)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## RUNNING UP
+If you want to run this application localy, follow the steps bellow.
 
-## Learn More
+1. **Cloning repository**
+    ```sh
+    $ git clone https://github.com/sineto/snio.dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**
+    ```sh
+    # This project uses Yarn as package manager.
+    # So, install Yarn first.
+    $ npm install --global yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    # install project dependencies
+    $ cd snio.dev
+    $ yarn install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Running Next.js server in `develop` mode**
+    ```sh
+    $ yarn dev
+    ```
 
-## Deploy on Vercel
+4. **Running Next.js server in `production` mode**
+    ```sh
+    $ yarn build
+    $ yarn start
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## DEVELOPMENT CONSIDERATIONS
+This project is being developed under some standards that I intend to follow.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Commit stage**
+
+    Before every commit action some triggers took automations.
+    - **Git commit message** need to follow the [**Angular Commit Message Guidelines**](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format);
+    - **ESLint** will check some patterns based on [**StandardJs**](https://standardjs.com) rules;
+    - **Prettier** will format the code out of the rules. Those rules was based on my own preferences;
+
+2. **Running code linter manually**
+    ```sh
+    $ yarn lint
+    ```
+
+3. **Running code format manually**
+    ```sh
+    $ yarn format
+    ```
+
+## ACKNOWLEDGMENTS
+- This project was built during Fullstack Master class
+by [DevPleno](https://devpleno.com/).
+- The layout credits mainly go to [Logan Cee](https://dribbble.com/shots/11276631-DS-Personal-Developer-Portfolio).
+
+## SELF PROMOTION
+Do you like this project? Come on:
+- Star and follow the repository on [GitHub](https://github.com/sineto/snio.dev).
+- Follow me on
+  - [GitHub](https://github.com/sineto)
+
+## LICENSE
+[MIT License](LICENSE)
