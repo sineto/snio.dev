@@ -1,6 +1,4 @@
-import Link from 'next/link';
-import { Header, Introduce } from '../../../components';
-import { iconLoader } from '../../../helpers';
+import { Header, Introduce, TechContributions } from '../../../components';
 import * as Styles from './styles';
 
 const Home = (): JSX.Element => {
@@ -8,7 +6,8 @@ const Home = (): JSX.Element => {
     <Styles.Container>
       <Header />
       <Introduce />
-      <Styles.TechContributions>
+      <TechContributions />
+      {/* <Styles.TechContributions>
         <Styles.TechContributionsContent>
           <Styles.TechContentRow>
             <Styles.TechContentColumn>
@@ -33,17 +32,10 @@ const Home = (): JSX.Element => {
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
                   <li>
-                    <span></span>
-                    TypeScript
+                    <span></span>TypeScript
                   </li>
-                  <li>
-                    {iconLoader('fa-star')}
-                    123.4k
-                  </li>
-                  <li>
-                    {iconLoader('io-branch')}
-                    1,234
-                  </li>
+                  <li>{iconLoader('fa-star')}123.4k</li>
+                  <li>{iconLoader('io-branch')}1,234</li>
                 </Styles.RepositoryCardSpecs>
               </Styles.TechRepositoryCard>
               <Styles.TechRepositoryCard>
@@ -63,17 +55,10 @@ const Home = (): JSX.Element => {
                 </Styles.RepositoryCardHeader>
                 <Styles.RepositoryCardSpecs>
                   <li>
-                    <span></span>
-                    TypeScript
+                    <span></span>TypeScript
                   </li>
-                  <li>
-                    {iconLoader('fa-star')}
-                    123.4k
-                  </li>
-                  <li>
-                    {iconLoader('io-branch')}
-                    1,234
-                  </li>
+                  <li>{iconLoader('fa-star')}123.4k</li>
+                  <li>{iconLoader('io-branch')}1,234</li>
                 </Styles.RepositoryCardSpecs>
               </Styles.TechRepositoryCard>
               <Styles.TechRepositoryCard>
@@ -232,7 +217,7 @@ const Home = (): JSX.Element => {
           </Styles.TechContentRow>
           <button>SEE MORE...</button>
         </Styles.TechContributionsContent>
-      </Styles.TechContributions>
+      </Styles.TechContributions> */}
     </Styles.Container>
   );
 };
