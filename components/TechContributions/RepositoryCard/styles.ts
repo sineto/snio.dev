@@ -1,48 +1,5 @@
 import styled from 'styled-components';
 
-const TechContributions = styled.div`
-  background: ${({ theme }) => theme.gray1};
-  padding: 7.5rem;
-`;
-
-const TechContributionsContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 26px;
-`;
-
-const TechContentCards = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-`;
-
-const TechContentHeader = styled.div`
-  max-width: 590px;
-  height: 179px;
-  font-family: 'Roboto Mono';
-  padding: 0 40px 26px 0;
-
-  flex-basis: 100%;
-
-  h1 {
-    font-size: 38px;
-    font-weight: 500;
-  }
-
-  p {
-    font-size: 18px;
-    color: ${({ theme }) => theme.gray4};
-  }
-`;
-
 const TechRepositoryCard = styled.div`
   max-width: 590px;
   font-family: 'Roboto Mono';
@@ -118,27 +75,4 @@ const RepositoryCardSpecs = styled.ul`
   }
 `;
 
-const MoreRepos = styled.a`
-  font-family: 'Roboto Mono';
-  font-weight: 500;
-  color: ${({ theme }) => theme.green};
-  background: rgba(37, 38, 42, 0.6);
-  border-radius: 8px;
-  padding: 28px 40px;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-export {
-  TechContributions,
-  TechContributionsContent,
-  TechContentCards,
-  TechContentHeader,
-  TechRepositoryCard,
-  RepositoryCardHeader,
-  RepositoryCardSpecs,
-  MoreRepos
-};
+export { TechRepositoryCard, RepositoryCardHeader, RepositoryCardSpecs };

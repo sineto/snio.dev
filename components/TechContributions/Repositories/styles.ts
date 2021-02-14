@@ -1,20 +1,5 @@
 import styled from 'styled-components';
 
-const TechContributions = styled.div`
-  background: ${({ theme }) => theme.gray1};
-  padding: 7.5rem;
-`;
-
-const TechContributionsContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 26px;
-`;
-
 const TechContentCards = styled.div`
   width: 100%;
   display: flex;
@@ -133,8 +118,6 @@ const MoreRepos = styled.a`
 `;
 
 export {
-  TechContributions,
-  TechContributionsContent,
   TechContentCards,
   TechContentHeader,
   TechRepositoryCard,
