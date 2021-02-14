@@ -1,4 +1,8 @@
-<h1 align="center">snio.dev</h1>
+<h1 align="center">
+  <a href="https://snio.dev">
+    <img width="400" src="docs/logo-readme.png">
+  </a>
+</h1>
 
 <div align="center">
 
@@ -26,6 +30,8 @@
   <a href="#self-promotion">Self Promotion</a> •
   <a href="#license">License</a>
 </h3>
+
+---
 
 ## REQUIREMENTS
 The website was built using:
