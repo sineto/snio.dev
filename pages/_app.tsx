@@ -37,9 +37,7 @@ const { publicRuntimeConfig } = getConfig();
 MyApp.getInitialProps = async ({ Component, ctx }) => {
   let pageProps = {};
 
-  const { data: github } = await axios.get(
-    `${publicRuntimeConfig.API_URL}/github/repos`
-  );
+  const { data: github } = await axios.get(`${publicRuntimeConfig.API_URL}/github/repos`);
 
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
