@@ -1,9 +1,12 @@
 const withImages = require('next-images');
+
 module.exports = withImages({
   env: {
-    API_URL: process.env.API_URL
+    API_URL: process.env.API_URL,
+    GITHUB_USERS: process.env.GITHUB_USERS
   },
   publicRuntimeConfig: {
-    API_URL: process.env.API_URL
+    API_URL: process.env.API_URL,
+    GITHUB_USERS: process.env.GITHUB_USERS
   }
 });

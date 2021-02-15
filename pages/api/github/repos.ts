@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 interface Repository {
   name: string
@@ -9,8 +12,6 @@ interface Repository {
   stars: number
   forks: number
 }
-
-const users: string[] = ['sineto', 'sinetoami'];
 
 const sortReposByStars = (repositories: Repository[]): Repository[] => {
   return repositories
@@ -48,9 +49,12 @@ const filterRepositories = async (users: string[]): Promise<Repository[]> => {
 
 const repos = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   try {
+    const users: string[] = publicRuntimeConfig.GITHUB_USERS.split(';')[0]
+      ? publicRuntimeConfig.GITHUB_USERS.split(';')
+      : publicRuntimeConfig.GITHUB_USERS;
+
     let repositories: Repository[] = await filterRepositories(users);
     repositories = sortReposByStars(repositories);
-
     res.status(200).json({ repositories });
   } catch (error) {
     res.status(500).send(error);
