@@ -1,17 +1,9 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
+import { Repository } from '../../../utils/types';
 
 const { publicRuntimeConfig } = getConfig();
-
-interface Repository {
-  name: string
-  url: string
-  description?: string
-  lang: string
-  stars: number
-  forks: number
-}
 
 const sortReposByStars = (repositories: Repository[]): Repository[] => {
   return repositories
@@ -26,7 +18,7 @@ const defineRepositories = (repositories: any[]): Repository[] => {
   const repos: Repository[] = repositories.map((repo: any) => {
     return {
       name: repo.name,
-      url: repo.url,
+      url: repo.html_url,
       description: repo.description,
       lang: repo.language,
       stars: repo.stargazers_count,
