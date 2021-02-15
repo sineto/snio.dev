@@ -73,19 +73,35 @@ If you want to run this application localy, follow the steps bellow.
 ## DEVELOPMENT CONSIDERATIONS
 This project is being developed under some standards that I intend to follow.
 
-1. **Commit stage**
+1. **Environment variables**
+    The code base requires two environment variables: `API_URL` and `GITHUB_USERS`. Those variables sets two important params thats feeds the Next.js server.
+    - **`API_URL`**: the host what the code fetch data. If you are running this code locally, by default need to be `http://localhost:3000/api`
+    - **`GITHUB_USERS`**: the users from Github you want the application fetch for repositories data. Each user need to separated by `;` (semicolon) - eg.: GITHUB_USERS='userA;userB'.
+
+    1.1 **Create `.env` file file inside root directory:**
+      ```sh
+      # define API_URL host
+      $ echo 'API_URL=http://localhost:3000/api' >> .env
+
+      # define GITHUB_USERS
+      $ echo "GITHUB_USERS='userA;userB'" >> .env
+      # or
+      $ echo 'GITHUB_USERS=userA' >> .env
+      ```
+
+2. **Commit stage**
 
     Before every commit action some triggers took automations.
     - **Git commit message** need to follow the [**Angular Commit Message Guidelines**](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format);
     - **ESLint** will check some patterns based on [**StandardJs**](https://standardjs.com) rules;
     - **Prettier** will format the code out of the rules. Those rules was based on my own preferences;
 
-2. **Running code linter manually**
+3. **Running code linter manually**
     ```sh
     $ yarn lint
     ```
 
-3. **Running code format manually**
+4. **Running code format manually**
     ```sh
     $ yarn format
     ```
