@@ -11,7 +11,7 @@ import theme from '../styles/theme';
 import GlobalStyle from '../styles/global';
 
 interface AppDataProps extends AppProps {
-  github: any
+  github: any;
 }
 
 const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
@@ -24,7 +24,7 @@ const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
           rel='stylesheet'
         />
       </Helmet>
-      <ContextProvider github={github}>
+      <ContextProvider github={github.repositories}>
         <Component {...pageProps} />
       </ContextProvider>
       <GlobalStyle />

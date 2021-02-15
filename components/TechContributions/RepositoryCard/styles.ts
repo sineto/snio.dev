@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { langColorLoader } from '../../../helpers';
 
 const TechRepositoryCard = styled.div`
   max-width: 590px;
+  min-height: 179px;
   font-family: 'Roboto Mono';
   background: rgba(37, 38, 42, 0.6);
   border-radius: 8px;
@@ -16,7 +18,7 @@ const TechRepositoryCard = styled.div`
   &:hover {
     background: rgba(37, 38, 42, 1);
 
-    h2 {
+    a {
       color: ${({ theme }) => theme.green};
     }
 
@@ -28,8 +30,9 @@ const TechRepositoryCard = styled.div`
 `;
 
 const RepositoryCardHeader = styled.div`
-  h2 {
+  a {
     font-size: 18px;
+    font-weight: 700;
     color: ${({ theme }) => theme.white};
     cursor: pointer;
     margin-bottom: 6px;
@@ -63,16 +66,19 @@ const RepositoryCardSpecs = styled.ul`
     align-items: center;
     gap: 6px;
   }
-
-  li:first-child {
-    span {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      background-color: tomato;
-      border-radius: 12px;
-    }
-  }
 `;
 
-export { TechRepositoryCard, RepositoryCardHeader, RepositoryCardSpecs };
+interface LangSpanStyle {
+  lang?: string;
+}
+
+const LangSpan = styled.span<LangSpanStyle>`
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: ${(props) =>
+    props.lang ? langColorLoader(props.lang) : props.theme.green};
+  border-radius: 12px;
+`;
+
+export { TechRepositoryCard, RepositoryCardHeader, RepositoryCardSpecs, LangSpan };

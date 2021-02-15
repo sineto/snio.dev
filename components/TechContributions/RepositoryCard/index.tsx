@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { RepositorySpecs } from '../Repositories';
 import { iconLoader } from '../../../helpers';
+import { Repository } from '../../../utils/types';
 import * as Styles from './styles';
 
 interface RepositoryCardProps {
-  repository: RepositorySpecs
+  repository: Repository;
 }
 
 const RepositoryCard = ({ repository }: RepositoryCardProps): JSX.Element => {
@@ -12,18 +12,20 @@ const RepositoryCard = ({ repository }: RepositoryCardProps): JSX.Element => {
     <Styles.TechRepositoryCard>
       <Styles.RepositoryCardHeader>
         <Link href={repository.url}>
-          <h2>
+          <a target='_blank' rel='noreferrer'>
             {repository.name}
             <span className='iconLink'>{iconLoader('bi-link-alt')}</span>
-          </h2>
+          </a>
         </Link>
         <p>{repository.description}</p>
       </Styles.RepositoryCardHeader>
       <Styles.RepositoryCardSpecs>
-        <li>
-          <span></span>
-          {repository.lang}
-        </li>
+        {repository.lang && (
+          <li>
+            <Styles.LangSpan lang={repository.lang}></Styles.LangSpan>
+            {repository.lang}
+          </li>
+        )}
         <li>
           {iconLoader('fa-star')}
           {repository.stars}
