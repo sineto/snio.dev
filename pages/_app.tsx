@@ -1,12 +1,20 @@
 import React from 'react';
 import { AppProps } from 'next/app';
+import getConfig from 'next/config';
+import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
+
+import { ContextProvider } from '../context/DataContext';
 
 import theme from '../styles/theme';
 import GlobalStyle from '../styles/global';
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+interface AppDataProps extends AppProps {
+  github: any
+}
+
+const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -16,10 +24,26 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           rel='stylesheet'
         />
       </Helmet>
-      <Component {...pageProps} />
+      <ContextProvider github={github}>
+        <Component {...pageProps} />
+      </ContextProvider>
       <GlobalStyle />
     </ThemeProvider>
   );
+};
+
+const { publicRuntimeConfig } = getConfig();
+
+MyApp.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {};
+
+  const { data: github } = await axios.get(`${publicRuntimeConfig.API_URL}/github/repos`);
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  return { pageProps, github };
 };
 
 export default MyApp;
