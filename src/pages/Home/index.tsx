@@ -1,4 +1,4 @@
-import { Header, Introduce, TechContributions } from '../../../components';
+import { Header, Introduce, TechContributions } from '../../../src/components';
 import * as Styles from './styles';
 
 const Home = (): JSX.Element => {
@@ -7,6 +7,7 @@ const Home = (): JSX.Element => {
       <Header />
       <Introduce />
       <TechContributions />
+      <Styles.Footer></Styles.Footer>
     </Styles.Container>
   );
 };

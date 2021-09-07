@@ -2,10 +2,10 @@ import Link from 'next/link';
 import * as Styles from './styles';
 
 export interface SkillCardProps {
-  title: string
-  icon: JSX.Element
-  description: string
-  href?: string
+  title: string;
+  icon: JSX.Element;
+  description: string;
+  href?: string;
 }
 
 const SkillCard = ({

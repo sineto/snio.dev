@@ -5,10 +5,10 @@ import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
-import { ContextProvider } from '../context/DataContext';
+import { ContextProvider } from '../src/context/DataContext';
 
-import theme from '../styles/theme';
-import GlobalStyle from '../styles/global';
+import theme from '../src/styles/theme';
+import GlobalStyle from '../src/styles/global';
 
 interface AppDataProps extends AppProps {
   github: any;

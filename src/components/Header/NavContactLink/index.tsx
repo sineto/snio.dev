@@ -4,16 +4,12 @@ import * as Styles from './styles';
 import theme from '../../../styles/theme';
 
 interface NavContactLinkProps {
-  icon: string
-  label: string
-  href: string
+  icon: string;
+  label: string;
+  href: string;
 }
 
-const NavContactLink = ({
-  icon,
-  label,
-  href
-}: NavContactLinkProps): JSX.Element => {
+const NavContactLink = ({ icon, label, href }: NavContactLinkProps): JSX.Element => {
   return (
     <Link href={href}>
       <a>

@@ -2,9 +2,9 @@ import { format } from '../../../helpers';
 import * as Styles from './styles';
 
 interface AboutProps {
-  devName: string
-  paragraph: string[]
-  tags: string[]
+  devName: string;
+  paragraph: string[];
+  tags: string[];
 }
 
 const About = ({ devName, paragraph, tags }: AboutProps): JSX.Element => {

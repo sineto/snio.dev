@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { ThemeType } from './theme';
 interface Props {
-  theme: ThemeType
+  theme: ThemeType;
 }
 
 const GlobalStyle = createGlobalStyle<Props>`

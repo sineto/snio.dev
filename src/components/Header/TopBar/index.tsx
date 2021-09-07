@@ -4,9 +4,9 @@ import NavContactLink from '../NavContactLink';
 import * as Styles from './styles';
 
 interface ContactLink {
-  icon: string
-  label: string
-  href: string
+  icon: string;
+  label: string;
+  href: string;
 }
 
 const TopBar = (): JSX.Element => {

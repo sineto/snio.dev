@@ -2,7 +2,7 @@ import SkillCard, { SkillCardProps } from './SkillCard';
 import * as Styles from './styles';
 
 interface SkillsProps {
-  skills: SkillCardProps[]
+  skills: SkillCardProps[];
 }
 
 const Skills = ({ skills }: SkillsProps): JSX.Element => {

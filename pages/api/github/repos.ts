@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
-import { Repository } from '../../../utils/types';
+import { Repository } from '../../../src/utils/types';
 
 const { publicRuntimeConfig } = getConfig();
 
