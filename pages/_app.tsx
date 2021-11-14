@@ -11,11 +11,6 @@ import { SanityProvider } from '../src/context/SanityContext';
 import theme from '../src/styles/theme';
 import GlobalStyle from '../src/styles/global';
 
-// interface AppDataProps extends AppProps {
-//   github: any;
-// }
-
-// const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>

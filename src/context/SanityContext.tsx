@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 import { createContext, ReactNode, useState, useEffect, useMemo } from 'react';
-import { getHeader } from '../services/sanity';
+import { getPageHeader } from '../services/sanity';
 import { SanityHeaderPage, SanityPageSettings } from '../types/sanity';
 
 type SanityContextProps = {
@@ -14,16 +14,8 @@ export const SanityContext = createContext<SanityContextType>({} as SanityContex
 export const SanityProvider = ({ children }: SanityContextProps): JSX.Element => {
   const [header, setHeader] = useState<SanityHeaderPage>();
 
-  const query = groq`
-    *[_type == "header" && !(_id in path("drafts.**"))]{
-      headerBadge,
-      headerTitle,
-      headerSubTitle
-    }
-  `;
-
   useEffect(() => {
-    getHeader(query)
+    getPageHeader()
       .then((data) => setHeader(data[0]))
       .catch((_error) => {});
   }, []);
