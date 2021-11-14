@@ -1,12 +1,16 @@
-const withImages = require('next-images');
-
-module.exports = withImages({
+module.exports = {
   env: {
     API_URL: process.env.API_URL,
-    GITHUB_USERS: process.env.GITHUB_USERS
+    GITHUB_USERS: process.env.GITHUB_USERS,
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    NEXT_PUBLIC_SANITY_PROJECT_DATASET: process.env.NEXT_PUBLIC_SANITY_PROJECT_DATASET,
+    NEXT_PUBLIC_SANITY_PROJECT_TOKEN: process.env.NEXT_PUBLIC_SANITY_PROJECT_TOKEN
   },
   publicRuntimeConfig: {
     API_URL: process.env.API_URL,
-    GITHUB_USERS: process.env.GITHUB_USERS
+    GITHUB_USERS: process.env.GITHUB_USERS,
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    NEXT_PUBLIC_SANITY_PROJECT_DATASET: process.env.NEXT_PUBLIC_SANITY_PROJECT_DATASET,
+    NEXT_PUBLIC_SANITY_PROJECT_TOKEN: process.env.NEXT_PUBLIC_SANITY_PROJECT_TOKEN
   }
-});
+};

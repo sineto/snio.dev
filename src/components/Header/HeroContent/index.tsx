@@ -1,8 +1,14 @@
+import { useContext } from 'react';
 import Image from 'next/image';
+
+import { SanityContext } from '../../../context/SanityContext';
+import { parseToHtml } from '../../../helpers/parsers';
 
 import * as Styles from './styles';
 
 const HeroContent = (): JSX.Element => {
+  const { header } = useContext(SanityContext);
+
   const TechLogos = (): JSX.Element => {
     return (
       <Styles.HeroTechLogosContainer>
@@ -34,17 +40,17 @@ const HeroContent = (): JSX.Element => {
   return (
     <Styles.HeaderHeroContent>
       <Styles.HeaderHeroDisclaimer>
-        <Styles.HeroDisclaimerTag>Web Developer</Styles.HeroDisclaimerTag>
-        <Styles.HeroDisclaimerTitle>
-          Hey! I'm Sinésio Neto,
-          <br />
-          a freelance Fullstack
-          <br />
-          Developer.
-        </Styles.HeroDisclaimerTitle>
-        <Styles.HeroDisclaimerSubTitle>
-          I enjoy build web solutions!
-        </Styles.HeroDisclaimerSubTitle>
+        {header && (
+          <>
+            <Styles.HeroDisclaimerTag>{header.headerBadge}</Styles.HeroDisclaimerTag>
+            <Styles.HeroDisclaimerTitle>
+              {parseToHtml(header.headerTitle)}
+            </Styles.HeroDisclaimerTitle>
+            <Styles.HeroDisclaimerSubTitle>
+              {header.headerSubTitle}
+            </Styles.HeroDisclaimerSubTitle>
+          </>
+        )}
         <Styles.HeroContactButton>Say hi!</Styles.HeroContactButton>
       </Styles.HeaderHeroDisclaimer>
 

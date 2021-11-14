@@ -6,15 +6,17 @@ import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
 import { ContextProvider } from '../src/context/DataContext';
+import { SanityProvider } from '../src/context/SanityContext';
 
 import theme from '../src/styles/theme';
 import GlobalStyle from '../src/styles/global';
 
-interface AppDataProps extends AppProps {
-  github: any;
-}
+// interface AppDataProps extends AppProps {
+//   github: any;
+// }
 
-const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
+// const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -24,26 +26,28 @@ const MyApp = ({ Component, pageProps, github }: AppDataProps): JSX.Element => {
           rel='stylesheet'
         />
       </Helmet>
-      <ContextProvider github={github.repositories}>
+      {/* <ContextProvider github={github.repositories}> */}
+      <SanityProvider>
         <Component {...pageProps} />
-      </ContextProvider>
+      </SanityProvider>
+      {/* </ContextProvider> */}
       <GlobalStyle />
     </ThemeProvider>
   );
 };
 
-const { publicRuntimeConfig } = getConfig();
+// const { publicRuntimeConfig } = getConfig();
 
-MyApp.getInitialProps = async ({ Component, ctx }) => {
-  let pageProps = {};
+// MyApp.getInitialProps = async ({ Component, ctx }) => {
+//   let pageProps = {};
 
-  const { data: github } = await axios.get(`${publicRuntimeConfig.API_URL}/github/repos`);
+//   // const { data: github } = await axios.get(`${process.env.API_URL}/github/repos`);
 
-  if (Component.getInitialProps) {
-    pageProps = await Component.getInitialProps(ctx);
-  }
+//   if (Component.getInitialProps) {
+//     pageProps = await Component.getInitialProps(ctx);
+//   }
 
-  return { pageProps, github };
-};
+//   return { pageProps, github: [] };
+// };
 
 export default MyApp;

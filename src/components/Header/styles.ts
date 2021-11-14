@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import headerBgArtifacts from '../../public/header-bg-artifacts.png';
+import headerBgArtifacts from '../../../public/header-bg-artifacts.png';
 
 const Container = styled.div``;
 const Header = styled.div`
@@ -7,7 +7,7 @@ const Header = styled.div`
   height: 796px;
   padding: 2.5rem 7.5rem;
   background-color: ${({ theme }) => theme.gray1};
-  background-image: url(${headerBgArtifacts});
+  background-image: url(${headerBgArtifacts.src});
   background-repeat: no-repeat;
   background-position: right;
 `;
