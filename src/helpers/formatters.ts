@@ -1,6 +1,6 @@
 import ReactHtmlParser from 'html-react-parser';
 
-export const stringToHtml = (
+export const parseToHtmlWithTags = (
   text: string,
   tags: string[]
 ): string | JSX.Element | JSX.Element[] => {
@@ -10,4 +10,8 @@ export const stringToHtml = (
   });
 
   return ReactHtmlParser(words);
+};
+
+export const parseToHtml = (body: string): string | JSX.Element | JSX.Element[] => {
+  return ReactHtmlParser(body);
 };

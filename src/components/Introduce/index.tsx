@@ -37,7 +37,7 @@ const Introduce = (): JSX.Element => {
       {skills && <Skills skills={buildSkills(skills)} />}
       {introduce && (
         <About
-          devName='Sinésio Neto'
+          devName={introduce.greet}
           paragraphs={sanitizeBody()}
           tags={introduce.keywords}
         />

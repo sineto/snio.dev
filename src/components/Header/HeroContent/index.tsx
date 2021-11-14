@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { usePageContent } from '../../../hooks';
-import { parseToHtml } from '../../../helpers/parsers';
+import { parseToHtml } from '../../../helpers';
 
 import * as Styles from './styles';
 

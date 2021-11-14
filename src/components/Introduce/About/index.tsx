@@ -1,4 +1,4 @@
-import { format } from '../../../helpers';
+import { parseToHtmlWithTags } from '../../../helpers';
 import * as Styles from './styles';
 
 interface AboutProps {
@@ -18,7 +18,7 @@ const About = ({ devName, paragraphs, tags }: AboutProps): JSX.Element => {
         {paragraphs.map((p: string, index: number) => {
           return (
             <Styles.AboutBody key={`p-${index}`}>
-              {format.stringToHtml(p, tags)}
+              {parseToHtmlWithTags(p, tags)}
             </Styles.AboutBody>
           );
         })}
