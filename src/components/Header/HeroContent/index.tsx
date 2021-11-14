@@ -1,13 +1,12 @@
-import { useContext } from 'react';
 import Image from 'next/image';
 
-import { SanityContext } from '../../../context/SanityContext';
+import { usePageContent } from '../../../hooks';
 import { parseToHtml } from '../../../helpers/parsers';
 
 import * as Styles from './styles';
 
 const HeroContent = (): JSX.Element => {
-  const { header } = useContext(SanityContext);
+  const { header } = usePageContent();
 
   const TechLogos = (): JSX.Element => {
     return (
@@ -42,12 +41,12 @@ const HeroContent = (): JSX.Element => {
       <Styles.HeaderHeroDisclaimer>
         {header && (
           <>
-            <Styles.HeroDisclaimerTag>{header.headerBadge}</Styles.HeroDisclaimerTag>
+            <Styles.HeroDisclaimerTag>{header.badge}</Styles.HeroDisclaimerTag>
             <Styles.HeroDisclaimerTitle>
-              {parseToHtml(header.headerTitle)}
+              {parseToHtml(header.title)}
             </Styles.HeroDisclaimerTitle>
             <Styles.HeroDisclaimerSubTitle>
-              {header.headerSubTitle}
+              {header.subTitle}
             </Styles.HeroDisclaimerSubTitle>
           </>
         )}

@@ -1,60 +1,47 @@
+import theme from '../../styles/theme';
+import { usePageContent } from '../../hooks';
 import { iconLoader } from '../../helpers';
+
 import { SkillCardProps } from './Skills/SkillCard';
 import About from './About';
 import Skills from './Skills';
+
 import * as Styles from './styles';
-import theme from '../../styles/theme';
-
-const skills: SkillCardProps[] = [
-  {
-    title: 'Back-end',
-    icon: iconLoader('ai-fill-api', 22, theme.green),
-    description: 'I can develop APIs with REST/GraphQL architecture'
-  },
-  {
-    title: 'Front-end',
-    icon: iconLoader('fa-code', 22, theme.green),
-    description: 'Front-end develop with React and Nextjs'
-  },
-  {
-    title: 'Deployment',
-    icon: iconLoader('ai-deploy-unit', 22, theme.green),
-    description: 'Infrastructure with Google Cloud Platform and Vercel'
-  }
-];
-
-const tags: string[] = [
-  'TypeScript',
-  'Node.js',
-  'HTML',
-  'CSS',
-  'Express',
-  'React',
-  'Next.js',
-  'GraphQL',
-  'REST',
-  'Google Cloud Platform',
-  'Vercel Platform'
-];
 
 const Introduce = (): JSX.Element => {
+  const { introduce, skills } = usePageContent();
+
+  const buildSkills = (skills: any): SkillCardProps[] => {
+    if (!skills) return [];
+
+    const result = [];
+    skills.forEach((skill) => {
+      const item = {
+        title: skill.name,
+        icon: iconLoader(skill.icon, 22, theme.green),
+        description: skill.description
+      };
+      result.push(item);
+    });
+
+    return result;
+  };
+
+  const sanitizeBody = (): string[] => {
+    if (!introduce) return [];
+    return introduce.body.split('\n').filter((str: string) => str);
+  };
+
   return (
     <Styles.IntroduceContent>
-      <Skills skills={skills} />
-      <About
-        devName='Sinésio Neto'
-        paragraph={[
-          `A freelance developer with main focus on building web solutions
-          with a TypeScript and Node.js stack. Beyond HTML and CSS, I'm familiar
-          with the Express micro-framework on back-end and the React library on
-          front-end, including Next.js and Gatsby frameworks. I'm also learning
-          how to develop GraphQL APIs and how this amazing architecture works.`,
-          `I'm able to delivery developed web applications with a great
-          infrastructure of deployment, mainly hosted on Google Cloud Platform
-          and Vercel Platform.`
-        ]}
-        tags={tags}
-      />
+      {skills && <Skills skills={buildSkills(skills)} />}
+      {introduce && (
+        <About
+          devName='Sinésio Neto'
+          paragraphs={sanitizeBody()}
+          tags={introduce.keywords}
+        />
+      )}
     </Styles.IntroduceContent>
   );
 };
