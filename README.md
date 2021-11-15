@@ -8,8 +8,10 @@
 
   <b>This project contains the source code of my personal portfolio available on: <a href="https://snio.dev">snio.dev</a>.</b>
 
-[![Next.js][nextjs-badge]][nextjs-badge-url] [![Vercel][vercel-badge]][vercel-badge-url] [![TypesScript][typescript-badge]][typescript-badge-url] [![GitHub Actions][github-actions-badge]][github-actions-url] [![Lincese MIT][license-badge]][license-badge-url]
+[![Sanity.io][sanity-io-badge]][sanity-io-badge-url] [![Next.js][nextjs-badge]][nextjs-badge-url] [![Vercel][vercel-badge]][vercel-badge-url] [![TypesScript][typescript-badge]][typescript-badge-url] [![GitHub Actions][github-actions-badge]][github-actions-url] [![Lincese MIT][license-badge]][license-badge-url]
 
+[sanity-io-badge]: https://img.shields.io/badge/Sanity.io-orange?style=for-the-badge&logo=Sanity
+[sanity-io-badge-url]: https://sanity.io
 [nextjs-badge]: https://img.shields.io/badge/next%20js%20-%23000000.svg?&style=for-the-badge&logo=next.js&logoColor=white
 [nextjs-badge-url]: https://nextjs.org
 [vercel-badge]: https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white
@@ -23,6 +25,7 @@
 </div>
 
 <h3 align="center">
+  <a href="#important-update">Importante Update</a> •
   <a href="#requirements">Requirements</a> •
   <a href="#running-up">Running Up</a> •
   <a href="#development-considerations">Development Considerations</a> •
@@ -32,13 +35,16 @@
 </h3>
 
 ---
+## IMPORTANTE UPDATE
+From now on this project will mantain integration with [Sanity Studio](https://sanity.io). Follow my Sanity Studio project to get the panel source code base [here](https://github.com/sineto/snio.dev-sanity-panel).
 
 ## REQUIREMENTS
-The website was built using:
-- [Nextjs](https://nextjs.org) (10.0.5)
-- [Styled Components](https://tailwindcss.com/) (5.2.1)
-- [React Helmet](https://purgecss.com/) (6.1.0)
-- [TypeScript](https://typescriptlang.org) (4.1.3)
+This project was built using:
+- [Nextjs](https://nextjs.org)
+- [Styled Components](https://tailwindcss.com/)
+- [React Helmet](https://purgecss.com/)
+- [TypeScript](https://typescriptlang.org)
+- [Sanity.io](https://www.sanity.io)
 
 ## RUNNING UP
 If you want to run this application localy, follow the steps bellow.
@@ -73,20 +79,20 @@ If you want to run this application localy, follow the steps bellow.
 ## DEVELOPMENT CONSIDERATIONS
 This project is being developed under some standards that I intend to follow.
 
-1. **Environment variables**
-    The code base requires two environment variables: `API_URL` and `GITHUB_USERS`. Those variables sets two important params thats feeds the Next.js server.
-    - **`API_URL`**: the host what the code fetch data. If you are running this code locally, by default need to be `http://localhost:3000/api`
-    - **`GITHUB_USERS`**: the users from Github you want the application fetch for repositories data. Each user need to separated by `;` (semicolon) - eg.: GITHUB_USERS='userA;userB'.
+1. **Environment variables:**
+
+    The code base requies some environment variables:
+    - **`API_URL`**: the host from the application will fetch data.
+    - **`NEXT_PUBLIC_SANITY_PROJECT_ID`**: hash ID of a Sanity project thats can get on dashboard Sanity.io account.
+    - **`NEXT_PUBLIC_SANITY_PROJECT_DATASET`**: dataset name of a Sanity project thats can get on dashboard Sanity.io account.
+    - **`NEXT_PUBLIC_SANITY_PROJECT_TOKEN`**: hash token API of a Sanity project thats can get on dashboard Sanity.io account.
 
     1.1 **Create `.env` file file inside root directory:**
       ```sh
-      # define API_URL host
-      $ echo 'API_URL=http://localhost:3000/api' >> .env
-
-      # define GITHUB_USERS
-      $ echo "GITHUB_USERS='userA;userB'" >> .env
-      # or
-      $ echo 'GITHUB_USERS=userA' >> .env
+      $ echo 'API_URL=http://localhost:3000' >> .env
+      $ echo 'NEXT_PUBLIC_SANITY_PROJECT_ID=xxxxxxxx' >> .env
+      $ echo 'NEXT_PUBLIC_SANITY_PROJECT_DATASET=development' >> .env
+      $ echo 'NEXT_PUBLIC_SANITY_PROJECT_TOKEN=project-token' >> .env
       ```
 
 2. **Commit stage**

@@ -1,10 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import getConfig from 'next/config';
 import axios from 'axios';
 import { getPageGithubSources } from './../../../src/services/sanity/index';
 import { GithubRepository } from '../../../src/types/global';
-
-const { publicRuntimeConfig } = getConfig();
 
 const sortReposByStars = (repositories: GithubRepository[]): GithubRepository[] => {
   return repositories
