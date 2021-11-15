@@ -19,7 +19,7 @@ const HeaderNavContact = styled.div`
   }
 `;
 
-const HeaderNavContactButton = styled.button`
+const HeaderNavContactButton = styled.a`
   width: 45px;
   height: 45px;
   background: ${({ theme }) => theme.gray2};
@@ -33,7 +33,7 @@ const HeaderNavContactButton = styled.button`
 `;
 
 const EnvelopeIcon = styled(FaEnvelope)`
-  transform: scale(1.4);
+  transform: scale(1);
   color: ${({ theme }) => theme.green};
 `;
 

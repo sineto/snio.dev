@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import { Repository } from '../../../utils/types';
+import { GithubRepository } from '../../../types/global';
 import RepositoryCard from '../RepositoryCard';
-import { DataContext } from '../../../context/DataContext';
+import { usePageContent } from '../../../hooks';
 import * as Styles from './styles';
 
 const Repositories = (): JSX.Element => {
-  const { githubData } = useContext(DataContext);
+  const { githubRepositories } = usePageContent();
 
   return (
     <Styles.TechContentCards>
@@ -13,9 +12,11 @@ const Repositories = (): JSX.Element => {
         <h1>Tech Contributions</h1>
         <p>My public repositories on Github</p>
       </Styles.TechContentHeader>
-      {(githubData || []).slice(0, 9).map((repo: Repository, index: number) => {
-        return <RepositoryCard key={`${index}-${repo.name}`} repository={repo} />;
-      })}
+      {(githubRepositories || [])
+        .slice(0, 9)
+        .map((repo: GithubRepository, index: number) => {
+          return <RepositoryCard key={`${index}-${repo.name}`} repository={repo} />;
+        })}
     </Styles.TechContentCards>
   );
 };

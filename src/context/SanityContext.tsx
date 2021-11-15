@@ -1,11 +1,19 @@
+import axios from 'axios';
 import { createContext, ReactNode, useState, useEffect, useMemo } from 'react';
-import { getPageHeader, getPageIntroduce, getPageSkills } from '../services/sanity';
+import {
+  getPageHeader,
+  getPageIntroduce,
+  getPageSkills,
+  getPageSocialProfile
+} from '../services/sanity';
 import {
   SanityHeaderPage,
   SanityIntroducePage,
   SanityPageSettings,
-  SanitySkillPage
+  SanitySkillPage,
+  SanitySocialProfilePage
 } from '../types/sanity';
+import { GithubRepository } from '../types/global';
 
 type SanityContextProps = {
   children: ReactNode;
@@ -19,6 +27,8 @@ export const SanityProvider = ({ children }: SanityContextProps): JSX.Element =>
   const [header, setHeader] = useState<SanityHeaderPage>();
   const [introduce, setIntroduce] = useState<SanityIntroducePage>();
   const [skills, setSkills] = useState<SanitySkillPage[]>();
+  const [githubRepositories, setGithubRepositories] = useState<GithubRepository[]>();
+  const [socialProfile, setSocialProfile] = useState<SanitySocialProfilePage>();
 
   useEffect(() => {
     getPageHeader()
@@ -32,11 +42,20 @@ export const SanityProvider = ({ children }: SanityContextProps): JSX.Element =>
     getPageSkills()
       .then((data) => setSkills(data))
       .catch((_error) => {});
+
+    axios
+      .get(`${process.env.API_URL}/api/github/get-repositories`)
+      .then(({ data }) => setGithubRepositories(data.repositories))
+      .catch((_error) => {});
+
+    getPageSocialProfile()
+      .then((data) => setSocialProfile(data[0]))
+      .catch((_error) => {});
   }, []);
 
   const memoedValue = useMemo(
-    () => ({ header, introduce, skills }),
-    [header, introduce, skills]
+    () => ({ header, introduce, skills, githubRepositories, socialProfile }),
+    [header, introduce, skills, githubRepositories, socialProfile]
   );
   return <SanityContext.Provider value={memoedValue}>{children}</SanityContext.Provider>;
 };

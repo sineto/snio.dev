@@ -40,7 +40,7 @@ const HeroDisclaimerSubTitle = styled.p`
   color: ${({ theme }) => theme.gray4};
 `;
 
-const HeroContactButton = styled.button`
+const HeroContactButton = styled.a`
   font-family: 'Roboto Mono';
   font-size: 20px;
   color: ${({ theme }) => theme.green};

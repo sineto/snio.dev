@@ -33,5 +33,29 @@ export const getPageSkills = async (): Promise<any> => {
       description
     }
   `;
+
+  return getClient().fetch(query);
+};
+
+export const getPageGithubSources = async (): Promise<any> => {
+  const query = groq`
+    *[_type == "githubRepo" && !(_id in path("draft.**"))]{links}
+  `;
+
+  return getClient().fetch(query);
+};
+
+export const getPageSocialProfile = async (): Promise<any> => {
+  const query = groq`
+    *[_type == "socialProfile" && !(_id in path("draft.**"))]{
+      name,
+      linkedin,
+      github,
+      email,
+      phoneNumber,
+      telegram
+    }
+  `;
+
   return getClient().fetch(query);
 };

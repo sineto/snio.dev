@@ -6,7 +6,7 @@ import { parseToHtml } from '../../../helpers';
 import * as Styles from './styles';
 
 const HeroContent = (): JSX.Element => {
-  const { header } = usePageContent();
+  const { header, socialProfile } = usePageContent();
 
   const TechLogos = (): JSX.Element => {
     return (
@@ -50,7 +50,13 @@ const HeroContent = (): JSX.Element => {
             </Styles.HeroDisclaimerSubTitle>
           </>
         )}
-        <Styles.HeroContactButton>Say hi!</Styles.HeroContactButton>
+        {socialProfile && (
+          <Styles.HeroContactButton
+            href={`mailto:${socialProfile.email}?subject=Mail from our Website`}
+          >
+            Say hi!
+          </Styles.HeroContactButton>
+        )}
       </Styles.HeaderHeroDisclaimer>
 
       <TechLogos />

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { usePageContent } from '../../../hooks';
 
 import NavContactLink from '../NavContactLink';
 import * as Styles from './styles';
@@ -10,14 +11,19 @@ interface ContactLink {
 }
 
 const TopBar = (): JSX.Element => {
-  const contactLinks: ContactLink[] = [
-    {
-      icon: 'fa-linkedin',
-      label: 'Linkedin',
-      href: 'https://www.linkedin.com/in/sndev/'
-    },
-    { icon: 'fa-github', label: 'GitHub', href: 'https://github.com/sineto' }
-  ];
+  const { socialProfile } = usePageContent();
+
+  let contactLinks: ContactLink[];
+  if (socialProfile) {
+    contactLinks = [
+      {
+        icon: 'fa-linkedin',
+        label: 'linkedin',
+        href: socialProfile.linkedin
+      },
+      { icon: 'fa-github', label: 'github', href: socialProfile.github }
+    ];
+  }
 
   return (
     <Styles.HeaderTopBar>
@@ -30,7 +36,7 @@ const TopBar = (): JSX.Element => {
       />
 
       <Styles.HeaderNavContact>
-        {contactLinks.map((link: ContactLink) => {
+        {(contactLinks || []).map((link: ContactLink) => {
           return (
             <NavContactLink
               key={link.label}
@@ -40,9 +46,13 @@ const TopBar = (): JSX.Element => {
             />
           );
         })}
-        <Styles.HeaderNavContactButton>
-          <Styles.EnvelopeIcon />
-        </Styles.HeaderNavContactButton>
+        {socialProfile && (
+          <Styles.HeaderNavContactButton
+            href={`mailto:${socialProfile.email}?subject=Mail from our Website`}
+          >
+            <Styles.EnvelopeIcon />
+          </Styles.HeaderNavContactButton>
+        )}
       </Styles.HeaderNavContact>
     </Styles.HeaderTopBar>
   );

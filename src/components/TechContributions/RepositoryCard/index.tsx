@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { iconLoader } from '../../../helpers';
-import { Repository } from '../../../utils/types';
+import { GithubRepository } from '../../../types/global';
 import * as Styles from './styles';
 
 interface RepositoryCardProps {
-  repository: Repository;
+  repository: GithubRepository;
 }
 
 const RepositoryCard = ({ repository }: RepositoryCardProps): JSX.Element => {
