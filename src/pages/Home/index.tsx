@@ -1,4 +1,5 @@
 import { Header, Introduce, TechContributions } from '../../../src/components';
+import Footer from '../../components/Footer';
 import * as Styles from './styles';
 
 const Home = (): JSX.Element => {
@@ -7,7 +8,7 @@ const Home = (): JSX.Element => {
       <Header />
       <Introduce />
       <TechContributions />
-      <Styles.Footer></Styles.Footer>
+      <Footer />
     </Styles.Container>
   );
 };
