@@ -30,7 +30,7 @@ const defineRepositories = (repositories: any[]): GithubRepository[] => {
 const filterRepositories = async (sources: string[]): Promise<GithubRepository[]> => {
   const repositories: any[] = [];
   for await (const source of sources) {
-    const { data } = await axios.get(source);
+    const { data } = await axios.get(`${source}?per_page=100`);
     repositories.push(...data);
   }
 
