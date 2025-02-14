@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+    --color-b100: #1A1A1A;
+    --color-b200: #25262A;
+    --color-b300: #292929;
+    --color-bl100: #2B2B2B;
+    --color-bl200: #2D2E32;
+    --color-g100: #8E8E8E;
+    --color-gr100: #63F5AD;
+    --color-w100: #FFFFFF;
+
+    --color-text-default: var(--color-w100);
+    --color-text-primary: var(--color-g100);
+    --color-text-secondary: var(--color-gr100);
+
+    --shadow-box-default: 1px 4px 5px 0px rgba(0,0,0,0.31);
+
+    --text-size-default: 16px;
+    --text-size-24px: 24px;
+    --text-size-32px: 32px;
+}
+
+@layer components {
+    .btn-small, .btn-large {
+        cursor: pointer;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-gr100);
+        border: 2px solid var(--color-gr100);
+        border-radius: 4px;
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--color-b100);
+            background-color: var(--color-gr100);
+        }
+    }
+    .btn-large {
+        font-size: var(--text-size-24px);
+        padding: 32px 45px;
+    }
+    .btn-small {
+        font-size: var(--text-size-default);
+        padding: 12px 22px;
+    }
+}
