@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "astro": "^6.1.8"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
