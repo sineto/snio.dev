@@ -1,0 +1,56 @@
+/* CSS RESET */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+nav :where(ol, ul) {
+  list-style: none;
+}
+
+img,
+picture {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* CSS Variables */
+:root {
+  /* colors */
+  --main-bg-primary: #25262a;
+  --main-bg-secondary: #2d2e32;
+  --main-tx-primary: #ffffff;
+  --main-tx-secondary: #8e8e8e;
+}
+
+/* custom media query breakpoints */
+@custom-media --sm (width >=480px);
+@custom-media --md (width >=768px);
+@custom-media --lg (width >=1201px);
+@custom-media --xl (width >=1440px);
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--main-bg-primary);
+  color: var(--main-tx-primary);
+  font-family: var(--font-roboto-mono), monospace;
+  text-rendering: optimizeLegibility;
+}
