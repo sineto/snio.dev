@@ -8,6 +8,9 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  },
   "dependencies": {
     "astro": "^6.1.8"
   },
