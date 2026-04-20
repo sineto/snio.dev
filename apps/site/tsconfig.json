@@ -11,13 +11,16 @@
   ],
   "exclude": [
     "dist",
-    "node_modules",
+    "node_modules"
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@public/*": [
+        "public/*"
       ]
     }
   }
