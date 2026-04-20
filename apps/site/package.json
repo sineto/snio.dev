@@ -12,7 +12,9 @@
     "@repo/typescript-config": "workspace:*"
   },
   "dependencies": {
-    "astro": "^6.1.8"
+    "@iconify-json/mdi": "^1.2.3",
+    "astro": "^6.1.8",
+    "astro-icon": "^1.1.5"
   },
   "engines": {
     "node": ">=22.12.0"
