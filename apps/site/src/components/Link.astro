@@ -1,0 +1,18 @@
+---
+interface Props {
+  text: string;
+  href: string;
+  class?: string;
+}
+
+const { text, href, class: classes, ...rest } = Astro.props as Props;
+---
+
+<a
+  href={href}
+  class:list={["link", classes]}
+  {...rest}
+>
+  <span>{text}</span>
+</a>
+

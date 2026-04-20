@@ -1,0 +1,79 @@
+---
+// dependency imports
+import { Icon } from "astro-icon/components";
+
+// component imports
+import Logo from "@/components/Logo.astro";
+import Link from "@/components/Link.astro";
+
+const links = [
+  { href: "/", label: "about"},
+  { href: "#experience", label: "experience"},
+  { href: "#work", label: "work"},
+  { href: "#contact", label: "contact"},
+]
+---
+
+<header class="site-header">
+  <nav class="nav-container">
+    <!-- Desktop Logo -->
+    <Logo
+      src="/logo-sn1o-lg.svg"
+      href="/"
+      width={148}
+      height={33}
+      class="logomark-lg"
+    />
+
+    <!-- Mobile Logo -->
+    <Logo
+      src="/logo-sn1o-sm.svg"
+      href="/"
+      width={48}
+      height={33}
+      class="logomark-sm"
+    />
+
+    <!-- Desktop Menu -->
+    <div id="nav-menu" class="nav-menu">
+      <ul class="nav-menu-list">
+        {links.map((link, idx) =>(
+        <li>
+          <a href={link.href}>
+            <span>{`0${idx+1}.`}</span> {link.label}
+          </a>
+        </li>
+        ))}
+        <Link text="Resume" href="" />
+      </ul> 
+    </div>
+
+    <!-- Hamburguer button -->
+    <button 
+      id="nav-hamburguer" 
+      class="nav-hamburguer"
+      aria-label="Toggle Menu"
+      aria-expanded="false"
+    >
+      <Icon name="mdi:menu" width={38} height={38} />
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="nav-menu-mobile" class="nav-menu-mobile">
+    <ul class="nav-menu-mobile-list">
+      {links.map((link, idx) =>(
+      <li>
+        <a href={link.href}>
+          <span>{`0${idx+1}.`}</span> {link.label}
+        </a>
+      </li>
+      ))}
+      <Link text="Resume" href="" />
+    </ul>
+  </div>
+</header>
+
+<script>
+  import "@/styles/global.js"
+</script>

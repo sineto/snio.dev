@@ -2,6 +2,9 @@
 // dependency import
 import { Font } from "astro:assets";
 
+// component imports
+import Navbar from "@/components/Navbar.astro";
+
 // style import
 import "@/styles/global.css";
 
@@ -14,17 +17,18 @@ const { title, description } = Astro.props as Props;
 ---
 
 <html lang="en">
-	<head>
-	    <meta charset="utf-8" />
-    	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    	<link rel="icon" href="/favicon.ico" />
-    	<meta name="viewport" content="width=device-width" />
-    	<meta name="generator" content={Astro.generator} />
-        <meta name="description" content={description} />
-        <Font cssVariable="--font-roboto-mono" />
-        <title>{title}</title>
-	</head>
-	<body>
-        <slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+   	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   	<link rel="icon" href="/favicon.ico" />
+   	<meta name="viewport" content="width=device-width" />
+   	<meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <Font cssVariable="--font-roboto-mono" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+  </body>
 </html>
