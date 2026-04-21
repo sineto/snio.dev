@@ -184,6 +184,20 @@ body {
   padding: 0;
 }
 
+.nav-hamburguer-close {
+  display: none;
+}
+
+#nav-hamburguer[aria-expanded="true"] { 
+  & .nav-hamburguer-menu {
+    display: none;
+  }
+
+  & .nav-hamburguer-close {
+    display: block;
+  }
+}
+
 .nav-menu-mobile {
   display: none;
   position: absolute;

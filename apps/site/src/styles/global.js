@@ -20,7 +20,7 @@ const toggleMobileMenu = () => {
       isOpen = false;
       hamburguer.classList.remove('active');
       mobileMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+      hamburguer.setAttribute('aria-expanded', 'false');
     }
   }
 

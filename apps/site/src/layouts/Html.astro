@@ -10,10 +10,10 @@ import "@/styles/global.css";
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
 }
 
-const { title, description } = Astro.props as Props;
+const { title, description = "Sinésio Neto - Professional portfolio" } = Astro.props as Props;
 ---
 
 <html lang="en">
