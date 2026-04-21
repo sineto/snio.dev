@@ -67,6 +67,7 @@ h6 {
   --radius-full: 100vmax;
 
   /* dynamic font sizes adapted from utopia.fyi */
+  --font-xs: clamp(0.64rem, calc(0.65rem + -0.02vw), 0.65rem);
   --font-sm: clamp(0.78rem, calc(0.75rem + 0.17vw), 0.88rem);
   --font-md: clamp(1.13rem, calc(1.04rem + 0.43vw), 1.38rem);
   --font-lg: clamp(1.35rem, calc(1.22rem + 0.64vw), 1.72rem);
@@ -273,6 +274,36 @@ body {
   &:hover {
     color: var(--main-bg-primary) !important;
     background-color: var(--green);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--grey);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  padding: 2rem;
+
+  & .footer-link-name {
+    text-decoration: none;
+    color: var(--main-tx-green);
+    transition: 0.2s;
+
+    &::after {
+      content: '';
+      width: 0px;
+      height: 1px;
+      display: block;
+      background: var(--green);
+      transition: 300ms;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
 
