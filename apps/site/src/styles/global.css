@@ -74,16 +74,16 @@ h6 {
   --font-xl: clamp(1.94rem, calc(1.69rem + 1.29vw), 2.69rem);
   --font-2xl: clamp(2.80rem, calc(2.31rem + 2.43vw), 4.20rem);
 
+  /* line heights */
+  --lh-1: 1;
+  --lh-1-1: 1.1;
+  --lh-1-4: 1.4;
+
   /* content sizes */
   --content-xs: 20ch;
   --content-sm: 30ch;
   --content-md: 45ch;
   --content-lg: 65ch;
-
-
-  /* --nav-bg: #ffffff; */
-  /* --nav-text: #1a1a1a; */
-  /* --accent: #007bff; */
 }
 
 /* custom media query breakpoints */
@@ -106,7 +106,7 @@ body {
 }
 
 .site-header {
-  width: 100vw;
+  width: 100%;
   position: relative;
   font-size: var(--font-sm);
   font-weight: 500;
@@ -277,6 +277,57 @@ body {
   }
 }
 
+.hero {
+  place-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: calc(var(--font-md) * .85);
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 3.5rem;
+}
+
+.hero-greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+
+  & .hero-greeting-1 {
+    font-size: calc(var(--font-xl) * .85);
+    line-height: var(--lh-1-4);
+  }
+
+  & span {
+    display: block;
+
+    & strong {
+      color: var(--main-tx-green);
+    }
+  }
+}
+
+.hero-tldr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(var(--font-md) * .85);
+  color: var(--main-tx-secondary);
+  text-align: center;
+
+  & strong {
+    color: var(--main-tx-green);
+  }
+}
+
+.hero-link {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  padding: 2rem 3rem;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
@@ -308,6 +359,15 @@ body {
 }
 
 /* Responsive */
+@media (min-width: 768px) {
+  .hero {
+    place-self: center;
+    max-width: 777px;
+    min-height: calc(100vh - 112px);
+    place-content: center;
+  }
+}
+
 @media (min-width: 1201px) {
   .logomark-lg {
     display: grid;
@@ -327,5 +387,13 @@ body {
 
   .nav-menu-mobile.open {
     display: none;
+  }
+
+  .hero {
+    place-self: center;
+    max-width: 777px;
+    min-height: calc(100vh - 112px);
+    place-content: center;
+    padding: 0;
   }
 }

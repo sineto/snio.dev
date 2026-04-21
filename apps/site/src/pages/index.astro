@@ -1,10 +1,24 @@
 ---
 // layout imports
 import Html from "@/layouts/Html.astro";
+
+// component imports
+import Link from "@/components/Link.astro";
 ---
 
 <Html title={"Sinésio Neto - README"}>
-  <h1>I enjoy build web solutions</h1>
+  <section class="hero">
+    <div class="hero-greeting">
+      <span class="hero-greeting-1">Hi! I'm <strong>Sinésio Neto</strong></span>
+      <span class="hero-greeting-2">I enjoy build web solutions.</span>
+    </div>
+    <div class="hero-tldr">
+      <span>
+        I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at <strong>Lab52</strong>.
+      </span>
+    </div>
+    <Link href="" text="Checkout my experience" class="hero-link" />
+  </section>
 </Html>
 
 <script>
