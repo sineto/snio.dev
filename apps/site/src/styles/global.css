@@ -36,12 +36,13 @@ h6 {
   --secondary: #2d2e32;
   --white: #ffffff;
   --grey: #8e8e8e;
+  --grey2: #a0a1a6;
   --green: #63f5ad;
 
   --main-bg-primary: var(--primary);
   --main-bg-secondary: var(--secondary);
   --main-tx-primary: var(--white);
-  --main-tx-secondary: var(--grey);
+  --main-tx-secondary: var(--grey2);
   --main-tx-green: var(--green);
 
   /* dynamic spacing adapted from utopia.fyi */
@@ -107,6 +108,7 @@ body {
 
 .site-header {
   width: 100%;
+  background-color: var(--main-bg-secondary);
   position: relative;
   font-size: var(--font-sm);
   font-weight: 500;
@@ -128,7 +130,8 @@ body {
   display: grid;
 }
 
-.logomark-lg, .logomark-sm {
+.logomark-lg,
+.logomark-sm {
   place-items: center;
 }
 
@@ -189,7 +192,7 @@ body {
   display: none;
 }
 
-#nav-hamburguer[aria-expanded="true"] { 
+#nav-hamburguer[aria-expanded="true"] {
   & .nav-hamburguer-menu {
     display: none;
   }
@@ -255,6 +258,32 @@ body {
   display: block;
 }
 
+/* Mobile menu overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 112px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (min-width: 1201px) {
+  .nav-overlay {
+    display: none !important;
+  }
+}
+
+.nav-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
 .link {
   --type: transparent;
   --fill: transparent;
@@ -285,6 +314,7 @@ body {
   gap: 2.5rem;
   font-size: calc(var(--font-md) * .85);
   text-align: center;
+  background-color: var(--main-bg-secondary);
   margin: 0 auto;
   padding: 2rem 3.5rem;
 }
@@ -362,9 +392,12 @@ body {
 @media (min-width: 768px) {
   .hero {
     place-self: center;
-    max-width: 777px;
     min-height: calc(100vh - 112px);
     place-content: center;
+  }
+
+  .hero-greeting .hero-tldr {
+    max-width: 777px;
   }
 }
 
@@ -391,9 +424,14 @@ body {
 
   .hero {
     place-self: center;
-    max-width: 777px;
+    min-width: 100%;
     min-height: calc(100vh - 112px);
     place-content: center;
     padding: 0;
+  }
+
+  .hero-greeting,
+  .hero-tldr {
+    max-width: 777px;
   }
 }
