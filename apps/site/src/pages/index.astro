@@ -1,4 +1,6 @@
 ---
+ import { Icon } from "astro-icon/components";
+
 // layout imports
 import Html from "@/layouts/Html.astro";
 
@@ -18,6 +20,59 @@ import Link from "@/components/Link.astro";
       </span>
     </div>
     <Link href="" text="Checkout my experience" class="hero-link" />
+  </section>
+  <section class="about">
+    <div class="about-intro">
+      <h1><span>01.</span> Introduce</h1>
+      <p class="about-intro-text">
+A freelance developer with main focus on building web solutions with a TypeScript and Node.js stack. Beyond HTML and CSS, I'm familiar with the Express.js micro-framework on back-end and the React library on front-end, including Next.js and Gatsby frameworks. I'm also learning how to develop GraphQL APIs and how this amazing architecture works.
+      </p>
+      <p class="about-intro-text">
+I'm able to delivery developed web applications with a great infrastructure of deployment, mainly hosted on Amazon AWS, Google Cloud Platform and Vercel Platform.
+      </p>
+      <ul class="about-intro-tags">
+        <li>Golang</li>
+        <li>TypeScript</li>
+        <li>Node.js</li>
+        <li>React</li>
+        <li>Next.js</li>
+        <li>PostgreSQL</li>
+        <li>Docker</li>
+        <li>Amazon AWS</li>
+      </ul>
+    </div>
+    <div class="about-cards">
+      <div class="about-cards-unit">
+        <div class="about-cards-unit-text">
+          <span class="about-cards-unit_title">
+            Back-end
+            <Icon name="ph:plugs-bold" />
+          </span>
+          <p>I can develop APIs with REST and gRPC achitecture using Golang.</p>
+        </div>
+        <a href="">clients</a>
+      </div>
+      <div class="about-cards-unit">
+        <div class="about-cards-unit-text">
+          <span class="about-cards-unit_title">
+            Front-end
+            <Icon name="ph:code-bold" />
+          </span>
+          <p>I can build web applications using React/Next.js stack.</p>
+        </div>
+        <a href="">clients</a>
+      </div>
+      <div class="about-cards-unit">
+        <div class="about-cards-unit-text">
+          <span class="about-cards-unit_title">
+            Infrastructure
+            <Icon name="ph:rocket-launch-bold" />
+          </span>
+          <p>I can manage cloud services using Amazon AWS.</p>
+        </div>
+        <a href="">clients</a>
+      </div>
+    </div>
   </section>
 </Html>
 

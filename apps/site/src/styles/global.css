@@ -193,11 +193,11 @@ body {
 }
 
 #nav-hamburguer[aria-expanded="true"] {
-  & .nav-hamburguer-menu {
+  .nav-hamburguer-menu {
     display: none;
   }
 
-  & .nav-hamburguer-close {
+  .nav-hamburguer-close {
     display: block;
   }
 }
@@ -273,12 +273,6 @@ body {
   transition: opacity 0.3s ease;
 }
 
-@media (min-width: 1201px) {
-  .nav-overlay {
-    display: none !important;
-  }
-}
-
 .nav-overlay.open {
   display: block;
   opacity: 1;
@@ -316,7 +310,7 @@ body {
   text-align: center;
   background-color: var(--main-bg-secondary);
   margin: 0 auto;
-  padding: 2rem 3.5rem;
+  padding: 3.5rem;
 }
 
 .hero-greeting {
@@ -325,15 +319,15 @@ body {
   align-items: center;
   font-weight: 700;
 
-  & .hero-greeting-1 {
+  .hero-greeting-1 {
     font-size: calc(var(--font-xl) * .85);
     line-height: var(--lh-1-4);
   }
 
-  & span {
+  span {
     display: block;
 
-    & strong {
+    strong {
       color: var(--main-tx-green);
     }
   }
@@ -347,7 +341,7 @@ body {
   color: var(--main-tx-secondary);
   text-align: center;
 
-  & strong {
+  strong {
     color: var(--main-tx-green);
   }
 }
@@ -356,6 +350,129 @@ body {
   font-size: var(--font-sm);
   font-weight: 700;
   padding: 2rem 3rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--main-tx-secondary);
+  padding: 3.5rem clamp(2.13rem, calc(0.85rem + 1.63vw), 3.5rem);
+}
+
+.about-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    color: var(--main-tx-primary);
+    font-size: calc(var(--font-xl) * .85);
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 1rem;
+
+    span {
+      color: var(--main-tx-green);
+    }
+
+    &::after {
+      content: "";
+      height: 1px;
+      background-color: var(--grey);
+      flex-grow: 1;
+
+      min-width: 100px;
+      max-width: 300px;
+    }
+  }
+}
+
+.about-intro-tags {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  list-style-type: "𐰷 ";
+  list-style-position: inside;
+
+  li {
+    margin: 0.62rem 0;
+
+    &::marker {
+      color: var(--main-tx-green);
+    }
+  }
+
+}
+
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-cards-unit {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--main-bg-secondary);
+  padding: 2rem 3.5rem;
+  border-radius: 8px;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.15);
+
+    .about-cards-unit_title {
+      color: var(--main-tx-green);
+    }
+  }
+
+  a {
+    display: inline-block;
+    width: fit-content;
+    color: var(--main-tx-primary);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s ease-in-out;
+
+    &::after {
+      content: '';
+      width: 0px;
+      height: 1px;
+      display: block;
+      background: var(--main-tx-primary);
+      transition: 300ms;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.about-cards-unit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+
+  p {
+    font-size: var(--font-md);
+  }
+}
+
+.about-cards-unit_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--main-tx-primary);
+  font-size: var(--font-md);
+  font-weight: 500;
+  transition: 0.2s;
 }
 
 .footer {
@@ -368,7 +485,7 @@ body {
   font-weight: 600;
   padding: 2rem;
 
-  & .footer-link-name {
+  .footer-link-name {
     text-decoration: none;
     color: var(--main-tx-green);
     transition: 0.2s;
@@ -389,6 +506,12 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 450px) {
+  .about-intro-tags {
+    grid-template-columns: auto auto;
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     place-self: center;
@@ -422,6 +545,10 @@ body {
     display: none;
   }
 
+  .nav-overlay {
+    display: none !important;
+  }
+
   .hero {
     place-self: center;
     min-width: 100%;
@@ -433,5 +560,22 @@ body {
   .hero-greeting,
   .hero-tldr {
     max-width: 777px;
+  }
+
+  .about {
+    height: 100vh;
+    max-width: 1174px;
+    flex-direction: row;
+    place-items: center;
+    padding: 0;
+  }
+
+  .about-intro {
+    max-width: 553px;
+    margin-right: 2.5rem;
+  }
+
+  .about-intro-tags {
+    font-size: var(--font-sm);
   }
 }
