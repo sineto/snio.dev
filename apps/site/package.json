@@ -15,8 +15,11 @@
     "@iconify-json/devicon-plain": "^1.2.57",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ph": "^1.2.2",
+    "@qwik.dev/astro": "^1.0.1",
+    "@qwik.dev/core": "^2.0.0-beta.32",
     "astro": "^6.1.8",
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "marked": "^18.0.2"
   },
   "engines": {
     "node": ">=22.12.0"

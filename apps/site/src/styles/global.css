@@ -106,6 +106,53 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.link {
+  --type: transparent;
+  --fill: transparent;
+  display: flex;
+  place-items: center;
+  width: fit-content;
+  padding: calc(var(--space-xs) * 0.75) var(--space-md);
+  color: var(--main-tx-green) !important;
+  background-color: var(--fill);
+  border-width: var(--border-sm);
+  border-style: solid;
+  border-color: var(--green);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    color: var(--main-bg-primary) !important;
+    background-color: var(--green);
+  }
+}
+
+.section-title {
+  color: var(--main-tx-primary);
+  font-size: calc(var(--font-xl) * .85);
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 1rem;
+
+  span {
+    color: var(--main-tx-green);
+  }
+
+  &::after {
+    content: "";
+    height: 1px;
+    background-color: var(--grey);
+    flex-grow: 1;
+
+    min-width: 30px;
+    max-width: 500px;
+  }
+}
+
 .site-header {
   width: 100%;
   background-color: var(--main-bg-secondary);
@@ -278,28 +325,6 @@ body {
   opacity: 1;
 }
 
-.link {
-  --type: transparent;
-  --fill: transparent;
-  display: flex;
-  place-items: center;
-  width: fit-content;
-  padding: calc(var(--space-xs) * 0.75) var(--space-md);
-  color: var(--main-tx-green) !important;
-  background-color: var(--fill);
-  border-width: var(--border-sm);
-  border-style: solid;
-  border-color: var(--green);
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: 0.2s;
-
-  &:hover {
-    color: var(--main-bg-primary) !important;
-    background-color: var(--green);
-  }
-}
-
 .hero {
   place-self: start;
   display: flex;
@@ -364,31 +389,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-  h1 {
-    color: var(--main-tx-primary);
-    font-size: calc(var(--font-xl) * .85);
-    font-weight: 700;
-
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    gap: 1rem;
-
-    span {
-      color: var(--main-tx-green);
-    }
-
-    &::after {
-      content: "";
-      height: 1px;
-      background-color: var(--grey);
-      flex-grow: 1;
-
-      min-width: 100px;
-      max-width: 300px;
-    }
-  }
 }
 
 .about-intro-tags {
@@ -404,7 +404,6 @@ body {
       color: var(--main-tx-green);
     }
   }
-
 }
 
 .about-cards {
@@ -473,6 +472,96 @@ body {
   font-size: var(--font-md);
   font-weight: 500;
   transition: 0.2s;
+}
+
+.experience {
+  width: 100vw;
+  background-color: var(--main-bg-secondary);
+  padding: 3.5rem clamp(2.13rem, calc(0.85rem + 1.63vw), 3.5rem);
+}
+
+.experience-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-jobs {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-sidebar-list {
+  display: flex;
+  list-style: none;
+  list-style-position: inside;
+  font-size: 1.2rem;
+  overflow: auto;
+  white-space: nowrap;
+
+  li {
+    color: var(--main-tx-secondary);
+    border-top: 3px solid;
+    border-color: var(--grey);
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--main-bg-primary);
+    }
+  }
+
+  .active-tab {
+    color: var(--main-tx-green);
+    border-color: var(--green);
+    background-color: var(--main-bg-primary);
+  }
+}
+
+.experience-resume {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 0;
+  overflow: auto;
+
+  article {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.experience-resume-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+
+  h3 {
+    span {
+      color: var(--main-tx-green);
+      font-size: var(--font-lg);
+      font-weight: 700;
+    }
+  }
+
+  span {
+    color: var(--main-tx-secondary);
+    font-size: var(--font-sm);
+    font-weight: 500;
+  }
+}
+
+.experience-resume-text {
+  ul, ol, il {
+    list-style-type: "𐰷 ";
+    list-style-position: inside;
+
+    li {
+      margin: 1.1rem 0;
+
+      &::marker {
+        color: var(--main-tx-green);
+      }
+    }
+  }
 }
 
 .footer {
@@ -577,5 +666,32 @@ body {
 
   .about-intro-tags {
     font-size: var(--font-sm);
+  }
+
+  .experience {
+    min-height: 100vh;
+    place-items: center;
+    place-content: center;
+    justify-content: center;
+  }
+
+  .experience-wrap {
+    max-height: 75vh;
+    max-width: 860px;
+  }
+
+  .experience-jobs {
+    min-height: 75vh;
+    flex-direction: row;
+  }
+
+  .experience-sidebar-list {
+    flex-direction: column;
+    margin-right: 2rem;
+
+    li, .active-tab {
+      border-top: none;
+      border-left: 3px solid;
+    }
   }
 }

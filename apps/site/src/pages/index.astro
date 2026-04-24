@@ -1,14 +1,40 @@
 ---
- import { Icon } from "astro-icon/components";
-
 // layout imports
 import Html from "@/layouts/Html.astro";
 
 // component imports
+import SectionTitle from "@/components/SectionTitle.astro";
+import AboutCard from "@/components/AboutCard.astro";
 import Link from "@/components/Link.astro";
+import Experiences from "@/components/Experiences/index.astro"
+
+interface Card {
+  title: string;
+  titleIcon: string;
+  tldr: string;
+}
+
+const aboutCardsList: Card[] = [
+  {
+    title: "Back-end",
+    titleIcon: "ph:plugs-bold",
+    tldr: "I can develop APIs with REST and gRPC achitecture using Golang."
+  },
+  {
+    title: "Front-end",
+    titleIcon: "ph:code-bold",
+    tldr: "I can build web applications using React/Next.js stack."
+  },
+  {
+    title: "Infrastructure",
+    titleIcon: "ph:rocket-launch-bold",
+    tldr: "I can manage cloud services using Amazon AWS."
+  },
+]
 ---
 
 <Html title={"Sinésio Neto - README"}>
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-greeting">
       <span class="hero-greeting-1">Hi! I'm <strong>Sinésio Neto</strong></span>
@@ -21,9 +47,11 @@ import Link from "@/components/Link.astro";
     </div>
     <Link href="" text="Checkout my experience" class="hero-link" />
   </section>
+
+  <!-- ABOUT -->
   <section class="about">
     <div class="about-intro">
-      <h1><span>01.</span> Introduce</h1>
+      <SectionTitle index="01" title="Introduce" />
       <p class="about-intro-text">
 A freelance developer with main focus on building web solutions with a TypeScript and Node.js stack. Beyond HTML and CSS, I'm familiar with the Express.js micro-framework on back-end and the React library on front-end, including Next.js and Gatsby frameworks. I'm also learning how to develop GraphQL APIs and how this amazing architecture works.
       </p>
@@ -42,38 +70,14 @@ I'm able to delivery developed web applications with a great infrastructure of d
       </ul>
     </div>
     <div class="about-cards">
-      <div class="about-cards-unit">
-        <div class="about-cards-unit-text">
-          <span class="about-cards-unit_title">
-            Back-end
-            <Icon name="ph:plugs-bold" />
-          </span>
-          <p>I can develop APIs with REST and gRPC achitecture using Golang.</p>
-        </div>
-        <a href="">clients</a>
-      </div>
-      <div class="about-cards-unit">
-        <div class="about-cards-unit-text">
-          <span class="about-cards-unit_title">
-            Front-end
-            <Icon name="ph:code-bold" />
-          </span>
-          <p>I can build web applications using React/Next.js stack.</p>
-        </div>
-        <a href="">clients</a>
-      </div>
-      <div class="about-cards-unit">
-        <div class="about-cards-unit-text">
-          <span class="about-cards-unit_title">
-            Infrastructure
-            <Icon name="ph:rocket-launch-bold" />
-          </span>
-          <p>I can manage cloud services using Amazon AWS.</p>
-        </div>
-        <a href="">clients</a>
-      </div>
+      {aboutCardsList.map((card: Card) => (
+        <AboutCard title={card.title} iconName={card.titleIcon} tldr={card.tldr} />
+      ))}
     </div>
   </section>
+
+  <!-- EXPERIENCE -->
+  <Experiences />
 </Html>
 
 <script>

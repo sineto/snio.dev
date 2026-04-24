@@ -1,0 +1,30 @@
+---
+import { type MarkdownInstance } from "astro";
+import { type ExperienceFrontmatter, ExperiencesSection } from "./Experiences";
+
+const exp = Object.values(
+  import.meta.glob<MarkdownInstance<ExperienceFrontmatter>>("@/pages/content/*.md", {
+		eager: true,
+	}),
+);
+
+const sortedExps = exp.sort((a, b) => {
+ const dateA = new Date(a.frontmatter.startDate).getDate();
+ const dateB = new Date(b.frontmatter.startDate).getDate();
+ return dateB - dateA;
+});
+
+const experiences = sortedExps.map((experience) => ({
+  content: experience.rawContent(),
+	experience: {
+		title: experience.frontmatter.title,
+		company: experience.frontmatter.company,
+		website: experience.frontmatter.website,
+		position: experience.frontmatter.position,
+		startDate: experience.frontmatter.startDate,
+		endDate: experience.frontmatter.endDate,
+	},
+}));
+---
+
+<ExperiencesSection experiences={experiences} />
