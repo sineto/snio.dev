@@ -669,14 +669,15 @@ body {
   }
 
   .experience {
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
     place-items: center;
     place-content: center;
     justify-content: center;
   }
 
   .experience-wrap {
-    max-height: 75vh;
+    max-height: 80vh;
     max-width: 860px;
   }
 
