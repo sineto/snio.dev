@@ -1,4 +1,4 @@
-import { component$, useStore } from "@qwik.dev/core";
+import { component$, useSignal, useStore, useTask$ } from "@qwik.dev/core";
 import { marked } from "marked";
 
 interface DynamicObject {
@@ -43,6 +43,7 @@ const createTabs = (obj: Experience[], n: number) => {
 
 const clickTab = (store: DynamicObject, tab: string) => {
   Object.keys(store).forEach((key) => {
+    if (store[key] == undefined) return;
     store[key].active = key === tab;
     store[key].hidden = key !== tab;
   });
@@ -51,6 +52,7 @@ const clickTab = (store: DynamicObject, tab: string) => {
 const ExperienceTab = component$((
   { store, tab }: { store: DynamicObject, tab: string }
 ) => {
+  if (store[tab] == undefined) return;
   return (
     <li
       class={store[tab].active ? "active-tab" : undefined}
@@ -64,6 +66,16 @@ const ExperienceTab = component$((
 const ExperienceResume = component$((
   { store, tab }: { store: DynamicObject, tab: string }
 ) => {
+  if (store[tab] == undefined) return;
+  const content = store[tab].content;
+  
+  const resumeHtml = useSignal("");
+
+  useTask$(async ({track}) => {
+    track(() => resumeHtml.value);
+    resumeHtml.value = await marked.parse(content);
+  });
+
   return (
     <article style={{ display: store[tab].hidden ? "none" : "block" }}>
       <div class="experience-resume-title">
@@ -77,7 +89,7 @@ const ExperienceResume = component$((
       </div>
       <div
         class="experience-resume-text"
-        dangerouslySetInnerHTML={marked.parse(store[tab].content)}
+        dangerouslySetInnerHTML={resumeHtml.value}
       />
     </article>
   );
