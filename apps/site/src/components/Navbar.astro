@@ -4,7 +4,6 @@ import { Icon } from "astro-icon/components";
 
 // component imports
 import Logo from "@/components/Logo.astro";
-import Link from "@/components/Link.astro";
 
 const links = [
   { href: "/", label: "about"},
@@ -14,7 +13,7 @@ const links = [
 ]
 ---
 
-<header class="site-header">
+<header id="navbar">
   <nav class="nav-container">
     <!-- Desktop Logo -->
     <Logo
@@ -44,13 +43,13 @@ const links = [
           </a>
         </li>
         ))}
-        <Link text="Resume" href="" />
-      </ul> 
+        <a class="button-md" href="">Resume</a>
+      </ul>
     </div>
 
     <!-- Hamburguer button -->
-    <button 
-      id="nav-hamburguer" 
+    <button
+      id="nav-hamburguer"
       class="nav-hamburguer"
       aria-label="Toggle Menu"
       aria-expanded="false"
@@ -70,7 +69,7 @@ const links = [
         </a>
       </li>
       ))}
-      <Link text="Resume" href="" />
+      <a class="button-md" href="">Resume</a>
     </ul>
   </div>
   

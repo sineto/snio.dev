@@ -1,84 +1,79 @@
 ---
+import { type MarkdownInstance } from "astro";
+
 // layout imports
-import Html from "@/layouts/Html.astro";
+import Layout from "@/layouts/Layout.astro";
 
 // component imports
-import SectionTitle from "@/components/SectionTitle.astro";
-import AboutCard from "@/components/AboutCard.astro";
-import Link from "@/components/Link.astro";
-import Experiences from "@/components/Experiences/index.astro"
+import Hero from "@/components/sections/Hero.astro";
+import About, { type AboutCard } from "@/components/sections/About.astro";
+import Experiences from "@/components/sections/Experiences/index.astro"
+import { type Experience, type ExperienceFrontmatter } from "@/components/sections/Experiences/Experiences";
 
-interface Card {
-  title: string;
-  titleIcon: string;
-  tldr: string;
-}
+const aboutTagsList: string[] = [
+  "Golang",
+  "TypeScript",
+  "Node.js",
+  "React",
+  "Next.js",
+  "PostgreSQL",
+  "Docker/Podman",
+  "Amazon AWS"
+];
 
-const aboutCardsList: Card[] = [
+const aboutCardsList: AboutCard[] = [
   {
     title: "Back-end",
-    titleIcon: "ph:plugs-bold",
+    iconName: "ph:plugs-bold",
     tldr: "I can develop APIs with REST and gRPC achitecture using Golang."
   },
   {
     title: "Front-end",
-    titleIcon: "ph:code-bold",
+    iconName: "ph:code-bold",
     tldr: "I can build web applications using React/Next.js stack."
   },
   {
     title: "Infrastructure",
-    titleIcon: "ph:rocket-launch-bold",
+    iconName: "ph:rocket-launch-bold",
     tldr: "I can manage cloud services using Amazon AWS."
   },
 ]
+
+const jobsContent = Object.values(
+  import.meta.glob<MarkdownInstance<ExperienceFrontmatter>>("@/pages/content/experiences/*.md", {
+		eager: true,
+	}),
+);
+
+const sortedExperiences = jobsContent.sort((a, b) => {
+ const dateA = new Date(a.frontmatter.startDate).getDate();
+ const dateB = new Date(b.frontmatter.startDate).getDate();
+ return dateB - dateA;
+});
+
+const experiences: Experience[] = sortedExperiences.map((experience) => ({
+  content: experience.rawContent(),
+	meta: {
+		title: experience.frontmatter.title,
+		company: experience.frontmatter.company,
+		website: experience.frontmatter.website,
+		position: experience.frontmatter.position,
+		startDate: experience.frontmatter.startDate,
+		endDate: experience.frontmatter.endDate,
+	},
+}));
 ---
 
-<Html title={"Sinésio Neto - README"}>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-greeting">
-      <span class="hero-greeting-1">Hi! I'm <strong>Sinésio Neto</strong></span>
-      <span class="hero-greeting-2">I enjoy build web solutions.</span>
-    </div>
-    <div class="hero-tldr">
-      <span>
-        I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at <strong>Lab52</strong>.
-      </span>
-    </div>
-    <Link href="" text="Checkout my experience" class="hero-link" />
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-intro">
-      <SectionTitle index="01" title="Introduce" />
-      <p class="about-intro-text">
-A freelance developer with main focus on building web solutions with a TypeScript and Node.js stack. Beyond HTML and CSS, I'm familiar with the Express.js micro-framework on back-end and the React library on front-end, including Next.js and Gatsby frameworks. I'm also learning how to develop GraphQL APIs and how this amazing architecture works.
-      </p>
-      <p class="about-intro-text">
-I'm able to delivery developed web applications with a great infrastructure of deployment, mainly hosted on Amazon AWS, Google Cloud Platform and Vercel Platform.
-      </p>
-      <ul class="about-intro-tags">
-        <li>Golang</li>
-        <li>TypeScript</li>
-        <li>Node.js</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>PostgreSQL</li>
-        <li>Docker</li>
-        <li>Amazon AWS</li>
-      </ul>
-    </div>
-    <div class="about-cards">
-      {aboutCardsList.map((card: Card) => (
-        <AboutCard title={card.title} iconName={card.titleIcon} tldr={card.tldr} />
-      ))}
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <Experiences />
-</Html>
-
-<script>
-</script>
+<Layout title={"Sinésio Neto - README"}>
+  <main>
+    <Hero workingAt="Lab52" workingAtUrl="" />
+    <About tagsList={aboutTagsList} cardsList={aboutCardsList} />
+    <Experiences experiences={experiences} />
+    <section id="projects">
+      <h2 class="section-header">Projects</h2>
+    </section>
+    <section id="contact">
+      <h2 class="section-header contact-header">What's Next?</h2>
+    </section>
+  </main>
+</Layout>

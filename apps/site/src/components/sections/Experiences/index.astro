@@ -1,0 +1,11 @@
+---
+import { Experiences, type Experience } from './Experiences.tsx'
+
+interface Props {
+  experiences: Experience[];
+}
+
+const { experiences } = Astro.props as Props;
+---
+
+<Experiences experiences={experiences} />

@@ -1,0 +1,20 @@
+---
+interface Props {
+  workingAt: string;
+  workingAtUrl: string;
+}
+
+const { workingAt, workingAtUrl } = Astro.props as Props;
+---
+<section id="hero">
+  <div class="hero-header"> 
+    <h1><span>Hi! I'm</span> Sinésio Neto</h1>
+    <h2>I enjoy build web solutions.</h2>
+  </div>
+  <div class="hero-tldr">
+    <p>
+      I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at <a class="link" href={workingAtUrl} target="_blank" rel="noreferrer">{workingAt}</a>.
+    </p>
+  </div>
+  <a class="button-lg" href="#experience">Checkout my experience</a>
+</section>

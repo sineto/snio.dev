@@ -14,7 +14,10 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Sinésio Neto - Professional portfolio" } = Astro.props as Props;
+const {
+  title,
+  description = "Sinésio Neto - Professional portfolio"
+} = Astro.props as Props;
 ---
 
 <html lang="en">
@@ -28,9 +31,13 @@ const { title, description = "Sinésio Neto - Professional portfolio" } = Astro.
     <Font cssVariable="--font-roboto-mono" />
     <title>{title}</title>
   </head>
-  <body>
-    <Navbar />
-    <slot />
-    <Footer />
+  <body id="root">
+    <div id="base">
+      <Navbar />
+      <div id="content">
+        <slot />
+        <Footer />
+      </div>
+    </div>
   </body>
 </html>

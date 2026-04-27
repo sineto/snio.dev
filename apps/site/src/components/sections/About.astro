@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface AboutCard {
+  title: string;
+  iconName: string;
+  tldr: string;
+}
+
+interface Props {
+  tagsList: string[];
+  cardsList: AboutCard[];
+}
+
+const { tagsList, cardsList } = Astro.props as Props;
+---
+<section id="about">
+  <div class="about-intro">
+    <h2 class="section-header">Introduce</h2>
+    <p>
+A freelance developer with main focus on building web solutions with a TypeScript and Node.js stack. Beyond HTML and CSS, I'm familiar with the Express.js micro-framework on back-end and the React library on front-end, including Next.js and Gatsby frameworks. I'm also learning how to develop GraphQL APIs and how this amazing architecture works.
+    </p>
+    <p>
+I'm able to delivery developed web applications with a great infrastructure of deployment, mainly hosted on Amazon AWS, Google Cloud Platform and Vercel Platform.
+    </p>
+    <ul>
+      {tagsList.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+  <div class="about-cards">
+    {cardsList.map((card: AboutCard) => (
+      <ul>
+        <li>
+          <span>
+            {card.title} <Icon name={card.iconName} />
+          </span>
+          <p>{card.tldr}</p>
+        </li>
+        <a href="">clients</a>
+      </ul>
+    ))}
+  </div>
+</section>
