@@ -6,9 +6,9 @@ import { Icon } from "astro-icon/components";
 import Logo from "@/components/Logo.astro";
 
 const links = [
-  { href: "/", label: "about"},
+  { href: "#about", label: "about"},
   { href: "#experience", label: "experience"},
-  { href: "#work", label: "work"},
+  { href: "#projects", label: "work"},
   { href: "#contact", label: "contact"},
 ]
 ---
@@ -71,10 +71,7 @@ const links = [
       ))}
       <a class="button-md" href="">Resume</a>
     </ul>
-  </div>
-  
-  <!-- Overlay -->
-  <div id="nav-overlay" class="nav-overlay"></div>
+  </div> 
 </header>
 
 <script>

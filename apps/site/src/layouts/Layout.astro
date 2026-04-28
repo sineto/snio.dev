@@ -1,6 +1,7 @@
 ---
 // dependency import
 import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
 
 // component imports
 import Navbar from "@/components/Navbar.astro";
@@ -29,6 +30,7 @@ const {
    	<meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <Font cssVariable="--font-roboto-mono" />
+    <ClientRouter />
     <title>{title}</title>
   </head>
   <body id="root">
@@ -37,6 +39,9 @@ const {
       <div id="content">
         <slot />
         <Footer />
+
+        <!-- Overlay -->
+        <div id="nav-overlay" class="nav-overlay"></div>
       </div>
     </div>
   </body>

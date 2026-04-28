@@ -88,7 +88,7 @@ export const Experiences = component$(({ experiences }: { experiences: Experienc
   console.log(scopedStyle.value);
  
   return (
-    <section id="experience">
+    <section id="experience" class="autoShow">
       <div class="experience-wrap">
         <h2 class="section-header">Expeciences</h2>
         <div class="experience-jobs">

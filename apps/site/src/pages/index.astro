@@ -67,12 +67,12 @@ const experiences: Experience[] = sortedExperiences.map((experience) => ({
 <Layout title={"Sinésio Neto - README"}>
   <main>
     <Hero workingAt="Lab52" workingAtUrl="" />
-    <About tagsList={aboutTagsList} cardsList={aboutCardsList} />
-    <Experiences experiences={experiences} />
-    <section id="projects">
+    <About transition:animate="slide" tagsList={aboutTagsList} cardsList={aboutCardsList} />
+    <Experiences transition:animate="slide" experiences={experiences} />
+    <section transition:animate="slide" id="projects" class="autoShow">
       <h2 class="section-header">Projects</h2>
     </section>
-    <section id="contact">
+    <section transition:animate="slide" id="contact" class="autoShow">
       <h2 class="section-header contact-header">What's Next?</h2>
     </section>
   </main>
