@@ -137,7 +137,11 @@ body {
 
 #content {
   counter-reset: section;
-  margin-top: calc(2 * var(--space-md));
+  margin-top: calc(1.26 * var(--space-2xl));
+
+  @media (min-width: 768px) {
+    margin-top: calc(1.24 * var(--space-2xl));
+  }
 
   @media (min-width: 1201px) {
     margin-top: calc(2 * var(--space-lg));

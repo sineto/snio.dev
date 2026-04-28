@@ -1,0 +1,91 @@
+---
+// layout imports
+import Html from "@/layouts/Html.astro";
+
+// component imports
+import SectionTitle from "@/components/SectionTitle.astro";
+import AboutCard from "@/components/AboutCard.astro";
+import Link from "@/components/Link.astro";
+import Experiences from "@/components/Experiences/index.astro"
+
+interface Card {
+  title: string;
+  titleIcon: string;
+  tldr: string;
+}
+
+const aboutCardsList: Card[] = [
+  {
+    title: "Back-end",
+    titleIcon: "ph:plugs-bold",
+    tldr: "I can develop APIs with REST and gRPC achitecture using Golang."
+  },
+  {
+    title: "Front-end",
+    titleIcon: "ph:code-bold",
+    tldr: "I can build web applications using React/Next.js stack."
+  },
+  {
+    title: "Infrastructure",
+    titleIcon: "ph:rocket-launch-bold",
+    tldr: "I can manage cloud services using Amazon AWS."
+  },
+]
+---
+
+<Html title={"Sinésio Neto - README"}>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-greeting">
+      <span class="hero-greeting-1">Hi! I'm <strong>Sinésio Neto</strong></span>
+      <span class="hero-greeting-2">I enjoy build web solutions.</span>
+    </div>
+    <div class="hero-tldr">
+      <span>
+        I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at <strong>Lab52</strong>.
+      </span>
+    </div>
+    <Link href="" text="Checkout my experience" class="hero-link" />
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-intro">
+      <SectionTitle index="01" title="Introduce" />
+      <p class="about-intro-text">
+A freelance developer with main focus on building web solutions with a TypeScript and Node.js stack. Beyond HTML and CSS, I'm familiar with the Express.js micro-framework on back-end and the React library on front-end, including Next.js and Gatsby frameworks. I'm also learning how to develop GraphQL APIs and how this amazing architecture works.
+      </p>
+      <p class="about-intro-text">
+I'm able to delivery developed web applications with a great infrastructure of deployment, mainly hosted on Amazon AWS, Google Cloud Platform and Vercel Platform.
+      </p>
+      <ul class="about-intro-tags">
+        <li>Golang</li>
+        <li>TypeScript</li>
+        <li>Node.js</li>
+        <li>React</li>
+        <li>Next.js</li>
+        <li>PostgreSQL</li>
+        <li>Docker</li>
+        <li>Amazon AWS</li>
+      </ul>
+    </div>
+    <div class="about-cards">
+      {aboutCardsList.map((card: Card) => (
+        <AboutCard title={card.title} iconName={card.titleIcon} tldr={card.tldr} />
+      ))}
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <Experiences />
+
+  <!-- WORK -->
+  <section class="work">
+    <article class="work-project">
+      
+    </article>
+  </section>
+</Html>
+
+<script>
+</script>
