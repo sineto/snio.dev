@@ -25,6 +25,12 @@
       ],
       "@public/*": [
         "public/*"
+      ],
+      "@content/*": [
+        "content/*"
+      ],
+      "@repo/content/*": [
+        "../../packages/content/*"
       ]
     }
   }

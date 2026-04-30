@@ -15,4 +15,11 @@ export default defineConfig({
     cssVariable: "--font-roboto-mono",
     weights: [100, 200, 300, 400, 500, 600, 700]
   }],
+  vite: {
+    server: {
+      fs: {
+        allow: ["../../packages/content", "./"]
+      }
+    }
+  }
 });

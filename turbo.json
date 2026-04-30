@@ -1,5 +1,6 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
+  "globalDependencies": ["packages/content/**"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

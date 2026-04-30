@@ -12,6 +12,7 @@
     "@repo/typescript-config": "workspace:*"
   },
   "dependencies": {
+    "@repo/content": "workspace:*",
     "@iconify-json/devicon-plain": "^1.2.57",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ph": "^1.2.2",
