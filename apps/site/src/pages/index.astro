@@ -7,8 +7,9 @@ import Layout from "@/layouts/Layout.astro";
 // component imports
 import Hero from "@/components/sections/Hero.astro";
 import About, { type AboutCard } from "@/components/sections/About.astro";
-import Experiences from "@/components/sections/Experiences/index.astro"
+import Experiences from "@/components/sections/Experiences/index.astro";
 import { type Experience, type ExperienceFrontmatter } from "@/components/sections/Experiences/Experiences";
+import Projects, { type Project, type ProjectFrontmatter } from "@/components/sections/Projects.astro";
 
 const aboutTagsList: string[] = [
   "Golang",
@@ -40,7 +41,7 @@ const aboutCardsList: AboutCard[] = [
 ]
 
 const jobsContent = Object.values(
-  import.meta.glob<MarkdownInstance<ExperienceFrontmatter>>("@/pages/content/experiences/*.md", {
+  import.meta.glob<MarkdownInstance<ExperienceFrontmatter>>("@repo/content/experiences/*.md", {
 		eager: true,
 	}),
 );
@@ -62,16 +63,46 @@ const experiences: Experience[] = sortedExperiences.map((experience) => ({
 		endDate: experience.frontmatter.endDate,
 	},
 }));
----
 
+const projectsContent = Object.values(
+  import.meta.glob<MarkdownInstance<ProjectFrontmatter>>(
+    "@repo/content/projects/*/*.md", { eager: true }
+    // "@/content/projects/*/*.md", { eager: true }
+  ),
+);
+
+const projectsImages = import.meta.glob<{ default: ImageMetadata }>(
+  // "@/content/projects/*/*.{jpeg,jpg,png,gif}"
+  "@repo/content/projects/*/*.{jpeg,jpg,png,gif}"
+);
+
+const projects: Project[] = projectsContent.map((project) => ({
+  content: project.rawContent(),
+  meta: {
+    order: project.frontmatter.order,
+    status: project.frontmatter.status,
+    type: project.frontmatter.type,
+    title: project.frontmatter.title,
+    cover: projectsImages[project.frontmatter.cover as string],
+    repository: project.frontmatter.repository,
+    external: project.frontmatter.external,
+    stack: project.frontmatter.stack
+  },
+}));
+
+const sortedProjects: Project[] = projects.sort((a: Project, b: Project) => {
+  return a.meta.order - b.meta.order;
+});
+
+// console.log(projects, projectsImages);
+
+---
 <Layout title={"Sinésio Neto - README"}>
   <main>
     <Hero workingAt="Lab52" workingAtUrl="" />
     <About transition:animate="slide" tagsList={aboutTagsList} cardsList={aboutCardsList} />
     <Experiences transition:animate="slide" experiences={experiences} />
-    <section transition:animate="slide" id="projects" class="autoShow">
-      <h2 class="section-header">Projects</h2>
-    </section>
+    <Projects transition:animate="slide" projects={sortedProjects} />
     <section transition:animate="slide" id="contact" class="autoShow">
       <h2 class="section-header contact-header">What's Next?</h2>
     </section>

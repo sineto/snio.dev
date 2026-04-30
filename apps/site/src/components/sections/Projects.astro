@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import Status from "@/components/Status.astro";
+
+export interface ProjectFrontmatter {
+  order: number;
+  status: string;
+  type: string;
+  title: string;
+  cover: string | (() => Promise<{ default: ImageMetadata }>) | undefined;
+  repository: string;
+  external: string;
+  stack: string[];
+}
+
+export interface Project {
+  meta: ProjectFrontmatter;
+  content: string;
+}
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props as Props;
+---
+
+<section id="projects" class="autoShow">
+  <h2 class="section-header">Projects</h2>
+  <div class="projects-grid">
+    {projects.map((project: Project) => {
+      const image = project.meta.cover() || "";
+      return (
+        <div class="projects-unit">
+          <div class="projects-unit-card">
+            <div class="projects-unit-card_title">
+              <div>
+                <strong>{project.meta.type}</strong> <Status status={project.meta.status} />
+              </div>
+              <h3>
+                <a class={project.meta.external}>
+                  {project.meta.title}
+                </a>
+              </h3>
+            </div>
+
+            <div class="projects-unit-card_text">{project.content}</div>
+            
+            {project.meta.stack.length && (
+              <ul class="projects-unit-card_stack">
+                {project.meta.stack.map((tech) => (
+                  <li>{tech}</li>
+                ))}
+              </ul>
+            )}
+
+            <div class="projects-unit-card_links">
+              {project.meta.repository && (
+                <a href={project.meta.repository}>
+                  <Icon
+                    class="projects-unit-card_repository"
+                    name="mdi:github"
+                    width={28} height={28}
+                  />
+                </a>
+              )}
+
+              {project.meta.external && (
+                <a href={project.meta.external}>
+                  <Icon
+                    class="projects-unit-card_external"
+                    name="mdi:external-link"
+                    width={28} height={28}
+                  />
+                </a>
+              )}
+            </div>
+          </div>
+          <div class="projects-unit-image">
+            <span>
+              <Image
+                id="#project-image"
+                src={image}
+                alt={project.meta.title}
+              />
+            </span>
+          </div>
+        </div>
+      )
+    })}
+  </div>
+</section>

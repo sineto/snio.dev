@@ -84,8 +84,6 @@ export const Experiences = component$(({ experiences }: { experiences: Experienc
       };
     }
   });
-
-  console.log(scopedStyle.value);
  
   return (
     <section id="experience" class="autoShow">

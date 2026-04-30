@@ -1,0 +1,23 @@
+---
+interface Props {
+  status: string;
+}
+
+const { status } = Astro.props as Props;
+
+const bgColor: Record<string, string> = {
+  archived: "yellow",
+  online: "green",
+  offline: "grey"
+}
+---
+<span
+  style={{
+    height: "10px",
+    width: "10px",
+    display: "inline-block",
+    backgroundColor: bgColor[status],
+    borderRadius: "100vmax",
+    flexShrink: 0
+  }}
+/>
