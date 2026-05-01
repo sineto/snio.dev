@@ -1,106 +1,30 @@
 ---
 import { type MarkdownInstance } from "astro";
+import { Icon } from "astro-icon/components";
+import { Octokit } from "octokit";
+import { getCollection } from "astro:content";
+
+// data imports
+import { aboutCards, aboutTags } from "@/data/about";
+import { type Experience, type ExperienceFrontmatter, experiences } from "@/data/experiences";
+import { type Project, type ProjectFrontmatter, projects } from "@/data/projects";
+import { type Repository, repositories } from "@/data/open-source";
 
 // layout imports
 import Layout from "@/layouts/Layout.astro";
 
 // component imports
 import Hero from "@/components/sections/Hero.astro";
-import About, { type AboutCard } from "@/components/sections/About.astro";
+import About from "@/components/sections/About.astro";
 import Experiences from "@/components/sections/Experiences/index.astro";
-import { type Experience, type ExperienceFrontmatter } from "@/components/sections/Experiences/Experiences";
-import Projects, { type Project, type ProjectFrontmatter } from "@/components/sections/Projects.astro";
-
-const aboutTagsList: string[] = [
-  "Golang",
-  "TypeScript",
-  "Node.js",
-  "React",
-  "Next.js",
-  "PostgreSQL",
-  "Docker/Podman",
-  "Amazon AWS"
-];
-
-const aboutCardsList: AboutCard[] = [
-  {
-    title: "Back-end",
-    iconName: "ph:plugs-bold",
-    tldr: "I can develop APIs with REST and gRPC achitecture using Golang."
-  },
-  {
-    title: "Front-end",
-    iconName: "ph:code-bold",
-    tldr: "I can build web applications using React/Next.js stack."
-  },
-  {
-    title: "Infrastructure",
-    iconName: "ph:rocket-launch-bold",
-    tldr: "I can manage cloud services using Amazon AWS."
-  },
-]
-
-const jobsContent = Object.values(
-  import.meta.glob<MarkdownInstance<ExperienceFrontmatter>>("@repo/content/experiences/*.md", {
-		eager: true,
-	}),
-);
-
-const sortedExperiences = jobsContent.sort((a, b) => {
- const dateA = new Date(a.frontmatter.startDate).getDate();
- const dateB = new Date(b.frontmatter.startDate).getDate();
- return dateB - dateA;
-});
-
-const experiences: Experience[] = sortedExperiences.map((experience) => ({
-  content: experience.rawContent(),
-	meta: {
-		title: experience.frontmatter.title,
-		company: experience.frontmatter.company,
-		website: experience.frontmatter.website,
-		position: experience.frontmatter.position,
-		startDate: experience.frontmatter.startDate,
-		endDate: experience.frontmatter.endDate,
-	},
-}));
-
-const projectsContent = Object.values(
-  import.meta.glob<MarkdownInstance<ProjectFrontmatter>>(
-    "@repo/content/projects/*/*.md", { eager: true }
-    // "@/content/projects/*/*.md", { eager: true }
-  ),
-);
-
-const projectsImages = import.meta.glob<{ default: ImageMetadata }>(
-  // "@/content/projects/*/*.{jpeg,jpg,png,gif}"
-  "@repo/content/projects/*/*.{jpeg,jpg,png,gif}"
-);
-
-const projects: Project[] = projectsContent.map((project) => ({
-  content: project.rawContent(),
-  meta: {
-    order: project.frontmatter.order,
-    status: project.frontmatter.status,
-    type: project.frontmatter.type,
-    title: project.frontmatter.title,
-    cover: projectsImages[project.frontmatter.cover as string],
-    repository: project.frontmatter.repository,
-    external: project.frontmatter.external,
-    stack: project.frontmatter.stack
-  },
-}));
-
-const sortedProjects: Project[] = projects.sort((a: Project, b: Project) => {
-  return a.meta.order - b.meta.order;
-});
-
-// console.log(projects, projectsImages);
+import Projects from "@/components/sections/Projects.astro";
+import OpenSource from "@/components/sections/OpenSource.astro";
 
 ---
 <Layout title={"Sinésio Neto - README"}>
   <main>
     <Hero workingAt="Lab52" workingAtUrl="" />
-    <About transition:animate="slide" tagsList={aboutTagsList} cardsList={aboutCardsList} />
+    <About transition:animate="slide" tagsList={aboutTags} cardsList={aboutCards} />
     <Experiences transition:animate="slide" experiences={experiences} />
     <Projects transition:animate="slide" projects={projects} />
      <OpenSource transition:animate="slide" repositories={repositories} />

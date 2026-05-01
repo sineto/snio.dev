@@ -3,7 +3,7 @@ order: 2
 status: 'archived'
 type: 'Client Project'
 title: 'Qualquer coisa'
-cover: '../../packages/content/projects/project-name-2/index.jpg'
+cover: './index.jpg'
 repository: 'https://github.com/bchiang7/halcyon-site'
 external: 'https://halcyon-theme.netlify.com/'
 stack: [ 'VS Code', 'Sublime Text', 'Hyper' ]

@@ -1,19 +1,7 @@
 import { component$, useTask$, useVisibleTask$, useSignal, useStore, $} from "@qwik.dev/core";
 import { marked } from "marked";
 
-export interface ExperienceFrontmatter {
-	title: string;
-	company: string;
-	website: string;
-	position: string;
-	startDate: string;
-	endDate: string;
-}
-
-export interface Experience {
-	meta: ExperienceFrontmatter;
-	content: string;
-}
+import type { ExperienceFrontmatter, Experience } from "@/data/experiences";
 
 interface DynamicObject {
   meta: ExperienceFrontmatter,

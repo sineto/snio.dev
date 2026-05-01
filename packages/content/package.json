@@ -1,5 +1,9 @@
 {
   "name": "@repo/content",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "astro": "^6.1.8"
+  }
 }

@@ -2,23 +2,9 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
+import { type Project } from "@/data/projects";
+
 import Status from "@/components/Status.astro";
-
-export interface ProjectFrontmatter {
-  order: number;
-  status: string;
-  type: string;
-  title: string;
-  cover: string | (() => Promise<{ default: ImageMetadata }>) | undefined;
-  repository: string;
-  external: string;
-  stack: string[];
-}
-
-export interface Project {
-  meta: ProjectFrontmatter;
-  content: string;
-}
 
 interface Props {
   projects: Project[];
@@ -30,8 +16,8 @@ const { projects } = Astro.props as Props;
 <section id="projects" class="autoShow">
   <h2 class="section-header">Projects</h2>
   <div class="projects-grid">
-    {projects.map((project: Project) => {
-      const image = project.meta.cover() || "";
+    {projects.map(async (project: Project) => {
+      const image = project.meta.cover;
       return (
         <div class="projects-unit">
           <div class="projects-unit-card">
@@ -82,7 +68,7 @@ const { projects } = Astro.props as Props;
             <span>
               <Image
                 id="#project-image"
-                src={image}
+                src={image as any}
                 alt={project.meta.title}
               />
             </span>

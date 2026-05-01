@@ -3,7 +3,7 @@ order: 1
 status: 'archived'
 type: 'Personal Project'
 title: 'Halcyon Theme'
-cover: '/src/content/projects/project-name-1/index.jpg'
+cover: './index.jpg'
 repository: 'https://github.com/bchiang7/halcyon-site'
 external: 'https://halcyon-theme.netlify.com/'
 stack: [ 'VS Code', 'Sublime Text', 'Atom', 'iTerm2', 'Hyper' ]

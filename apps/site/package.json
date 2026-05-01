@@ -12,15 +12,17 @@
     "@repo/typescript-config": "workspace:*"
   },
   "dependencies": {
-    "@repo/content": "workspace:*",
     "@iconify-json/devicon-plain": "^1.2.57",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ph": "^1.2.2",
     "@qwik.dev/astro": "^1.0.1",
     "@qwik.dev/core": "^2.0.0-beta.32",
-    "astro": "^6.1.8",
+    "@repo/content": "workspace:*",
+    "astro": "^6.2.1",
     "astro-icon": "^1.1.5",
-    "marked": "^18.0.2"
+    "marked": "^18.0.2",
+    "octokit": "^5.0.5",
+    "sharp": "^0.34.5"
   },
   "engines": {
     "node": ">=22.12.0"

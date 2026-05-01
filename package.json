@@ -4,7 +4,7 @@
   "devDependencies": {
     "typescript": "5.9.2",
     "@types/bun": "latest",
-    "turbo": "^2.5.3"
+    "turbo": "^2.9.7"
   },
   "engines": {
     "node": ">=18"
@@ -15,7 +15,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier --write \"**/*.{astro,ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },
   "workspaces": [
