@@ -102,7 +102,8 @@ const sortedProjects: Project[] = projects.sort((a: Project, b: Project) => {
     <Hero workingAt="Lab52" workingAtUrl="" />
     <About transition:animate="slide" tagsList={aboutTagsList} cardsList={aboutCardsList} />
     <Experiences transition:animate="slide" experiences={experiences} />
-    <Projects transition:animate="slide" projects={sortedProjects} />
+    <Projects transition:animate="slide" projects={projects} />
+     <OpenSource transition:animate="slide" repositories={repositories} />
     <section transition:animate="slide" id="contact" class="autoShow">
       <h2 class="section-header contact-header">What's Next?</h2>
     </section>

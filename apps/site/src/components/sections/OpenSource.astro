@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { type Repository } from "@/data/open-source";
+
+interface Props {
+  repositories: Repository[];
+}
+
+const { repositories } = Astro.props as Props;
+---
+
+<section transition:animate="slide" id="open-source">
+  <h3>
+    Another Personal Projects
+    <a class="link" href="">view repository profile</a>
+  </h3>
+  <ul class="open-source-repos">
+    {repositories.slice(0,6).map((repo: Repository) => {
+      return (
+        <li>
+          <h4>
+            <a href={repo.url}>
+              {repo.name} <Icon class="repo-icon-link" name="mdi:link" />
+            </a>
+          </h4>
+          <p>{repo.description}</p>
+          <div>
+            <span>
+              <Icon name="mdi:circle" />
+              {repo.language.name}
+            </span>
+            <span><Icon name="mdi:star" />{repo.starsCount}</span>
+            <span><Icon name="mdi:source-fork" />{repo.forksCount}</span>
+          </div>
+        </li>
+      )
+    })}
+  </ul>
+  <a class="button-md" href="">See more...</a>
+</section>
