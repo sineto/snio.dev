@@ -1,35 +1,30 @@
 ---
-import { type MarkdownInstance } from "astro";
-import { Icon } from "astro-icon/components";
-import { Octokit } from "octokit";
-import { getCollection } from "astro:content";
-
-// data imports
-import { aboutCards, aboutTags } from "@/data/about";
-import { type Experience, type ExperienceFrontmatter, experiences } from "@/data/experiences";
-import { type Project, type ProjectFrontmatter, projects } from "@/data/projects";
-import { type Repository, repositories } from "@/data/open-source";
-
-// layout imports
-import Layout from "@/layouts/Layout.astro";
+import About from "@/components/sections/About.astro";
+import Experiences from "@/components/sections/Experiences/index.astro";
 
 // component imports
 import Hero from "@/components/sections/Hero.astro";
-import About from "@/components/sections/About.astro";
-import Experiences from "@/components/sections/Experiences/index.astro";
-import Projects from "@/components/sections/Projects.astro";
 import OpenSource from "@/components/sections/OpenSource.astro";
+import Projects from "@/components/sections/Projects.astro";
 
+// data imports
+import { aboutCards, aboutTags } from "@/data/about";
+import { experiences } from "@/data/experiences";
+import { repositories } from "@/data/open-source";
+import { projects } from "@/data/projects";
+
+// layout imports
+import Layout from "@/layouts/Layout.astro";
 ---
 <Layout title={"Sinésio Neto - README"}>
-  <main>
-    <Hero workingAt="Lab52" workingAtUrl="" />
-    <About transition:animate="slide" tagsList={aboutTags} cardsList={aboutCards} />
-    <Experiences transition:animate="slide" experiences={experiences} />
-    <Projects transition:animate="slide" projects={projects} />
-     <OpenSource transition:animate="slide" repositories={repositories} />
-    <section transition:animate="slide" id="contact" class="autoShow">
-      <h2 class="section-header contact-header">What's Next?</h2>
-    </section>
-  </main>
+    <main>
+      <Hero workingAt="Lab52" workingAtUrl=""/>
+      <About transition:animate="slide" tagsList={aboutTags} cardsList={aboutCards}/>
+      <Experiences transition:animate="slide" experiences={experiences}/>
+      <Projects transition:animate="slide" projects={projects}/>
+      <OpenSource transition:animate="slide" repositories={repositories}/>
+      <section transition:animate="slide" id="contact" class="autoShow">
+        <h2 class="section-header contact-header">What's Next?</h2>
+      </section>
+    </main>
 </Layout>

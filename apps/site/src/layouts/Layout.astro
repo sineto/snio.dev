@@ -2,10 +2,10 @@
 // dependency import
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import Footer from "@/components/Footer.astro";
 
 // component imports
 import Navbar from "@/components/Navbar.astro";
-import Footer from "@/components/Footer.astro";
 
 // style import
 import "@/styles/global.css";
@@ -15,10 +15,8 @@ interface Props {
   description?: string;
 }
 
-const {
-  title,
-  description = "Sinésio Neto - Professional portfolio"
-} = Astro.props as Props;
+const { title, description = "Sinésio Neto - Professional portfolio" } =
+  Astro.props as Props;
 ---
 
 <html lang="en">

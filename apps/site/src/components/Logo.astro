@@ -9,7 +9,14 @@ interface Props {
   class?: string;
 }
 
-const { src, href, width, height, class: classes, ...rest } = Astro.props as Props
+const {
+  src,
+  href,
+  width,
+  height,
+  class: classes,
+  ...rest
+} = Astro.props as Props;
 ---
 
 <a href={href} class={classes} aria-label="Home">

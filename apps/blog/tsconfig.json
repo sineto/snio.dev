@@ -1,24 +1,10 @@
 {
-  "extends": [
-    "@repo/typescript-config/base.json",
-    "astro/tsconfigs/strict"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.astro",
-    ".astro/types.d.ts"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    ".astro"
-  ],
+  "extends": ["@repo/typescript-config/base.json", "astro/tsconfigs/strict"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.astro", ".astro/types.d.ts"],
+  "exclude": ["dist", "node_modules", ".astro"],
   "compileOptions": {
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     }
   }
 }

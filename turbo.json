@@ -14,6 +14,12 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "//#biome": {
+      "cache": false
+    },
+    "//#biome:fix": {
+      "cache": false
+    },
     "check-types": {
       "dependsOn": ["^check-types"]
     }

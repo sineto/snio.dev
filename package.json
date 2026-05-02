@@ -2,9 +2,10 @@
   "name": "sn1o.dev",
   "version": "0.0.0",
   "devDependencies": {
-    "typescript": "5.9.2",
+    "@biomejs/biome": "^2.4.13",
     "@types/bun": "latest",
-    "turbo": "^2.9.7"
+    "turbo": "^2.9.7",
+    "typescript": "5.9.2"
   },
   "engines": {
     "node": ">=18"
@@ -16,6 +17,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{astro,ts,tsx,md}\"",
+    "biome": "biome check .",
+    "biome:fix": "biome check . --write",
     "check-types": "turbo run check-types"
   },
   "workspaces": [
