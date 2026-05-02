@@ -1116,7 +1116,7 @@ section {
   @media (min-width: 768px) {
     max-width: 1174px;
     place-self: center;
-    padding: var(--space-2xl) var(--space-lg);
+    padding: var(--space-xl) var(--space-lg);
 
     ul {
       display: grid;
