@@ -1,11 +1,11 @@
 ---
-import About from "@/components/sections/About.astro";
-import Experiences from "@/components/sections/Experiences/index.astro";
-
 // component imports
 import Hero from "@/components/sections/Hero.astro";
+import About from "@/components/sections/About.astro";
+import Experiences from "@/components/sections/Experiences/index.astro";
 import OpenSource from "@/components/sections/OpenSource.astro";
 import Projects from "@/components/sections/Projects.astro";
+import Contact from "@/components/sections/Contact.astro";
 
 // data imports
 import { aboutCards, aboutTags } from "@/data/about";
@@ -23,8 +23,6 @@ import Layout from "@/layouts/Layout.astro";
       <Experiences transition:animate="slide" experiences={experiences}/>
       <Projects transition:animate="slide" projects={projects}/>
       <OpenSource transition:animate="slide" repositories={repositories}/>
-      <section transition:animate="slide" id="contact" class="autoShow">
-        <h2 class="section-header contact-header">What's Next?</h2>
-      </section>
+      <Contact />
     </main>
 </Layout>
