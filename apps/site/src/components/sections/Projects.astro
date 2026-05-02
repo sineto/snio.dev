@@ -24,7 +24,7 @@ const { projects } = Astro.props as Props;
                 <strong>{project.meta.type}</strong> <Status status={project.meta.status} />
               </div>
               <h3>
-                <a class={project.meta.external}>
+                <a class={project.meta.external} target="_blank" rel="noreferrer">
                   {project.meta.title}
                 </a>
               </h3>
@@ -42,7 +42,7 @@ const { projects } = Astro.props as Props;
 
             <div class="projects-unit-card_links">
               {project.meta.repository && (
-                <a href={project.meta.repository}>
+                <a href={project.meta.repository} target="_blank" rel="noreferrer">
                   <Icon
                     class="projects-unit-card_repository"
                     name="mdi:github"
@@ -52,7 +52,7 @@ const { projects } = Astro.props as Props;
               )}
 
               {project.meta.external && (
-                <a href={project.meta.external}>
+                <a href={project.meta.external} target="_blank" rel="noreferrer">
                   <Icon
                     class="projects-unit-card_external"
                     name="mdi:external-link"

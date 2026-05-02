@@ -13,14 +13,21 @@ const { repositories } = Astro.props as Props;
 <section transition:animate="slide" id="open-source">
   <h3>
     Another Personal Projects
-    <a class="link" href="">view repository profile</a>
+    <a
+      class="link"
+      href="https://github.com/sineto"
+      target="_blank"
+      rel="noreferrer"
+    >
+      view repository profile
+    </a>
   </h3>
   <ul class="open-source-repos">
     {repositories.slice(0,6).map((repo: Repository) => {
       return (
         <li>
           <h4>
-            <a href={repo.url}>
+            <a href={repo.url} target="_blank" rel="noreferrer">
               {repo.name} <Icon class="repo-icon-link" name="mdi:link" />
             </a>
           </h4>
@@ -37,5 +44,12 @@ const { repositories } = Astro.props as Props;
       )
     })}
   </ul>
-  <a class="button-md" href="">See more...</a>
+  <a
+    class="button-md"
+    href="https://github.com/sineto"
+    target="_blank"
+    rel="noreferrer"
+  >
+    See more...
+  </a>
 </section>

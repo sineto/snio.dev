@@ -883,6 +883,9 @@ section {
   }
 
   @media (min-width: 768px) {
+    max-width: 1174px;
+    place-self: center;
+
     ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
