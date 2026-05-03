@@ -5,6 +5,9 @@ import { Icon } from "astro-icon/components";
 // component imports
 import Logo from "@/components/Logo.astro";
 
+// data imports
+import { metadata } from "@/data/site-content";
+
 const links = [
   { href: "#about", label: "about" },
   { href: "#experience", label: "experience" },
@@ -43,7 +46,7 @@ const links = [
           </a>
         </li>
         ))}
-        <a class="button-sm" href="">Resume</a>
+        <a class="button-sm" href={metadata.resume} target="_blank">Resume</a>
       </ul>
     </div>
 

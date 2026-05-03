@@ -1,34 +1,28 @@
-export interface AboutCard {
+import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
+
+interface Card {
   title: string;
   iconName: string;
   tldr: string;
 }
 
-export const aboutTags: string[] = [
-  "Golang",
-  "TypeScript",
-  "Node.js",
-  "React",
-  "Next.js",
-  "PostgreSQL",
-  "Docker/Podman",
-  "Amazon AWS",
-];
+export interface AboutCard {
+  type: Card[];
+  stack: string[];
+  content: string;
+}
 
-export const aboutCards: AboutCard[] = [
-  {
-    title: "Back-end",
-    iconName: "ph:plugs-bold",
-    tldr: "I can develop APIs with REST and gRPC achitecture using Golang.",
-  },
-  {
-    title: "Front-end",
-    iconName: "ph:code-bold",
-    tldr: "I can build web applications using React/Next.js stack.",
-  },
-  {
-    title: "Infrastructure",
-    iconName: "ph:rocket-launch-bold",
-    tldr: "I can manage cloud services using Amazon AWS.",
-  },
-];
+export const about: AboutCard = (await getCollection("about"))
+  .map((about: CollectionEntry<"about">) => ({
+    type: [
+      about.data.backend,
+      about.data.frontend,
+      about.data.infra,
+    ],
+    stack: about.data.stack,
+    content: about.rendered?.html ?? ""
+}))[0];
+
+const aboutContent = await getEntry("about", "about");
+export const { Content: AboutContent } = await render(aboutContent);
+

@@ -1,4 +1,6 @@
 ---
+import { metadata } from "@/data/site-content";
+
 interface Props {
   workingAt: string;
   workingAtUrl: string;
@@ -13,8 +15,8 @@ const { workingAt, workingAtUrl } = Astro.props as Props;
   </div>
   <div class="hero-tldr">
     <p>
-      I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at <a class="link" href={workingAtUrl} target="_blank" rel="noreferrer">{workingAt}</a>.
+      {metadata.heroText} <a class="link" href={metadata.currentWork.website} target="_blank" rel="noreferrer">{metadata.currentWork.company}</a>.
     </p>
   </div>
-  <a class="button-lg" href="#experience">Checkout my experience</a>
+  <a class="button-md" href="#experience">Checkout my experience</a>
 </section>

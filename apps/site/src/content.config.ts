@@ -40,4 +40,18 @@ const repositories = defineCollection({
   },
 });
 
-export const collections = { experiences, projects, repositories };
+const metadata = defineCollection({
+  loader: glob({ base: "../../packages/content/site", pattern: "metadata.md" }),
+});
+
+const about = defineCollection({
+  loader: glob({ base: "../../packages/content/site", pattern: "about.md" }),
+});
+
+export const collections = {
+  metadata,
+  about,
+  experiences,
+  projects,
+  repositories,
+};

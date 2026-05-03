@@ -27,7 +27,5 @@ export const experiences: Experience[] = (await getCollection("experiences"))
     },
   }))
   .sort(
-    (a, b) =>
-      new Date(b.meta.startDate).getDate() -
-      new Date(a.meta.startDate).getDate(),
-  );
+    (a, b) => new Date(a.meta.startDate).getDate() - new Date(b.meta.startDate).getDate(),
+  ).reverse();
