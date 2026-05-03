@@ -227,7 +227,7 @@ section {
   gap: var(--gap-1);
 
   color: var(--fs-primary);
-  font-size: var(--font-1);
+  font-size: var(--font-0);
   font-weight: 700;
   white-space: nowrap;
 
@@ -257,6 +257,11 @@ section {
   background-color: rgba(45, 46, 50, 1);
   backdrop-filter: blur(12px);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: var(--space-lg) var(--space-lg);
+
+  @media (min-width: 1201px) {
+    padding: var(--space-sm) var(--space-lg);
+  }
 }
 
 #navbar.slidedown {
@@ -271,6 +276,7 @@ section {
     top: 0;
     background-color: rgba(45, 46, 50, 0.6);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: var(--space-xs) var(--space-lg);
   }
 }
 
@@ -280,7 +286,6 @@ section {
   align-items: center;
 
   font-weight: 500;
-  padding: var(--space-xs) var(--space-lg);
   margin: 0 auto;
 
   .logomark-lg {
@@ -302,7 +307,6 @@ section {
 
   @media (min-width: 1201px) {
     font-size: var(--font--3);
-    padding: var(--space-xs) var(--space-lg);
 
     .logomark-lg {
       display: grid;
@@ -495,7 +499,7 @@ section {
 
 .hero-header,
 .hero-tldr {
-  max-width: 890px;
+  max-width: 711px;
 }
 
 .hero-header {
@@ -511,13 +515,19 @@ section {
   }
 
   h2 {
-    font-size: var(--font-1);
+    font-size: var(--font-0);
   }
 }
 
 .hero-tldr {
   color: var(--fs-secondary);
-  font-size: var(--font-0);
+  font-size: var(--font--1);
+  
+  p {
+    a {
+      display: inline-block;
+    }
+  }
 }
 
 #about {
@@ -566,6 +576,10 @@ section {
 
   @media (min-width: 1201px) {
     max-width: 553px;
+
+    p {
+      font-size: var(--font--1);
+    }
   }
 }
 
@@ -635,6 +649,26 @@ section {
 
       &:hover::after {
         width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 1201px) {
+    ul {
+      li {
+        max-width: 356px;
+
+        span {
+          font-size: var(--font--1);
+        }
+        
+        p {
+          font-size: var(--font--2);
+        }
+      }
+
+      a {
+        font-size: var(--font--2);
       }
     }
   }
