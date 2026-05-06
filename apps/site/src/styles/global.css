@@ -134,6 +134,7 @@ body {
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 #content {
@@ -265,13 +266,14 @@ section {
 }
 
 #navbar.slidedown {
-  animation: slidedown .3s forwards;
+  animation: slidedown 0.3s forwards;
 }
 
-@keyframes slidedown{
+@keyframes slidedown {
   from {
     top: -250px;
   }
+
   to {
     top: 0;
     background-color: rgba(45, 46, 50, 0.6);
@@ -522,7 +524,7 @@ section {
 .hero-tldr {
   color: var(--fs-secondary);
   font-size: var(--font--1);
-  
+
   p {
     a {
       display: inline-block;
@@ -661,7 +663,7 @@ section {
         span {
           font-size: var(--font--1);
         }
-        
+
         p {
           font-size: var(--font--2);
         }
@@ -1068,6 +1070,7 @@ section {
 #open-source {
   flex-direction: column;
   place-items: center;
+  padding: var(--space-md) var(--space-lg) var(--space-3xl) var(--space-md);
 
   h3 {
     display: flex;
@@ -1150,12 +1153,16 @@ section {
   @media (min-width: 768px) {
     max-width: 1174px;
     place-self: center;
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-2xl);
 
     ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  @media (min-width: 1201px) {
+    padding: var(--space-xl) var(--space-lg) calc(1.5 * var(--space-3xl));
   }
 }
 

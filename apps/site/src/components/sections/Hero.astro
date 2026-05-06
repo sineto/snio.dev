@@ -1,12 +1,4 @@
 ---
-import { metadata } from "@/data/site-content";
-
-interface Props {
-  workingAt: string;
-  workingAtUrl: string;
-}
-
-const { workingAt, workingAtUrl } = Astro.props as Props;
 ---
 <section id="hero">
   <div class="hero-header"> 
@@ -14,9 +6,7 @@ const { workingAt, workingAtUrl } = Astro.props as Props;
     <h2>I enjoy build web solutions.</h2>
   </div>
   <div class="hero-tldr">
-    <p>
-      {metadata.heroText} <a class="link" href={metadata.currentWork.website} target="_blank" rel="noreferrer">{metadata.currentWork.company}</a>.
-    </p>
+    <slot name="hero-content" />
   </div>
   <a class="button-md" href="#experience">Checkout my experience</a>
 </section>

@@ -7,4 +7,4 @@ currentWork:
   website: "https://sn1o.dev"
   startDate: '10/2020'
 ---
-I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at
+I’m a Brazilian professional software developer specializing to build digital solutions. Currently I’m working on some awesome products at <a class="link" href="https://sn1o.dev">SNIO Solutions</a>.

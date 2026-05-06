@@ -1,4 +1,4 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
 
 interface Metadata {
   title: string;
@@ -6,6 +6,7 @@ interface Metadata {
   resume: string;
   currentWork: {
     company: string;
+    website: string;
     startDate: string;
   };
   heroText: string;
@@ -19,3 +20,6 @@ export const metadata: Metadata = (await getCollection("metadata"))
     currentWork: metadata.data.currentWork,
     heroText: metadata.body ?? "",
 }))[0];
+
+const metadataContent = await getEntry("metadata", "metadata");
+export const { Content: HeroContent } = await render(metadataContent);

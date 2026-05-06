@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Status from "@/components/Status.astro";
-import type { Project } from "@/data/projects";
+import { type Project } from "@/data/projects";
 
 interface Props {
   projects: Project[];
@@ -11,7 +11,7 @@ interface Props {
 const { projects } = Astro.props as Props;
 ---
 
-<section id="projects" class="autoShow">
+<section id="projects">
   <h2 class="section-header">Projects</h2>
   <div class="projects-grid">
     {projects.map(async (project: Project) => {
@@ -30,7 +30,9 @@ const { projects } = Astro.props as Props;
               </h3>
             </div>
 
-            <div class="projects-unit-card_text">{project.content}</div>
+            <div class="projects-unit-card_text">
+              {project.content}
+            </div>
             
             {project.meta.stack.length && (
               <ul class="projects-unit-card_stack">

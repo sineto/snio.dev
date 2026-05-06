@@ -18,7 +18,7 @@ export interface Project {
 
 export const projects: Project[] = (await getCollection("projects"))
   .map((project: CollectionEntry<"projects">) => ({
-    content: project.rendered?.html ?? "",
+    content: project?.body ?? "",
     meta: {
       order: project.data.order,
       status: project.data.status,

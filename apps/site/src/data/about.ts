@@ -1,6 +1,6 @@
 import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
 
-interface Card {
+export interface Card {
   title: string;
   iconName: string;
   tldr: string;
