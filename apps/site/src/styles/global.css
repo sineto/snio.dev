@@ -164,6 +164,17 @@ section {
   }
 }
 
+h5 {
+  font-size: var(--font--1);
+  font-weight: 700;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-2xs);
+}
+
+strong {
+  font-weight: 700;
+}
+
 .link {
   display: inline-block;
   color: var(--fs-green);

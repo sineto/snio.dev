@@ -2,18 +2,19 @@
 title: 'Experience LegalCloud'
 company: 'LegalCloud'
 website: 'https://legalcloud.com.br'
-position: 'Software Developer'
+position: 'Front-end Developer (Web/Mobile)'
 isCurrentJob: false
-startDate: '10/2020'
-endDate: '10/2022'
+startDate: '2021/02'
+endDate: '2021/11'
 ---
+A LegalCloud é lawtech focada em facilitar a rotina burocrática do profissionais de direito. Ela propõe soluções que promovem uma gestão centralizada
+de prazos, processos e clientes dos usuários.
 
-1. **AWS**
-   You’ll need to know your AWS Account ID and have permissions that allow you to create Roles, Identity Providers, S3
-   buckets, and be **able to update bucket policie**s.
-2. Postgres Database
-   You’ll need to know the connection strings for your databases, which region the databases are deployed, and which
-   version of Postgres your databases use.
-3. GitHub Action
-   You’ll also need to have permission to access Actions and Settings > Secrets in the GitHub repository you’d like to
-   run the Actions from.
+##### Competências:
+- Atuei no time de desenvolvimento focado em aplicação mobile usando TypeScript, React Native e Styled Components; corrigindo problemas, melhorando funcionalidades já bem definidas e consolidadas, implementando novas funcionalidades;
+
+- Desenvolvi a ferramenta de backoffice para auxíliar a equipe de conteúdo da empresa a agilizarem as demandas necessárias de maneira prática, usando Sanity.io/Sanity Studio e React para consolidar o projeto;
+
+- Desenvolvi protótipos de aplicações, funcionalidades extras, em React.js, e também MVPs que se consolidaram na plataforma e que foram agregadas com sucesso ao produto principal.
+
+- Trabalhei principalmente com TypeScript, React Native, ReactJS, Sanity Studio, Vue.js, HTML e CSS.
