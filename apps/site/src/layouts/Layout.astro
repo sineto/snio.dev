@@ -2,13 +2,16 @@
 // dependency import
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import Footer from "@/components/Footer.astro";
 
 // component imports
 import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
 
 // style import
 import "@/styles/global.css";
+
+// i18n
+import { getLangFromUrl } from '@/i18n/utils';
 
 interface Props {
   title: string;
@@ -17,9 +20,12 @@ interface Props {
 
 const { title, description = "Sinésio Neto - Professional portfolio" } =
   Astro.props as Props;
+
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
    	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

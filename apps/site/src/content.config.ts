@@ -5,11 +5,11 @@ import { Octokit } from "octokit";
 import { GITHUB_TOKEN } from "@/data/open-source.ts";
 
 const experiences = defineCollection({
-  loader: glob({ base: "../../packages/content/experiences", pattern: "*.md" }),
+  loader: glob({ base: "../../packages/content/pt-br/experiences", pattern: "*.md" }),
 });
 
 const projects = defineCollection({
-  loader: glob({ base: "../../packages/content/projects", pattern: "**/*.md" }),
+  loader: glob({ base: "../../packages/content/pt-br/projects", pattern: "**/*.md" }),
   schema: ({ image }) =>
     z.object({
       order: z.number(),
@@ -41,11 +41,11 @@ const repositories = defineCollection({
 });
 
 const metadata = defineCollection({
-  loader: glob({ base: "../../packages/content/site", pattern: "metadata.md" }),
+  loader: glob({ base: "../../packages/content/pt-br/site", pattern: "metadata.md" }),
 });
 
 const about = defineCollection({
-  loader: glob({ base: "../../packages/content/site", pattern: "about.md" }),
+  loader: glob({ base: "../../packages/content/pt-br/site", pattern: "about.md" }),
 });
 
 export const collections = {

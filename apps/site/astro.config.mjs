@@ -10,6 +10,17 @@ export default defineConfig({
   server: {
     allowedHosts: true,
   },
+  i18n: {
+    locales: ["en", "pt-br"],
+    defaultLocale: "pt-br",
+    routing: {
+      prefixDefaultLocale: false,
+    }
+    // domains: {
+    //   "pt-br": "https://sn1o.dev",
+    //   en: "https://sn1o.dev/en",
+    // },
+  },
   fonts: [
     {
       provider: fontProviders.fontsource(),
