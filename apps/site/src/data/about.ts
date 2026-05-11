@@ -15,7 +15,7 @@ export interface AboutCard {
 }
 
 export const getAboutEntry = async (lang: Lang) => {
-  const entry = await getEntryByLang("metadata", "about", lang)
+  const entry = await getEntryByLang("about", "about", lang)
   return {
     type: [
       entry?.data.backend,
@@ -28,7 +28,7 @@ export const getAboutEntry = async (lang: Lang) => {
 }
 
 export const getAboutContent = async (lang: Lang): Promise<AstroComponentFactory> => {
-  const aboutContent = await getEntryByLang("metadata", "about", lang);
+  const aboutContent = await getEntryByLang("about", "about", lang);
   if (!aboutContent) return {};
   const { Content: HeroContent } = await render(aboutContent);
   return HeroContent;

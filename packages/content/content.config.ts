@@ -5,19 +5,19 @@ import { Octokit } from "octokit";
 import { GITHUB_TOKEN } from "astro:env/server";
 
 const metadata = defineCollection({
-  loader: glob({ base: "../../packages/content/site", pattern: "**/*.md" }),
+  loader: glob({ base: "../../packages/content/site/metadata", pattern: "**/*.md" }),
 })
 
 const about = defineCollection({
-  loader: glob({ base: "../../packages/content/site", pattern: "**/*.md" }),
+  loader: glob({ base: "../../packages/content/site/about", pattern: "**/*.md" }),
 })
 
 const experiences = defineCollection({
-  loader: glob({ base: "../../packages/content/experiences", pattern: "**/*.md" }),
+  loader: glob({ base: "../../packages/content/site/experiences", pattern: "**/*.md" }),
 });
 
 const projects = defineCollection({
-  loader: glob({ base: "../../packages/content/projects", pattern: "**/*.md" }),
+  loader: glob({ base: "../../packages/content/site/projects", pattern: "**/*.md" }),
   schema: ({ image }) =>
     z.object({
       order: z.number(),
