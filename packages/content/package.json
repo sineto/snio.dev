@@ -2,8 +2,15 @@
   "name": "@repo/content",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    ".": "./content.config.ts",
+    "./content.utils": "./content.utils.ts"
+  },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "astro": "^6.1.8"
+  },
+  "dependencies": {
+    "octokit": "^5.0.5"
   }
 }
