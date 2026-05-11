@@ -1,18 +1,37 @@
 {
-  "extends": ["@repo/typescript-config/base.json", "astro/tsconfigs/strict"],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.astro", ".astro/types.d.ts"],
-  "exclude": ["dist", "node_modules"],
+  "extends": [
+    "@repo/typescript-config/base.json",
+    "astro/tsconfigs/strict"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.astro",
+    ".astro/types.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
   "compilerOptions": {
     "checkJs": false,
     "allowJs": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@qwik.dev/core",
+    "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@public/*": ["public/*"],
-      "@content/*": ["content/*"],
-      "@repo/content/*": ["../../packages/content/*"]
+      "@/*": [
+        "src/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@content/*": [
+        "content/*"
+      ],
+      "@repo/content/*": [
+        "../../packages/content/*"
+      ]
     }
   }
 }

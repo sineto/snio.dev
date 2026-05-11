@@ -2,9 +2,9 @@
   "name": "sn1o.dev",
   "version": "0.0.0",
   "devDependencies": {
-    "@biomejs/biome": "^2.4.14",
+    "@biomejs/biome": "^2.4.15",
     "@types/bun": "latest",
-    "turbo": "^2.9.9",
+    "turbo": "^2.9.12",
     "typescript": "5.9.2"
   },
   "engines": {
