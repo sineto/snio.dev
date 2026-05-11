@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import type { Repository } from "@/data/open-source";
 
 interface Props {
@@ -8,6 +9,9 @@ interface Props {
 }
 
 const { repositories } = Astro.props as Props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="open-source">
@@ -50,6 +54,6 @@ const { repositories } = Astro.props as Props;
     target="_blank"
     rel="noreferrer"
   >
-    See more...
+    {t("opensource.button")}
   </a>
 </section>

@@ -1,13 +1,16 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <section id="contact">
   <div>
     <h2>04. What's Next?</h2>
-    <h3>Get In Touch</h3>
+    <h3>{t("contact.sub")}</h3>
     <p>
-      Estou em busca de novas oportunidades no momento, minha caixa de entrada está sempre aberta. Se você tiver alguma dúvida, proposta ou quer apenas dizer "olá", sinta-se a vontade para me contatar. Farei o possível para lhe responder!
+      {t("contact.tldr")}
     </p>
-    <a class="button-md">Contate-me!</a>
+    <a class="button-md">{t("contact.button")}</a>
   </div>
 </section>

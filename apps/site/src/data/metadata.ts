@@ -1,25 +1,33 @@
-import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import { type Lang, getEntryByLang} from "@repo/content/content.utils";
+import type { AstroComponentFactory } from "astro/runtime";
 
-interface Metadata {
+interface MetadataEntry {
   title: string;
   description: string;
   resume: string;
+  herotldr: string;
   currentWork: {
     company: string;
     website: string;
     startDate: string;
   };
-  heroText: string;
 }
 
-export const metadata: Metadata = (await getCollection("metadata"))
-  .map((metadata: CollectionEntry<"metadata">) => ({
-    title: metadata.data.siteTitle,
-    description: metadata.data.siteDescription,
-    resume: metadata.data.resumeUrl,
-    currentWork: metadata.data.currentWork,
-    heroText: metadata.body ?? "",
-}))[0];
+export const getMetadataEntry = async (lang: Lang) => {
+  const entry = await getEntryByLang("metadata", "metadata", lang)
+  return {
+    title: entry?.data.siteTitle,
+    description: entry?.data.siteDescription,
+    resume: entry?.data.resumeUrl,
+    currentWork: entry?.data.currentWork,
+    herotldr: entry?.body ?? "",
+  } as MetadataEntry
+}
 
-const metadataContent = await getEntry("metadata", "metadata");
-export const { Content: HeroContent } = await render(metadataContent);
+export const getHeroContent = async (lang: Lang): Promise<AstroComponentFactory> => {
+  const metadataContent = await getEntryByLang("metadata", "metadata", lang);
+  if (!metadataContent) return {};
+  const { Content: HeroContent } = await render(metadataContent);
+  return HeroContent;
+}

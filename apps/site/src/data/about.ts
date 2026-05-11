@@ -1,4 +1,6 @@
-import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
+import {render} from "astro:content";
+import {type Lang, getEntryByLang} from "@repo/content/content.utils";
+import type { AstroComponentFactory } from "astro/runtime";
 
 export interface Card {
   title: string;
@@ -12,17 +14,22 @@ export interface AboutCard {
   content: string;
 }
 
-export const about: AboutCard = (await getCollection("about"))
-  .map((about: CollectionEntry<"about">) => ({
+export const getAboutEntry = async (lang: Lang) => {
+  const entry = await getEntryByLang("metadata", "about", lang)
+  return {
     type: [
-      about.data.backend,
-      about.data.frontend,
-      about.data.infra,
+      entry?.data.backend,
+      entry?.data.frontend,
+      entry?.data.infra,
     ],
-    stack: about.data.stack,
-    content: about.rendered?.html ?? ""
-}))[0];
+    stack: entry?.data.stack,
+    content: entry?.rendered?.html ?? ""
+  } as AboutCard
+}
 
-const aboutContent = await getEntry("about", "about");
-export const { Content: AboutContent } = await render(aboutContent);
-
+export const getAboutContent = async (lang: Lang): Promise<AstroComponentFactory> => {
+  const aboutContent = await getEntryByLang("metadata", "about", lang);
+  if (!aboutContent) return {};
+  const { Content: HeroContent } = await render(aboutContent);
+  return HeroContent;
+}

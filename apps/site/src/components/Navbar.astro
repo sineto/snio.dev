@@ -6,7 +6,8 @@ import { Icon } from "astro-icon/components";
 import Logo from "@/components/Logo.astro";
 
 // data imports
-import { metadata } from "@/data/metadata";
+import { getMetadataEntry } from "@/data/metadata";
+import {getCurrentLanguage} from "@/i18n/utils";
 
 const links = [
   { href: "#about", label: "about" },
@@ -14,6 +15,9 @@ const links = [
   { href: "#projects", label: "work" },
   { href: "#contact", label: "contact" },
 ];
+
+const lang = getCurrentLanguage(Astro);
+const metadata = await getMetadataEntry(lang);
 ---
 
 <header id="navbar">
