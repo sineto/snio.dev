@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { type Card } from "@/data/about";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface Props {
   aboutStack: string[];
@@ -8,10 +9,13 @@ interface Props {
 }
 
 const { aboutStack, aboutCards } = Astro.props as Props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <section id="about">
   <div class="about-intro">
-    <h2 class="section-header">Introduce</h2>
+    <h2 class="section-header">{t("about.title")}</h2>
       <slot />
     <ul>
       {aboutStack && (aboutStack.map((item: string) => (
@@ -28,7 +32,7 @@ const { aboutStack, aboutCards } = Astro.props as Props;
           </span>
           <p>{card.tldr}</p>
         </li>
-        <a href="">clients</a>
+        <a href="">{t("about.card.clients")}</a>
       </ul>
     )))}
   </div>

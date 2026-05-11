@@ -21,14 +21,13 @@ import { getRepositories } from "@/data/open-source";
 // data objects
 const lang = getCurrentLanguage(Astro);
 const about = await getAboutEntry(lang);
-const experiences = await getExperiences(lang)
-const projects = await getProjects(lang)
-const repositories = await getRepositories()
+const experiences = await getExperiences(lang);
+const projects = await getProjects(lang);
+const repositories = await getRepositories();
 
 // data content
 const HeroContent = await getHeroContent(lang);
 const AboutContent = await getAboutContent(lang);
-
 ---
 <Layout title={"Sinésio Neto - README"}>
   <main slot="main">

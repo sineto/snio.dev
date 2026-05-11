@@ -7,4 +7,4 @@ currentWork:
   website: "https://sn1o.dev"
   startDate: '10/2020'
 ---
-Go & TypeScript Engineer · Full-stack com foco em backend e cultura DevOps — mais de 4 anos construindo APIs, plataformas web, infraestrutura cloud e produtos reais do zero à produção. Atualmente construindo coisas legais na <a class="link" href="https://sn1o.dev">SNIO Labs</a>.
+Go & TypeScript Engineer · Full-stack com foco em backend e cultura DevOps - mais de 4 anos construindo APIs, plataformas web, com infraestrutura em núvem e produtos reais do zero à produção. Atualmente construindo coisas legais na <a class="link" href="https://sn1o.dev">SNIO Labs</a>.

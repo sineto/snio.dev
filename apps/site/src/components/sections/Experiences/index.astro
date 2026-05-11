@@ -9,4 +9,4 @@ interface Props {
 const { experiences } = Astro.props as Props;
 ---
 
-<Experiences experiences={experiences} />
+<Experiences experiences={experiences} astroUrl={Astro.url} />

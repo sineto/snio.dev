@@ -3,16 +3,21 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Status from "@/components/Status.astro";
 import { type Project } from "@/data/projects";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 
 interface Props {
   projects: Project[];
 }
 
 const { projects } = Astro.props as Props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="projects">
-  <h2 class="section-header">Projects</h2>
+  <h2 class="section-header">{t("projects.title")}</h2>
   <div class="projects-grid">
     {projects.map(async (project: Project) => {
       const image = project.meta.cover;

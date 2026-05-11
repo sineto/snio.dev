@@ -9,6 +9,7 @@ import {
 import { marked } from "marked";
 
 import type { Experience, ExperienceFrontmatter } from "@/data/experiences";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface DynamicObject {
   meta: ExperienceFrontmatter;
@@ -23,12 +24,16 @@ interface TabInfo {
 }
 
 export const Experiences = component$(
-  ({ experiences }: { experiences: Experience[] }) => {
+  ({ experiences, astroUrl }: { experiences: Experience[], astroUrl: URL }) => {
     const tabList = useStore<DynamicObject[]>(experiences.map((exp, idx) => ({
       meta: exp.meta,
       content: exp.content,
       active: idx === 0,
     })));
+
+    const lang = getLangFromUrl(astroUrl);
+    const t = useTranslations(lang);
+
     const tabInfo = useSignal<TabInfo>({ id: 0, tab: "", resumeHTML: "" });
     const scopedStyle = useSignal({ width: 0, left: 0, height: 0, top: 0 });
     const activeTabRef = useSignal<Element>();
@@ -60,7 +65,7 @@ export const Experiences = component$(
     return (
       <section id="experience">
         <div class="experience-wrap">
-          <h2 class="section-header">Expeciences</h2>
+          <h2 class="section-header">{t("experience.title")}</h2>
           <div class="experience-jobs">
             <div class="experience-tablist">
               {tabList.map((tab: DynamicObject, idx: number) => {
