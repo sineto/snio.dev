@@ -994,6 +994,7 @@ strong {
 
   .projects-unit-card_stack {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--space-sm);
 

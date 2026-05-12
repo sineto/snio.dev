@@ -10,7 +10,7 @@ export const languages = {
 export const ui = {
   "pt-br": {
     "hero.hi": "Olá! Eu me chamo",
-    "hero.sub": "E tenho satisfação em contruir soluções web.",
+    "hero.sub": "E curto construir soluções web.",
     "hero.button": "Veja minha experiência",
     "about.title": "Sobre mim",
     "about.card.clients": "clientes",
