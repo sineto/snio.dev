@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*"
+    "@repo/typescript-config": "workspace:*",
+    "@types/bun": "^1.3.13"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.4",
