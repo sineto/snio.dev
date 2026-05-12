@@ -6,6 +6,7 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/sections/Hero.astro";
 import About from "@/components/sections/About.astro";
 import Experiences from "@/components/sections/Experiences/index.astro";
+import UnderConstruction from "@/components/sections/UnderConstruction.astro";
 import Projects from "@/components/sections/Projects.astro";
 import OpenSource from "@/components/sections/OpenSource.astro";
 import Contact from "@/components/sections/Contact.astro";
@@ -45,7 +46,9 @@ const AboutContent = await getAboutContent(lang);
         <Experiences experiences={experiences}/>
 
         <!-- PROJECTS -->
-        <Projects projects={projects}/>
+        {projects.length
+        ? (<Projects projects={projects}/>)
+        : (<UnderConstruction />)}
 
         <!-- OPEN-SOURCE PROJECTS -->
         <OpenSource repositories={repositories}/>

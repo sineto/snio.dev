@@ -835,6 +835,32 @@ strong {
   }
 }
 
+#under-construction {
+  flex-direction: column;
+
+  div {
+    max-width: 580px;
+    max-height: 450px;
+  }
+
+  @media (max-width: 435px) {
+    div {
+      picture {
+        img {
+          max-width: 380px;
+          max-height: 250px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    place-self: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+}
+
 #projects {
   flex-direction: column;
   padding: var(--space-3xl) var(--space-lg);

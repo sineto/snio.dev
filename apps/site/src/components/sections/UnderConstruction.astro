@@ -1,0 +1,19 @@
+---
+import { Picture } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import botsay from "public/botsay.gif";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<section id="under-construction">
+  <h2 class="section-header">{t("undercons.title")}</h2>
+  <div>
+    <Picture
+      src={botsay}
+      width="480"
+      height="350"
+      alt="Bot saying 'Section Under Construction!'"
+    />
+  </div>
+</section>

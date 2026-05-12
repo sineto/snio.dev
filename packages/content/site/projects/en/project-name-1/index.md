@@ -1,12 +1,13 @@
 ---
 order: 1
-status: 'archived'
+status: 'offline'
 type: 'Personal Project'
-title: 'Halcyon Theme'
+title: 'Sample Project'
 cover: './index.jpg'
-repository: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
-stack: [ 'VS Code', 'Sublime Text', 'Atom', 'iTerm2', 'Hyper' ]
+repository: 'https://github.com/sineto'
+external: 'https://github.com/sineto'
+stack: [ 'NeoVim', 'Astro', 'Qwik', 'CloudFlare' ]
 ---
 
-A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.
+Mussum Ipsum, cacilds vidis litro abertis.  Detraxit consequat et quo num tendi nada. Quem num gosta di mé, boa gentis num é. Suco de cevadiss deixa as pessoas mais interessantis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.
+Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Quem num gosta di mé, boa gentis num é. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.

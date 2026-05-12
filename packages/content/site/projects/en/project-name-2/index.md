@@ -1,12 +1,12 @@
 ---
 order: 2
-status: 'archived'
+status: 'offline'
 type: 'Client Project'
-title: 'Qualquer coisa'
+title: 'Example'
 cover: './index.jpg'
-repository: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
-stack: [ 'VS Code', 'Sublime Text', 'Hyper' ]
+repository: 'https://github.com/sineto'
+external: 'https://github.com/sineto'
+stack: [ 'NeoVim', 'Astro', 'Qwik', 'HTML', 'CSS', 'CloudFlare' ]
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+Mussum Ipsum, cacilds vidis litro abertis.  Pra lá, depois divoltis porris, paradis. Delegadis gente finis, bibendum egestas augue arcu ut est. Negão é teu passadis, eu sou faxa pretis. Quem manda na minha terra sou euzis!
