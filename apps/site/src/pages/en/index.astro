@@ -32,28 +32,29 @@ const AboutContent = await getAboutContent(lang);
 ---
 <Layout title={"Sinésio Neto - README"}>
     <main slot="main">
-        <!-- HERO -->
-        <Hero>
-            <HeroContent slot="hero-content" />
-        </Hero>
+      <!-- HERO -->
+      <Hero>
+        <HeroContent slot="hero-content" />
+      </Hero>
 
-        <!-- ABOUT -->
-        <About aboutStack={about.stack} aboutCards={about.type}>
-          <AboutContent />
-        </About>
+      <!-- ABOUT -->
+      <About aboutStack={about.stack} aboutCards={about.type} transition:animate="none">
+        <AboutContent />
+      </About>
 
-        <!-- EXPERIENCES -->
-        <Experiences experiences={experiences}/>
+      <!-- EXPERIENCES -->
+      <Experiences experiences={experiences} transition:animate="none" />
 
-        <!-- PROJECTS -->
-        {projects.length
-        ? (<Projects projects={projects}/>)
-        : (<UnderConstruction />)}
+      <!-- PROJECTS -->
+      <!-- <UnderConstruction /> -->
+      {projects.length
+      ? (<Projects projects={projects} transition:animate="none" />)
+      : (<UnderConstruction transition:animate="none" />)}
 
-        <!-- OPEN-SOURCE PROJECTS -->
-        <OpenSource repositories={repositories}/>
+      <!-- OPEN-SOURCE PROJECTS -->
+      <OpenSource repositories={repositories} transition:animate="none" />
 
-        <!-- CONTACT -->
-        <Contact />
+      <!-- CONTACT -->
+      <Contact />
     </main>
 </Layout>

@@ -17,13 +17,13 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="projects">
+<section id="projects" class="autoShow">
   <h2 class="section-header">{t("projects.title")}</h2>
   <div class="projects-grid">
     {projects.map(async (project: Project) => {
       const image = project.meta.cover;
       return (
-        <div class="projects-unit">
+        <div class="projects-unit autoShow">
           <div class="projects-unit-card">
             <div class="projects-unit-card_title">
               <div>

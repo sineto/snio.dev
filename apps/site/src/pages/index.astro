@@ -38,20 +38,21 @@ const AboutContent = await getAboutContent(lang);
     </Hero>
 
     <!-- ABOUT -->
-    <About aboutStack={about.stack} aboutCards={about.type}>
+    <About aboutStack={about.stack} aboutCards={about.type} transition:animate="none">
       <AboutContent />
     </About>
 
     <!-- EXPERIENCES -->
-    <Experiences experiences={experiences}/>
+    <Experiences experiences={experiences} transition:animate="none" />
 
     <!-- PROJECTS -->
+    <!-- <UnderConstruction /> -->
     {projects.length
-    ? (<Projects projects={projects}/>)
-    : (<UnderConstruction />)}
+    ? (<Projects projects={projects} transition:animate="none" />)
+    : (<UnderConstruction transition:animate="none" />)}
 
     <!-- OPEN-SOURCE PROJECTS -->
-    <OpenSource repositories={repositories}/>
+    <OpenSource repositories={repositories} transition:animate="none" />
 
     <!-- CONTACT -->
     <Contact />

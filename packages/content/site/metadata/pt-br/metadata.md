@@ -1,7 +1,7 @@
 ---
 siteTitle: "Sinésio Neto - README"
 siteDescription: "Sinésio Neto Professional Portfolio"
-resumeUrl: "https://pub-c1bae9fd4d3844cc89f5ad7dfb067717.r2.dev/site/sinesio-neto_25022026.pdf"
+resumeUrl: "https://pub-c1bae9fd4d3844cc89f5ad7dfb067717.r2.dev/site/sineto-neto_202605.pdf"
 currentWork:
   company: "SN10 Solutions"
   website: "https://sn1o.dev"

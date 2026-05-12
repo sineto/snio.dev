@@ -14,20 +14,20 @@ const { aboutStack, aboutCards } = Astro.props as Props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<section id="about">
+<section id="about" class="autoShow">
   <div class="about-intro">
     <h2 class="section-header">{t("about.title")}</h2>
       <slot />
       <ul>
         {aboutStack && (aboutStack.map((item: string) => (
-          <li>{item}</li>
+          <li class="autoShow">{item}</li>
         )))}
       </ul>
   </div>
 
   <div class="about-cards">
     {aboutCards && (aboutCards.map((card: Card) => (
-    <div class="about-card-container">
+    <div class="about-card-container autoShow">
       <div class="about-card-container_title">
         <h3>{card.title} <Icon name={card.iconName} /></h3>
         <p>{card.tldr}</p>

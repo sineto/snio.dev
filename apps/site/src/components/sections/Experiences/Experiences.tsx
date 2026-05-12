@@ -63,7 +63,7 @@ export const Experiences = component$(
     });
 
     return (
-      <section id="experience">
+      <section id="experience" class="autoShow">
         <div class="experience-wrap">
           <h2 class="section-header">{t("experience.title")}</h2>
           <div class="experience-jobs">
