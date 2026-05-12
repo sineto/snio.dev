@@ -5,12 +5,19 @@ import Layout from "@/layouts/Layout.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<Layout>
+<Layout title="Sinésio Neto - 404 - Page Not Found">
   <main slot="main">
     <section id="page404">
       <h1><span>404:</span> Not Found</h1>
-      <p>Path: <code>{Astro.url.pathname}</code></p>
+      <p>Path: <code id="attempted-path">{Astro.url.pathname}</code></p>
       <a href="/" class="link">{t("404.link")}</a>
     </section>
   </main>
 </Layout>
+<script>
+  // This runs in the user's browser
+  const pathElement = document.getElementById("attempted-path");
+  if (pathElement) {
+    pathElement.textContent = window.location.pathname;
+  }
+</script>
