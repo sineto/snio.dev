@@ -24,6 +24,7 @@ export const ui = {
     "contact.sub": "Vamos Conversar!",
     "contact.tldr": `Estou em busca de novas oportunidades no momento, minha caixa de entrada está sempre aberta. Se você tiver alguma dúvida, proposta ou quer apenas dizer "olá", sinta-se a vontade para me contatar. Farei o possível para lhe responder!`,
     "contact.button": "Contate-me!",
+    "404.link": "Voltar",
 
   },
   en: {
@@ -42,5 +43,6 @@ export const ui = {
     "contact.sub": "Get In Touch",
     "contact.tldr": `I am currently open for new opportunities and my inbox is always open. If you have any questions, proposals, or just want to say "hello" feel free to contact me. I will do my best to respond!`,
     "contact.button": "Let's talk?",
+    "404.link": "Go back",
   },
 } as const;

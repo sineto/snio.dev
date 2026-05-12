@@ -1256,6 +1256,45 @@ strong {
   padding: var(--space-md);
 }
 
+#page404 {
+  height: 100vh;
+
+  place-self: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
+
+  font-size: var(--font-4);
+  font-weight: 700;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+
+    span {
+      color: var(--fs-green);
+    }
+  }
+
+  p {
+    font-size: var(--font-1);
+    font-weight: 400;
+    margin-bottom: 2rem;
+
+    code {
+      background-color: var(--secondary);
+      border-radius: var(--radius-sm);
+      padding: var(--space-3xs) var(--space-xs);
+    }
+  }
+
+  a {
+    font-size: var(--font-0);
+    font-weight: 400;
+  }
+}
+
 .autoShow {
   animation: text-appear both;
   animation-timeline: view();

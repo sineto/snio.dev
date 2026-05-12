@@ -1,0 +1,16 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<Layout>
+  <main slot="main">
+    <section id="page404">
+      <h1><span>404:</span> Not Found</h1>
+      <p>Path: <code>{Astro.url.pathname}</code></p>
+      <a href="/" class="link">{t("404.link")}</a>
+    </section>
+  </main>
+</Layout>
