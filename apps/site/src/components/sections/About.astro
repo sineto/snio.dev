@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import { type Card } from "@/data/about";
+import type { Card, Client } from "@/data/about";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface Props {
@@ -17,23 +18,39 @@ const t = useTranslations(lang);
   <div class="about-intro">
     <h2 class="section-header">{t("about.title")}</h2>
       <slot />
-    <ul>
-      {aboutStack && (aboutStack.map((item: string) => (
-        <li>{item}</li>
-      )))}
-    </ul>
+      <ul>
+        {aboutStack && (aboutStack.map((item: string) => (
+          <li>{item}</li>
+        )))}
+      </ul>
   </div>
+
   <div class="about-cards">
     {aboutCards && (aboutCards.map((card: Card) => (
-      <ul>
-        <li>
-          <span>
-            {card.title} <Icon name={card.iconName} />
-          </span>
-          <p>{card.tldr}</p>
-        </li>
-        <a href="">{t("about.card.clients")}</a>
-      </ul>
+    <div class="about-card-container">
+      <div class="about-card-container_title">
+        <h3>{card.title} <Icon name={card.iconName} /></h3>
+        <p>{card.tldr}</p>
+      </div>
+      <div id="about-card-clients" class="about-card-container-clients">
+        <button>{t("about.card.clients")}</button>
+        <div id="about-card-client">
+        {card?.clients && card.clients.map((client: Client) => (
+          <div class="about-card-client_content">
+            <a hre={client.website}>
+              <Image
+                src={client.logo}
+                height={45}
+                width={45}
+                alt={`${client.name} logo`}
+              />
+              <!-- <p>{client.name}</p> -->
+            </a>
+          </div>
+        ))}
+        </div>
+      </div>
+    </div>
     )))}
   </div>
 </section>

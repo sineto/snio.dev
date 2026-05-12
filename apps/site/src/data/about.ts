@@ -2,10 +2,17 @@ import {render} from "astro:content";
 import {type Lang, getEntryByLang} from "@repo/content/content.utils";
 import type { AstroComponentFactory } from "astro/runtime";
 
+export interface Client {
+  name: string;
+  website: string;
+  logo: string;
+}
+
 export interface Card {
   title: string;
   iconName: string;
   tldr: string;
+  clients: Client[];
 }
 
 export interface AboutCard {

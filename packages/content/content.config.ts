@@ -10,6 +10,40 @@ const metadata = defineCollection({
 
 const about = defineCollection({
   loader: glob({ base: "../../packages/content/site/about", pattern: "**/*.md" }),
+  schema: ({ image }) =>
+    z.object({
+      backend: z.object({
+        title: z.string(),
+        iconName: z.string(),
+        tldr: z.string(),
+        clients: z.array(z.object({
+          name: z.string(),
+          website: z.string(),
+          logo: image(),
+        })),
+      }),
+      frontend: z.object({
+        title: z.string(),
+        iconName: z.string(),
+        tldr: z.string(),
+        clients: z.array(z.object({
+          name: z.string(),
+          website: z.string(),
+          logo: image(),
+        })),
+      }),
+      infra: z.object({
+        title: z.string(),
+        iconName: z.string(),
+        tldr: z.string(),
+        clients: z.array(z.object({
+          name: z.string(),
+          website: z.string(),
+          logo: image(),
+        })),
+      }),
+      stack: z.array(z.string()),
+    }),
 })
 
 const experiences = defineCollection({
@@ -35,8 +69,6 @@ const repositories = defineCollection({
   loader: {
     name: "github-loader",
     load: async ({ store, logger }) => {
-      logger.info(`GITHUB_TOKEN: ${GITHUB_TOKEN}`);
-
       const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
       try {
