@@ -7,7 +7,8 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.astro",
-    ".astro/types.d.ts"
+    ".astro/types.d.ts",
+    "./worker-configuration.d.ts"
   ],
   "exclude": [
     "dist",
@@ -17,7 +18,7 @@
     "checkJs": false,
     "allowJs": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "jsxImportSource": "@qwik.dev/core",
     "baseUrl": ".",
     "paths": {
       "@/*": [

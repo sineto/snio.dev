@@ -1,28 +1,32 @@
 // @ts-check
-
+import { defineConfig, fontProviders } from "astro/config";
 import qwik from "@qwik.dev/astro";
-import {defineConfig, envField, fontProviders} from "astro/config";
-import icon from "astro-icon";
-
 import react from "@astrojs/react";
+import icon from "astro-icon";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [qwik(), icon(), react()],
+  output: "static",
+  adapter: cloudflare({
+    imageService: "cloudflare-binding",
+    prerenderEnvironment: "node",
+  }),
+
+  integrations: [qwik({ clientRouter: true }), icon(), react()],
+
   server: {
     allowedHosts: true,
   },
+
   i18n: {
     locales: ["pt-br", "en"],
     defaultLocale: "pt-br",
     routing: {
       prefixDefaultLocale: false,
     }
-    // domains: {
-    //   "pt-br": "https://sn1o.dev",
-    //   en: "https://sn1o.dev/en",
-    // },
   },
+
   fonts: [
     {
       provider: fontProviders.fontsource(),
@@ -31,17 +35,33 @@ export default defineConfig({
       weights: [100, 200, 300, 400, 500, 600, 700],
     },
   ],
+
   vite: {
+    optimizeDeps: {
+      exclude: ["@qwik.dev/core", "@qwik.dev/astro"],
+    },
+    ssr: {
+      noExternal: ["@qwik.dev/core", "@qwik.dev/astro"],
+    },
+    environments: {
+      ssr: {
+        optimizeDeps: {
+          exclude: ["@qwik.dev/core", "@qwik.dev/astro", "@vitejs/plugin-react", "@babel/preset-typescript", "blake3-wasm"],
+        },
+      },
+      prerender: {
+        optimizeDeps: {
+          exclude: ["@qwik.dev/core", "@qwik.dev/astro", "@vitejs/plugin-react", "@babel/preset-typescript", "blake3-wasm"],
+        },
+      },
+    },
     server: {
       fs: {
         allow: ["../../packages/content", "./"],
       },
     },
+    build: {
+      minify: false,
+    },
   },
-    env: {
-      schema: {
-          GITHUB_TOKEN: envField.string({ context: "server", access: "secret" }),
-          GITLAB_TOKEN: envField.string({ context: "server", access: "secret" }),
-      }
-    }
 });

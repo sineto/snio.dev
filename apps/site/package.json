@@ -3,33 +3,39 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
+    "astro": "astro",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "rm -rf .wrangler/deploy dist && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "cloudflare": "wrangler pages dev ./dist",
+    "generate-types": "wrangler types"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "@types/bun": "^1.3.13"
+    "@types/bun": "^1.3.14",
+    "wrangler": "^4.90.1"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.4",
+    "@astrojs/cloudflare": "^13.5.1",
+    "@astrojs/react": "^5.0.5",
     "@iconify-json/devicon-plain": "^1.2.57",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ph": "^1.2.2",
-    "@qwik.dev/astro": "^1.0.1",
-    "@qwik.dev/core": "^2.0.0-beta.32",
+    "@qwik.dev/astro": "^1.0.2",
+    "@qwik.dev/core": "^2.0.0-beta.35",
     "@repo/content": "workspace:*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "astro": "6.3.1",
     "astro-icon": "^1.1.5",
     "date-fns": "^4.1.0",
-    "marked": "^18.0.2",
+    "marked": "^18.0.3",
     "octokit": "^5.0.5",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "vite": "^7.3.3"
   },
   "engines": {
     "node": ">=22.12.0"

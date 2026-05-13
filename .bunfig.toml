@@ -1,0 +1,5 @@
+[install]
+hoist = true
+
+[install.lockfile]
+print = "npm"

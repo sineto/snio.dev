@@ -147,6 +147,7 @@ dist
 
 # Turborepo
 .turbo
+.wrangler
 
 # Vite files
 vite.config.js.timestamp-*
