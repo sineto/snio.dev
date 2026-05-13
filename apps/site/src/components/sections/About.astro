@@ -20,14 +20,14 @@ const t = useTranslations(lang);
       <slot />
       <ul>
         {aboutStack && (aboutStack.map((item: string) => (
-          <li class="autoShow">{item}</li>
+          <li class="">{item}</li>
         )))}
       </ul>
   </div>
 
   <div class="about-cards">
     {aboutCards && (aboutCards.map((card: Card) => (
-    <div class="about-card-container autoShow">
+    <div class="about-card-container">
       <div class="about-card-container_title">
         <h3>{card.title} <Icon name={card.iconName} /></h3>
         <p>{card.tldr}</p>
@@ -37,7 +37,7 @@ const t = useTranslations(lang);
         <div id="about-card-client">
         {card?.clients && card.clients.map((client: Client) => (
           <div class="about-card-client_content">
-            <a hre={client.website}>
+            <a href={client.website}>
               <Image
                 src={client.logo}
                 height={45}
