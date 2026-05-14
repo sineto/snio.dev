@@ -3,15 +3,21 @@ import { defineConfig, fontProviders } from "astro/config";
 import qwik from "@qwik.dev/astro";
 import react from "@astrojs/react";
 import icon from "astro-icon";
-import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel";
+// import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  adapter: cloudflare({
-    imageService: "cloudflare-binding",
-    prerenderEnvironment: "node",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
   }),
+  // adapter: cloudflare({
+  //   imageService: "cloudflare-binding",
+  //   prerenderEnvironment: "node",
+  // }),
 
   integrations: [qwik({ clientRouter: true }), icon(), react()],
 
@@ -37,24 +43,24 @@ export default defineConfig({
   ],
 
   vite: {
-    optimizeDeps: {
-      exclude: ["@qwik.dev/core", "@qwik.dev/astro"],
-    },
-    ssr: {
-      noExternal: ["@qwik.dev/core", "@qwik.dev/astro"],
-    },
-    environments: {
-      ssr: {
-        optimizeDeps: {
-          exclude: ["@qwik.dev/core", "@qwik.dev/astro", "@vitejs/plugin-react", "@babel/preset-typescript", "blake3-wasm"],
-        },
-      },
-      prerender: {
-        optimizeDeps: {
-          exclude: ["@qwik.dev/core", "@qwik.dev/astro", "@vitejs/plugin-react", "@babel/preset-typescript", "blake3-wasm"],
-        },
-      },
-    },
+    // optimizeDeps: {
+    //   exclude: ["@qwik.dev/core", "@qwik.dev/astro"],
+    // },
+    // ssr: {
+    //   noExternal: ["@qwik.dev/core", "@qwik.dev/astro"],
+    // },
+    // environments: {
+    //   ssr: {
+    //     optimizeDeps: {
+    //       exclude: ["@qwik.dev/core", "@qwik.dev/astro", "@vitejs/plugin-react", "@babel/preset-typescript", "blake3-wasm"],
+    //     },
+    //   },
+    //   prerender: {
+    //     optimizeDeps: {
+    //       exclude: ["@qwik.dev/core", "@qwik.dev/astro", "@vitejs/plugin-react", "@babel/preset-typescript", "blake3-wasm"],
+    //     },
+    //   },
+    // },
     server: {
       fs: {
         allow: ["../../packages/content", "./"],
