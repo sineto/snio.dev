@@ -604,7 +604,6 @@ strong {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-
 }
 
 .about-card-container {
@@ -693,7 +692,6 @@ strong {
     }
   }
 
-
   @media (min-width: 1201px) {
     button {
       font-size: var(--font--2);
@@ -749,7 +747,8 @@ strong {
   flex-direction: column;
   align-items: center;
 
-  img, picture {
+  img,
+  picture {
     height: 45px;
     width: 45px;
   }
@@ -793,7 +792,7 @@ strong {
 
   .active-tab {
     color: var(--fs-green);
-    background-color: var(--main-bg-primary);
+    background-color: var(--primary);
   }
 
   .active-tab-block {
