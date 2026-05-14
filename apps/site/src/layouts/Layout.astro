@@ -2,6 +2,7 @@
 // dependency import
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro"
 
 // component imports
 import Navbar from "@/components/Navbar.astro";
@@ -33,6 +34,7 @@ const lang = getLangFromUrl(Astro.url);
    	<meta name="viewport" content="width=device-width" />
    	<meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+      <SpeedInsights />
     <Font cssVariable="--font-roboto-mono" />
     <ClientRouter />
     <title>{title}</title>
