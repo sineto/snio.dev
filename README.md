@@ -6,7 +6,7 @@
 
 <div align="center">
 
-  <b>This project contains the source code of my personal portfolio available on: <a href="https://snio.dev">snio.dev</a>.</b>
+  <b>This project contains the source code of my personal portfolio available on: <a href="https://sn1o.vercel.app">sn1o.vercel.app</a>.</b>
 
 [![Astro][astro-badge]][astro-badge-url] [![Qwik][qwik-badge]][qwik-badge-url] 
 <!-- [![CloudFlare][cloudflare-badge]][cloudflare-badge-url]  -->
@@ -20,6 +20,7 @@
 </div>
 
 <h3 align="center">
+  <a href="#overview">Overview</a> •
   <a href="#requirements">Requirements</a> •
   <a href="#running-up">Running Up</a> •
   <a href="#development-considerations">Development Considerations</a> •
@@ -29,6 +30,12 @@
 </h3>
 
 ---
+## OVERVIEW
+|                        |                              |                                    |
+|:-----------------------|:----------------------------:|-----------------------------------:|
+| ![hero](docs/hero.jpg) |   ![about](docs/about.png)   | ![experience](docs/experience.png) |
+| ![work](docs/work.png) | ![contact](docs/contact.png) ||
+
 ## REQUIREMENTS
 - [`Bun`](https://bun.sh/) - package manager
 - [`Turborepo`](https://turborepo.dev/) - monorepo project manager
