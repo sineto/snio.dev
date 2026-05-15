@@ -10,8 +10,8 @@ export const getCollectionByLang = async (collection: Collection, lang: Lang) =>
   });
 
   return items;
-}
+};
 
 export const getEntryByLang = async (collection: Collection, slug: string, lang: Lang) => {
   return getEntry(collection, `${lang}/${slug}`);
-}
+};

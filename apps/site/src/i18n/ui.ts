@@ -25,7 +25,6 @@ export const ui = {
     "contact.tldr": `Estou em busca de novas oportunidades no momento, minha caixa de entrada está sempre aberta. Se você tiver alguma dúvida, proposta ou quer apenas dizer "olá", sinta-se a vontade para me contatar. Farei o possível para lhe responder!`,
     "contact.button": "Contate-me!",
     "404.link": "Voltar",
-
   },
   en: {
     "hero.hi": "Hi! My name is",

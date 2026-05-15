@@ -3,9 +3,8 @@ import { Image, Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import Status from "@/components/Status.astro";
-import { type Project } from "@/data/projects";
+import type { Project } from "@/data/projects";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-
 
 interface Props {
   projects: Project[];
@@ -30,7 +29,7 @@ const t = useTranslations(lang);
                 <strong>{project.meta.type}</strong> <Status status={project.meta.status} />
               </div>
               <h3>
-                <a class={project.meta.external} target="_blank" rel="noreferrer">
+                <a href={project.meta.external} target="_blank" rel="noreferrer">
                   {project.meta.title}
                 </a>
               </h3>

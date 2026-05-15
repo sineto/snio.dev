@@ -7,7 +7,7 @@ import Logo from "@/components/Logo.astro";
 
 // data imports
 import { getMetadataEntry } from "@/data/metadata";
-import {getCurrentLanguage} from "@/i18n/utils";
+import { getCurrentLanguage } from "@/i18n/utils";
 
 const links = [
   { href: "#about", label: "about" },
@@ -23,22 +23,10 @@ const metadata = await getMetadataEntry(lang);
 <header id="navbar">
   <nav class="nav-container">
     <!-- Desktop Logo -->
-    <Logo
-      src="/logo-sn1o-lg.svg"
-      href="/#hero"
-      width={148}
-      height={33}
-      class="logomark-lg"
-    />
+    <Logo src="/logo-sn1o-lg.svg" href="/#hero" width={148} height={33} class="logomark-lg" />
 
     <!-- Mobile Logo -->
-    <Logo
-      src="/logo-sn1o-sm.svg"
-      href="/#hero"
-      width={48}
-      height={33}
-      class="logomark-sm"
-    />
+    <Logo src="/logo-sn1o-sm.svg" href="/#hero" width={48} height={33} class="logomark-sm" />
 
     <!-- Desktop Menu -->
     <div id="nav-menu" class="nav-menu">
@@ -55,12 +43,7 @@ const metadata = await getMetadataEntry(lang);
     </div>
 
     <!-- Hamburguer button -->
-    <button
-      id="nav-hamburguer"
-      class="nav-hamburguer"
-      aria-label="Toggle Menu"
-      aria-expanded="false"
-    >
+    <button id="nav-hamburguer" class="nav-hamburguer" aria-label="Toggle Menu" aria-expanded="false">
       <Icon class="nav-hamburguer-menu" name="mdi:menu" width={38} height={38} />
       <Icon class="nav-hamburguer-close" name="mdi:close-circle-outline" width={38} height={38} />
     </button>
@@ -78,9 +61,9 @@ const metadata = await getMetadataEntry(lang);
       ))}
       <a class="button-md" href="">Resume</a>
     </ul>
-  </div> 
+  </div>
 </header>
 
 <script>
-  import "@/styles/global.js"
+  import "@/styles/global.js";
 </script>

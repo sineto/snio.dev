@@ -1,60 +1,59 @@
 ---
-// layout imports
-import Layout from "@/layouts/Layout.astro";
-
+import About from "@/components/sections/About.astro";
+import Contact from "@/components/sections/Contact.astro";
+import Experiences from "@/components/sections/Experiences/index.astro";
 // component imports
 import Hero from "@/components/sections/Hero.astro";
-import About from "@/components/sections/About.astro";
-import Experiences from "@/components/sections/Experiences/index.astro";
-import UnderConstruction from "@/components/sections/UnderConstruction.astro";
-import Projects from "@/components/sections/Projects.astro";
 import OpenSource from "@/components/sections/OpenSource.astro";
-import Contact from "@/components/sections/Contact.astro";
-
+import Projects from "@/components/sections/Projects.astro";
+import UnderConstruction from "@/components/sections/UnderConstruction.astro";
+import { getAboutContent, getAboutEntry } from "@/data/about";
+import { getExperiences } from "@/data/experiences";
+import { getHeroContent } from "@/data/metadata";
+import { getRepositories } from "@/data/open-source";
+import { getProjects } from "@/data/projects";
 // data imports
 import { getCurrentLanguage } from "@/i18n/utils";
-import { getHeroContent } from "@/data/metadata";
-import { getAboutEntry, getAboutContent } from "@/data/about";
-import { getExperiences } from "@/data/experiences";
-import { getProjects } from "@/data/projects";
-import { getRepositories } from "@/data/open-source";
+// layout imports
+import Layout from "@/layouts/Layout.astro";
 
 // data objects
 const lang = getCurrentLanguage(Astro);
 const about = await getAboutEntry(lang);
 const experiences = await getExperiences(lang);
-const projects = await getProjects(lang)
+const projects = await getProjects(lang);
 const repositories = await getRepositories();
 
 // data content
 const HeroContent = await getHeroContent(lang);
 const AboutContent = await getAboutContent(lang);
 ---
+
 <Layout title={"Sinésio Neto - README"}>
-    <main slot="main">
-      <!-- HERO -->
-      <Hero>
-        <HeroContent slot="hero-content" />
-      </Hero>
+  <main slot="main">
+    <!-- HERO -->
+    <Hero>
+      <HeroContent slot="hero-content" />
+    </Hero>
 
-      <!-- ABOUT -->
-      <About aboutStack={about.stack} aboutCards={about.type} transition:animate="none">
-        <AboutContent />
-      </About>
+    <!-- ABOUT -->
+    <About aboutStack={about.stack} aboutCards={about.type} transition:animate="none">
+      <AboutContent />
+    </About>
 
-      <!-- EXPERIENCES -->
-      <Experiences experiences={experiences} transition:animate="none" />
+    <!-- EXPERIENCES -->
+    <Experiences experiences={experiences} transition:animate="none" />
 
-      <!-- PROJECTS -->
-      <!-- <UnderConstruction /> -->
-      {projects.length
+    <!-- PROJECTS -->
+    <!-- <UnderConstruction /> -->
+    {projects.length
       ? (<Projects projects={projects} transition:animate="none" />)
       : (<UnderConstruction transition:animate="none" />)}
 
-      <!-- OPEN-SOURCE PROJECTS -->
-      <OpenSource repositories={repositories} transition:animate="none" />
+    <!-- OPEN-SOURCE PROJECTS -->
+    <OpenSource repositories={repositories} transition:animate="none" />
 
-      <!-- CONTACT -->
-      <Contact />
-    </main>
+    <!-- CONTACT -->
+    <Contact />
+  </main>
 </Layout>

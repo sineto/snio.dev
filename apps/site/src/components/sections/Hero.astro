@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
+
 <section id="hero">
   <div class="hero-header">
     <h1><span>{t("hero.hi")}</span> Sinésio Neto.</h1>
@@ -12,7 +13,5 @@ const t = useTranslations(lang);
   <div class="hero-tldr">
     <slot name="hero-content" />
   </div>
-  <a class="button-md" href="#experience">
-    {t("hero.button")}
-  </a>
+  <a class="button-md" href="#experience"> {t("hero.button")} </a>
 </section>

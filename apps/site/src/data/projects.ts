@@ -1,4 +1,4 @@
-import {getCollectionByLang, type Lang} from "@repo/content/content.utils";
+import { getCollectionByLang, type Lang } from "@repo/content/content.utils";
 
 export interface ProjectFrontmatter {
   order: number;
@@ -16,9 +16,9 @@ export interface Project {
   content: string;
 }
 
-export const getProjects = async (lang: Lang)  => {
+export const getProjects = async (lang: Lang) => {
   return (await getCollectionByLang("projects", lang))
-    .map((project) => ({
+    .map(project => ({
       content: project?.body ?? "",
       meta: {
         order: project?.data.order,
@@ -34,4 +34,4 @@ export const getProjects = async (lang: Lang)  => {
     .sort((a: Project, b: Project) => {
       return a.meta.order - b.meta.order;
     });
-}
+};

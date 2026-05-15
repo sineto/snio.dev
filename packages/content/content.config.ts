@@ -1,12 +1,12 @@
-import {defineCollection} from "astro/content/config";
-import {glob} from "astro/loaders";
+import { GITHUB_TOKEN } from "astro:env/server";
+import { defineCollection } from "astro/content/config";
+import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { Octokit } from "octokit";
-import { GITHUB_TOKEN } from "astro:env/server";
 
 const metadata = defineCollection({
   loader: glob({ base: "../../packages/content/site/metadata", pattern: "**/*.md" }),
-})
+});
 
 const about = defineCollection({
   loader: glob({ base: "../../packages/content/site/about", pattern: "**/*.md" }),
@@ -16,35 +16,41 @@ const about = defineCollection({
         title: z.string(),
         iconName: z.string(),
         tldr: z.string(),
-        clients: z.array(z.object({
-          name: z.string(),
-          website: z.string(),
-          logo: image(),
-        })),
+        clients: z.array(
+          z.object({
+            name: z.string(),
+            website: z.string(),
+            logo: image(),
+          }),
+        ),
       }),
       frontend: z.object({
         title: z.string(),
         iconName: z.string(),
         tldr: z.string(),
-        clients: z.array(z.object({
-          name: z.string(),
-          website: z.string(),
-          logo: image(),
-        })),
+        clients: z.array(
+          z.object({
+            name: z.string(),
+            website: z.string(),
+            logo: image(),
+          }),
+        ),
       }),
       infra: z.object({
         title: z.string(),
         iconName: z.string(),
         tldr: z.string(),
-        clients: z.array(z.object({
-          name: z.string(),
-          website: z.string(),
-          logo: image(),
-        })),
+        clients: z.array(
+          z.object({
+            name: z.string(),
+            website: z.string(),
+            logo: image(),
+          }),
+        ),
       }),
       stack: z.array(z.string()),
     }),
-})
+});
 
 const experiences = defineCollection({
   loader: glob({ base: "../../packages/content/site/experiences", pattern: "**/*.md" }),
@@ -92,7 +98,7 @@ const repositories = defineCollection({
         logger.error(`GitHub API Error: ${error instanceof Error ? error.message : String(error)}`);
       }
     },
-  }
+  },
 });
 
 export const collections = {

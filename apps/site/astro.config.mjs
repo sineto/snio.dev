@@ -1,9 +1,10 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
-import qwik from "@qwik.dev/astro";
+
 import react from "@astrojs/react";
-import icon from "astro-icon";
 import vercel from "@astrojs/vercel";
+import qwik from "@qwik.dev/astro";
+import { defineConfig, fontProviders } from "astro/config";
+import icon from "astro-icon";
 // import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
@@ -30,7 +31,7 @@ export default defineConfig({
     defaultLocale: "pt-br",
     routing: {
       prefixDefaultLocale: false,
-    }
+    },
   },
 
   fonts: [

@@ -1,5 +1,5 @@
-import {type Lang, getCollectionByLang} from "@repo/content/content.utils";
-import { format, compareAsc } from "date-fns";
+import { getCollectionByLang, type Lang } from "@repo/content/content.utils";
+import { compareAsc, format } from "date-fns";
 
 export interface ExperienceFrontmatter {
   title: string;
@@ -17,7 +17,7 @@ export interface Experience {
 
 export const getExperiences = async (lang: Lang) => {
   return (await getCollectionByLang("experiences", lang))
-    .map((job) => ({
+    .map(job => ({
       content: job.rendered?.html ?? "",
       meta: {
         title: job?.data.title,
@@ -25,7 +25,7 @@ export const getExperiences = async (lang: Lang) => {
         website: job?.data.website,
         position: job?.data.position,
         startDate: format(new Date(job?.data.startDate), "MMM, yyyy"),
-        endDate: format(new Date(job?.data.endDate), "MMM, yyyy")
+        endDate: format(new Date(job?.data.endDate), "MMM, yyyy"),
       },
     }))
     .sort((a, b) => {
@@ -33,4 +33,4 @@ export const getExperiences = async (lang: Lang) => {
       const endDate = format(new Date(b.meta.endDate), "MMM, yyyy");
       return compareAsc(endDate, startDate);
     });
-}
+};

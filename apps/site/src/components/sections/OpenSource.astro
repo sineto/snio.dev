@@ -1,8 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import type { Repository } from "@/data/open-source";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface Props {
   repositories: Repository[];
@@ -17,12 +16,7 @@ const t = useTranslations(lang);
 <section id="open-source" class="autoShow">
   <h3>
     {t("opensource.title")}
-    <a
-      class="link"
-      href="https://github.com/sineto"
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a class="link" href="https://github.com/sineto" target="_blank" rel="noreferrer">
       {t("opensource.profileLink")}
     </a>
   </h3>
@@ -48,12 +42,5 @@ const t = useTranslations(lang);
       )
     })}
   </ul>
-  <a
-    class="button-md"
-    href="https://github.com/sineto"
-    target="_blank"
-    rel="noreferrer"
-  >
-    {t("opensource.button")}
-  </a>
+  <a class="button-md" href="https://github.com/sineto" target="_blank" rel="noreferrer"> {t("opensource.button")} </a>
 </section>

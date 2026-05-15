@@ -34,17 +34,17 @@ const toggleMobileMenu = () => {
   overlay.addEventListener("click", closeMobileMenu);
 
   // Close menu when pressing Escape key
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", e => {
     const isOpen = hamburguer.getAttribute("aria-expanded") === "true";
     if (e.key === "Escape" && isOpen) {
       closeMobileMenu();
     }
   });
-  document.addEventListener("scroll", (e) => {
-    if( window.scrollY > 100 ){
-      navbar.classList.add( 'slidedown' );
-    }else{
-      navbar.classList.remove( 'slidedown' );
+  document.addEventListener("scroll", e => {
+    if (window.scrollY > 100) {
+      navbar.classList.add("slidedown");
+    } else {
+      navbar.classList.remove("slidedown");
     }
   });
 };

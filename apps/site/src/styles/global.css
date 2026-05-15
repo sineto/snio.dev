@@ -182,7 +182,7 @@ strong {
   transition: 0.1s;
 
   &::after {
-    content: "";
+    content: '';
     width: 0px;
     height: 1px;
     background: var(--green);
@@ -245,12 +245,12 @@ strong {
 
   &::before {
     counter-increment: section;
-    content: "0" counter(section) ".";
+    content: '0' counter(section) '.';
     color: var(--fs-green);
   }
 
   &::after {
-    content: "";
+    content: '';
     height: 1px;
     background-color: var(--grey-dark);
     flex-grow: 1;
@@ -362,7 +362,7 @@ strong {
       transition: 0.2s ease-in-out;
 
       &::after {
-        content: "";
+        content: '';
         width: 0px;
         height: 1px;
         display: block;
@@ -402,7 +402,7 @@ strong {
   display: none;
 }
 
-#nav-hamburguer[aria-expanded="true"] {
+#nav-hamburguer[aria-expanded='true'] {
   .nav-hamburguer-menu {
     display: none;
   }
@@ -445,7 +445,7 @@ strong {
       transition: 0.2s ease-in-out;
 
       &::after {
-        content: "";
+        content: '';
         width: 0px;
         height: 1px;
         display: block;
@@ -570,7 +570,7 @@ strong {
   ul {
     display: grid;
     grid-template-columns: auto auto auto;
-    list-style-type: "𐰷 ";
+    list-style-type: '𐰷 ';
     list-style-position: inside;
 
     li {
@@ -679,7 +679,7 @@ strong {
     }
 
     &::after {
-      content: "";
+      content: '';
       width: 0px;
       height: 1px;
       display: block;
@@ -879,10 +879,10 @@ strong {
         position: relative;
         padding-left: var(--space-sm);
         margin-bottom: var(--space-xs);
-        list-style-type: "𐰷 ";
+        list-style-type: '𐰷 ';
 
         &::before {
-          content: "𐰷 ";
+          content: '𐰷 ';
           position: absolute;
           left: 0;
           color: var(--green);
@@ -981,7 +981,6 @@ strong {
   }
 
   @media (min-width: 768px) {
-
     &:hover,
     &:focus-visible {
       box-shadow: none;
@@ -1116,7 +1115,7 @@ strong {
     &::before {
       width: 100%;
       height: 100%;
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
