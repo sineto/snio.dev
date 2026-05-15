@@ -6,8 +6,7 @@
     "prebuild": "",
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{astro,ts,tsx,md}\"",
+    "format": "biome format .",
     "biome": "biome check .",
     "biome:fix": "biome check . --write",
     "check-types": "turbo run check-types"
