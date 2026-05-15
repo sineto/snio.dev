@@ -1,0 +1,29 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "root": false,
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "enabled": true,
+        "rules": {
+          "recommended": true,
+          "correctness": {
+            "noUnusedImports": "warn",
+            "noUnusedVariables": "warn",
+            "noUnusedFunctionParameters": "warn",
+            "useHookAtTopLevel": "off"
+          }
+        }
+      }
+    }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  }
+}

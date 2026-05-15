@@ -12,7 +12,7 @@
       "@/*": ["src/*"],
       "@public/*": ["public/*"],
       "@content/*": ["content/*"],
-      "@repo/content/*": ["../../packages/content/*"],
-    },
-  },
+      "@repo/content/*": ["../../packages/content/*"]
+    }
+  }
 }
