@@ -45,7 +45,6 @@ const AboutContent = await getAboutContent(lang);
     <Experiences experiences={experiences} transition:animate="none" />
 
     <!-- PROJECTS -->
-    <!-- <UnderConstruction /> -->
     {projects.length
     ? (<Projects projects={projects} transition:animate="none" />)
     : (<UnderConstruction transition:animate="none" />)}
