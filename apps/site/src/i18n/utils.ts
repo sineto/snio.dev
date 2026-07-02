@@ -1,4 +1,4 @@
-import { defaultLang, ui } from "./ui";
+import { defaultLang, showDefaultLang, ui } from "./ui";
 
 export const getCurrentLanguage = (Astro: any): "pt-br" | "en" => {
   const lang = Astro.params.lang || Astro.currentLocale;

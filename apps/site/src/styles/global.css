@@ -314,6 +314,41 @@ strong {
     place-items: center;
   }
 
+  .nav-home-lang {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xl);
+
+    color: var(--grey-dark);
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &::after {
+        content: "";
+        width: 0px;
+        height: 1px;
+        display: block;
+        background: var(--green);
+        transition: 300ms;
+      }
+
+      &:hover {
+        color: var(--fs-green);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
   .nav-menu {
     display: none;
   }
