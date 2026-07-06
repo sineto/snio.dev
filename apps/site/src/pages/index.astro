@@ -46,8 +46,8 @@ const AboutContent = await getAboutContent(lang);
 
     <!-- PROJECTS -->
     {projects.length
-    ? (<Projects projects={projects} transition:animate="none" />)
-    : (<UnderConstruction transition:animate="none" />)}
+      ? (<Projects projects={projects} transition:animate="none" />)
+      : (<UnderConstruction transition:animate="none" />)}
 
     <!-- OPEN-SOURCE PROJECTS -->
     <OpenSource repositories={repositories} transition:animate="none" />

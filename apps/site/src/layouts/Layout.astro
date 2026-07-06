@@ -41,11 +41,10 @@ const lang = getLangFromUrl(Astro.url);
       <Navbar />
       <div id="content">
         <slot name="main" />
-        <Footer />
-
         <!-- Overlay -->
         <div id="nav-overlay" class="nav-overlay"></div>
       </div>
+      <Footer />
     </div>
   </body>
 </html>
